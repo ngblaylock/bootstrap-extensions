@@ -1,0 +1,16 @@
+{
+  "name": "@ngblaylock/bootstrap-extensions",
+  "version": "1.0.0",
+  "description": "Commonly used code to extend or modify Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
+  }
+}
