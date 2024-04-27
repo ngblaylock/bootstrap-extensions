@@ -8,6 +8,7 @@ module.exports = function (eleventyConfig) {
   });
 	return {
 		dir: {
+			pathPrefix: 'bootstrap-extensions',
       input: "pages",
 			includes: "_includes",
       layouts: "_layouts",

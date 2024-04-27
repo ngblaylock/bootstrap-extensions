@@ -1,6 +1,7 @@
 const sass = require('sass');
 const fs = require('fs');
 const chokidar = require('chokidar');
+const path = require('path');
 
 const filesToConvert = [
   {
@@ -16,13 +17,21 @@ const filesToConvert = [
 const convertFile = ({inputFilename, outputFilename}) => {
   ['expanded', 'compressed'].forEach(style => {
     sass.render({
-      file: `./dist/scss/${inputFilename}`,
+      file: `./dist/bootstrap-5/scss/${inputFilename}`,
       outputStyle: style,
     }, (err, result) => {
       if (err) {
         console.error(err);
       } else {
-        const outputFilePath = `./dist/css/${outputFilename}${style === 'compressed' ? '.min' : ''}.css`;
+        const outputFilePath = `./dist/bootstrap-5/css/${outputFilename}${style === 'compressed' ? '.min' : ''}.css`;
+
+        // Ensure the directory exists
+        const outputDir = path.dirname(outputFilePath);
+        if (!fs.existsSync(outputDir)) {
+          fs.mkdirSync(outputDir, { recursive: true });
+        }
+
+        // Write the CSS file
         fs.writeFileSync(outputFilePath, result.css.toString());
         console.log(`Converted ${inputFilename} to ${outputFilePath}`);
       }
@@ -35,7 +44,7 @@ const buildSass = () => {
 };
 
 const watchSass = () => {
-  const watcher = chokidar.watch('./dist/scss');
+  const watcher = chokidar.watch('./dist/bootstrap-5/scss');
   watcher.on('change', () => {
     console.log('Change detected in SCSS files. Rebuilding...');
     buildSass();
@@ -44,7 +53,7 @@ const watchSass = () => {
 
 // Check if the watch flag is provided
 if (process.argv.includes('-w') || process.argv.includes('--watch')) {
-  console.log("Watching Changes...")
+  console.log("Watching Sass Changes...")
   buildSass();
   watchSass();
 } else {

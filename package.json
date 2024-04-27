@@ -1,10 +1,11 @@
 {
   "name": "@ngblaylock/bootstrap-extensions",
-  "version": "1.0.0",
+  "version": "0.1.0-beta.1",
   "description": "Commonly used code to extend or modify Bootstrap",
   "main": "index.js",
   "scripts": {
-    "dev": "npx @11ty/eleventy --serve",
+    "build": "npm run sass:build && npx @11ty/eleventy",
+    "dev": "npm run sass:watch & npx @11ty/eleventy --serve",
     "sass:build": "node ./build-sass.ts",
     "sass:watch": "node ./build-sass.ts -w"
   },
