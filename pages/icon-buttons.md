@@ -9,19 +9,13 @@ Icon Buttons must all be the same height of other buttons without an icon. Icon 
 **Using Sass:**
 
 ```scss
-@import 'some/file/path/here';
-```
-
-**Using CSS**
-
-```html
-<link src="/some/path/here.min.css" rel="stylesheet" />
+@import 'node_modules/@ngblaylock/bootstrap-extensions/_icon-buttons.scss';
 ```
 
 **Using CDN**
 
 ```html
-<link src="https://cdnjs/some/file/path" rel="stylesheet" />
+<style rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@1.0.0/icon-buttons.min.css"></style>
 ```
 
 ## Example

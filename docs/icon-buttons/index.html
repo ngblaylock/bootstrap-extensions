@@ -17,6 +17,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="/css/bootstrap-extensions.min.css">
     <style>
       pre[class*="language-"] {
         margin-bottom: 2rem;
@@ -143,40 +144,10 @@
             <p>Icon Buttons must all be the same height of other buttons without an icon. Icon only buttons should be a 1:1 ratio, and the icon inside should be designed at a 1:1 ratio just like Material Design Icons. They should look uniform whether the base font size is <code>48px</code> or if the font is a crummy cursive variant.</p>
 <h2>Getting Started</h2>
 <p><strong>Using Sass:</strong></p>
-<pre class="language-scss"><code class="language-scss"><span class="token keyword">@import</span> <span class="token string">'some/file/path/here'</span><span class="token punctuation">;</span></code></pre>
-<p><strong>Using CSS</strong></p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/some/path/here.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@import</span> <span class="token string">'node_modules/@ngblaylock/bootstrap-extensions/_icon-buttons.scss'</span><span class="token punctuation">;</span></code></pre>
 <p><strong>Using CDN</strong></p>
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdnjs/some/file/path<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@1.0.0/icon-buttons.min.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
 <h2>Example</h2>
-<style>
-  .btn.btn-inner-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.625em;
-  }
-  .btn.btn-inner-icon svg {
-    align-items: center;
-    fill: currentColor;
-    display: inline-block;
-    height: calc(var(--bs-btn-line-height) * 1em);
-    transform: scale(0.8);
-    margin: 0 -0.25em;
-  }
-  .btn.btn-icon {
-    padding: var(--bs-btn-padding-y);
-    border-radius: var(--bs-border-radius-pill);
-    display: inline-flex;
-  }
-  .btn.btn-icon svg {
-    margin: 0;
-    fill: currentColor;
-    width: calc(var(--bs-btn-line-height) * 1em);
-    height: calc(var(--bs-btn-line-height) * 1em);
-    display: block;
-  }
-</style>
 <div class="vstack gap-2">
   <div>
     <button class="btn btn-primary">Button</button>
