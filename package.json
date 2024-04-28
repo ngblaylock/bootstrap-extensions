@@ -1,0 +1,23 @@
+{
+  "name": "@ngblaylock/bootstrap-extensions",
+  "version": "0.1.0-beta.4",
+  "description": "Commonly used code to extend or modify Bootstrap 5",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run sass:build && npx @11ty/eleventy --pathprefix=bootstrap-extensions",
+    "dev": "npm run sass:watch & npx @11ty/eleventy --serve",
+    "sass:build": "node ./build-sass.ts",
+    "sass:watch": "node ./build-sass.ts -w"
+  },
+  "keywords": ["Bootstrap 5"],
+  "author": "ngblaylock",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@types/node": "^20.12.7",
+    "bootstrap": "^5.3.3",
+    "chokidar": "^3.6.0",
+    "sass": "^1.75.0"
+  }
+}
