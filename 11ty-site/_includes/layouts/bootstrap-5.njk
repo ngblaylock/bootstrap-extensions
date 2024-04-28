@@ -45,6 +45,11 @@
             </a>
             <div class="h5">Extensions</div>
             <div class="list-group list-group-flush border-top">
+              <a
+                href="/"
+                class="list-group-item {% if page.url == '/' %}active{% endif %}"
+                >Home</a
+              >
               {% set sortedCollection = collections.extension | sortByTitle %}
               {%- for extension in sortedCollection -%}
               <a
@@ -90,17 +95,31 @@
                   >Portfolio</a
                 >
               </div>
-              {#
-              <div>
-                <a href="" target="_blank" class="link-secondary">NPM</a>
-              </div>
-              #}
+
               <div>
                 <a
                   href="https://github.com/ngblaylock/bootstrap-extensions"
                   target="_blank"
                   class="link-secondary"
                   >GitHub</a
+                >
+              </div>
+
+              <div>
+                <a
+                  href="https://www.npmjs.com/package/@ngblaylock/bootstrap-extensions"
+                  target="_blank"
+                  class="link-secondary"
+                  >NPM</a
+                >
+              </div>
+
+              <div>
+                <a
+                  href="https://www.jsdelivr.com/package/npm/@ngblaylock/bootstrap-extensions"
+                  target="_blank"
+                  class="link-secondary"
+                  >jsDelivr</a
                 >
               </div>
             </div>

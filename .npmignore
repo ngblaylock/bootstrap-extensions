@@ -2,3 +2,4 @@
 .vscode
 .eleventy.js
 build-sass.ts
+docs

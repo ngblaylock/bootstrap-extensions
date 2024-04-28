@@ -2,4 +2,9 @@
 title: Layouts
 ---
 
-This would be like using a left navigation, sticky and secondary headers.
+Ideas:
+
+- Left Navigation (mobile responsive)
+- Sticky footer
+- Sticky secondary header
+- Fixed header

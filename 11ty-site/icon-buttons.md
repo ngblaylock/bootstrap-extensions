@@ -15,10 +15,10 @@ Icon Buttons must all be the same height of other buttons without an icon. Icon 
 ### CDN
 
 ```html
-<style
+<link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@1.0.0/icon-buttons.min.css"
-></style>
+  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/css/bootstrap-extensions.min.css"
+/>
 ```
 
 ## Usage
@@ -26,6 +26,7 @@ Icon Buttons must all be the same height of other buttons without an icon. Icon 
 This uses Material Design Icons, which work great for most projects. Notice how the buttons are all the same size, and the icons don't change the height. For the icon only button, just use the class `.btn-icon` and the icon within the regular button it will be `.btn-inner-icon`. This makes it so it doesn't matter if you have the icon before or after the text.
 
 {% include "examples/icon-buttons.njk" %}
+
 ```html
 {% include "examples/icon-buttons.njk" %}
 ```
