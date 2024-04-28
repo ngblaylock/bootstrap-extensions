@@ -17,7 +17,7 @@ This project supports [Bootstrap 5](/bootstrap-5).
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@0.1.0-beta.3/dist/bootstrap-5/css/bootstrap-extensions.min.css"
+  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/css/bootstrap-extensions.min.css"
 />
 ```
 
