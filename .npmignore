@@ -1,5 +1,6 @@
 11ty-site
 .vscode
+.github
 .eleventy.js
 build-sass.ts
 docs
