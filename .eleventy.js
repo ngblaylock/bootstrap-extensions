@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
 			pathPrefix: "/bootstrap-extensions/",
       input: "11ty-site",
 			includes: "_includes",
-      layouts: "_includes/layouts",
+      layouts: "_layouts",
       output: "docs",
 		},
 	};
