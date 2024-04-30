@@ -8,13 +8,18 @@ module.exports = function (eleventyConfig) {
 	
 	// Plugins
 	eleventyConfig.addPlugin(syntaxHighlight);
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	
 	// Filters
 	eleventyConfig.addFilter("sortByTitle", function(collection) {
 		return collection.sort((a, b) => (a.data.title > b.data.title) ? 1 : -1);
   });
 	
-	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+	// Server Options
+	eleventyConfig.setServerOptions({
+    watch: ['docs/css/site.min.css']
+  })
+
 	return {
 		dir: {
 			pathPrefix: "/bootstrap-extensions/",
