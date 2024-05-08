@@ -1,0 +1,87 @@
+$base-1: #ffffff !default;
+$base-2: #f8f9fa !default;
+$base-3: #eff0f1 !default;
+$base-4: #e7e8e9 !default;
+$base-5: #35393d !default;
+$base-6: #2e3236 !default;
+$base-7: #282c30 !default;
+$base-8: #212529 !default;
+
+:root,
+[data-bs-theme="light"] {
+  // standard
+  --bs-base-1: #{$base-1};
+  --bs-base-2: #{$base-2};
+  --bs-base-3: #{$base-3};
+  --bs-base-4: #{$base-4};
+  --bs-base-5: #{$base-5};
+  --bs-base-6: #{$base-6};
+  --bs-base-7: #{$base-7};
+  --bs-base-8: #{$base-8};
+  // hover
+  $bs-base-1-hover: darken($base-1, 6%);
+  $bs-base-2-hover: darken($base-2, 6%);
+  $bs-base-3-hover: darken($base-3, 6%);
+  $bs-base-4-hover: darken($base-4, 6%);
+  $bs-base-5-hover: lighten($base-5, 18%);
+  $bs-base-6-hover: lighten($base-6, 18%);
+  $bs-base-7-hover: lighten($base-7, 18%);
+  $bs-base-8-hover: lighten($base-8, 18%);
+  --bs-base-1-hover: #{$bs-base-1-hover};
+  --bs-base-2-hover: #{$bs-base-2-hover};
+  --bs-base-3-hover: #{$bs-base-3-hover};
+  --bs-base-4-hover: #{$bs-base-4-hover};
+  --bs-base-5-hover: #{$bs-base-5-hover};
+  --bs-base-6-hover: #{$bs-base-6-hover};
+  --bs-base-7-hover: #{$bs-base-7-hover};
+  --bs-base-8-hover: #{$bs-base-8-hover};
+}
+
+[data-bs-theme="dark"] {
+  --bs-base-1: #{$base-8};
+  --bs-base-2: #{$base-7};
+  --bs-base-3: #{$base-6};
+  --bs-base-4: #{$base-5};
+  --bs-base-5: #{$base-4};
+  --bs-base-6: #{$base-3};
+  --bs-base-7: #{$base-2};
+  --bs-base-8: #{$base-1};
+  // hover
+  $bs-base-1-hover: lighten($base-8, 6%);
+  $bs-base-2-hover: lighten($base-7, 6%);
+  $bs-base-3-hover: lighten($base-6, 6%);
+  $bs-base-4-hover: lighten($base-5, 6%);
+  $bs-base-5-hover: darken($base-4, 12%);
+  $bs-base-6-hover: darken($base-3, 12%);
+  $bs-base-7-hover: darken($base-2, 12%);
+  $bs-base-8-hover: darken($base-1, 12%);
+  --bs-base-1-hover: #{$bs-base-1-hover};
+  --bs-base-2-hover: #{$bs-base-2-hover};
+  --bs-base-3-hover: #{$bs-base-3-hover};
+  --bs-base-4-hover: #{$bs-base-4-hover};
+  --bs-base-5-hover: #{$bs-base-5-hover};
+  --bs-base-6-hover: #{$bs-base-6-hover};
+  --bs-base-7-hover: #{$bs-base-7-hover};
+  --bs-base-8-hover: #{$bs-base-8-hover};
+}
+
+@for $i from 1 through 8 {
+  .bg-base-#{$i} {
+    background: var(--bs-base-#{$i}) !important;
+  }
+  .text-base-#{$i} {
+    color: var(--bs-base-#{$i}) !important;
+  }
+  .link-base-#{$i} {
+    color: var(--bs-base-#{$i}) !important;
+    &:hover{
+      color: var(--bs-base-#{$i}-hover) !important; 
+    }
+  }
+  .link-underline-base-#{$i} {
+    text-decoration-color: var(--bs-base-#{$i}) !important;
+  }
+  .border-base-#{$i} {
+    border-color: var(--bs-base-#{$i}) !important;
+  }
+}
