@@ -4,10 +4,6 @@ title: Dark Theme Base
 
 This is my solution for implementing a better dark theme with Bootstrap. From what I gather on the Bootstrap 5 documentation, there isn't a whole lot of options for switching between darker colors to lighter depending on your dark/light theme. There are some CSS variables that you can use, but I wanted to use things like `.bg-base-1` or `.border-base-1` that will gracefully swap to the negative instance when switching themes.
 
-``` txt
-Maybe this should just use `.base-bg-1` and `.base-body-1`
-```
-
 ## Getting Started
 
 ### Sass
