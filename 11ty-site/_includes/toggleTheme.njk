@@ -1,4 +1,4 @@
-<div class="mt-4">
+{# <div class="mt-4">
   <button class="btn" onclick="toggleTheme()">
     Toggle Theme
   </button>
@@ -17,4 +17,49 @@
     );
     localStorage.setItem('theme', newTheme)
   }
-</script>
+</script> #}
+
+<div
+  x-data="{ 
+    theme: 'light',
+    init() {
+      this.theme = localStorage.getItem('theme') || 'light';
+      document.body.setAttribute('data-bs-theme', this.theme)
+      $watch('theme', value => {
+        localStorage.setItem('theme', value);
+        document.body.setAttribute('data-bs-theme', this.theme)
+      });
+    }
+   }"
+>
+  <fieldset>
+    <legend class="h6">Theme</legend>
+    <div class="form-check">
+      <input
+        x-model="theme"
+        class="form-check-input"
+        type="radio"
+        name="themeRadio"
+        id="themeRadio1"
+        value="light"
+      />
+      <label class="form-check-label" for="themeRadio1">
+        Light
+      </label>
+    </div>
+    <div class="form-check">
+      <input
+        x-model="theme"
+        class="form-check-input"
+        type="radio"
+        name="themeRadio"
+        id="themeRadio2"
+        value="dark"
+      />
+      <label class="form-check-label" for="themeRadio2">
+        Dark
+      </label>
+    </div>
+  </fieldset>
+</div>
+

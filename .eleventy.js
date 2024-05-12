@@ -1,5 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
 
 module.exports = function (eleventyConfig) {
 	// Passthrough File Copy
@@ -9,6 +10,7 @@ module.exports = function (eleventyConfig) {
 	// Plugins
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+	eleventyConfig.addPlugin(eleventyHelmetPlugin);
 	
 	// Filters
 	eleventyConfig.addFilter("sortByTitle", function(collection) {

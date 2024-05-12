@@ -61,3 +61,14 @@ You can either use `.bg-base-1` or `.text-bg-base-1`.
 - In dark mode, just set `$body-bg-dark` and `$body-color-dark` to achieve a similar affect explained above.
 - When changing `$base-1-{light|dark}` and `$base-8-{light|dark}`, `$base-{2-7}-{light|dark}` will automatically add a tint or shade depending on what was set.
 - You can also just declare `$base-{1-8}-{light|dark}` for full customization.
+
+## Available Classes
+
+These are classes `*` being a `base-` with the number value. More may be added as needed.
+
+- `bg-*`
+- `border-*`
+- `link-*`
+- `link-underline-*`
+- `text-*`
+- `text-bg-*`

@@ -11,7 +11,9 @@
     "sass:eleventy:build": "sass 11ty-site/_scss/site.scss docs/css/site.min.css --style=compressed --no-source-map",
     "sass:eleventy:watch": "npm run sass:eleventy:build && sass 11ty-site/_scss/site.scss docs/css/site.min.css --style=compressed --no-source-map -w"
   },
-  "keywords": ["Bootstrap 5"],
+  "keywords": [
+    "Bootstrap 5"
+  ],
   "author": "ngblaylock",
   "license": "ISC",
   "devDependencies": {
@@ -20,6 +22,7 @@
     "@types/node": "^20.12.7",
     "bootstrap": "^5.3.3",
     "chokidar": "^3.6.0",
+    "eleventy-plugin-helmet": "^0.2.2",
     "sass": "^1.75.0"
   }
 }
