@@ -1,4 +1,3 @@
 node_modules
 .DS_Store
 docs
-11ty-site/_scss/site.min.css
