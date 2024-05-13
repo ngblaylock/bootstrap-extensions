@@ -6,9 +6,9 @@ eleventyExcludeFromCollections: true
 
 I am making this because there are some modifications I want to make to all or at least most of my Bootstrap projects. This is a repository that lets me pull in those changes as needed. This is for the most part general purpose, but if you don't like how it works you can just copy the source into your own project and modify it as needed.
 
-This project supports [Bootstrap 5](/bootstrap-5).
+This project supports [Bootstrap 5](https://getbootstrap.com/).
 
-<div class="alert alert-warning">This is a work in progress. You might find breaking changes during version `0.x.x`.</div>
+<div class="alert alert-warning">This is a work in progress. You might find breaking changes during version <code>v0.x.x</code>.</div>
 
 ## Getting Started
 

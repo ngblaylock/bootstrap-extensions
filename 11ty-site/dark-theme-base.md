@@ -2,7 +2,9 @@
 title: Dark Theme Base
 ---
 
-This is my solution for implementing a better dark theme with Bootstrap. From what I gather on the Bootstrap 5 documentation, there isn't a whole lot of options for switching between darker colors to lighter depending on your dark/light theme. There are some CSS variables that you can use, but I wanted to use things like `.bg-base-1` or `.border-base-1` that will gracefully swap to the negative instance when switching themes.
+This is my solution for handling dark theme with Bootstrap. From what I gather on the Bootstrap 5 documentation, there aren't many options for dynamic color shifting. There are some CSS variables that you can use, but I wanted to use things like `.bg-base-1` or `.border-base-1` that will gracefully swap to the negative instance when switching themes.
+
+The names of these may change throughout `v0.x.x` since I'm not fully convinced my naming convention is the best it can be. I wanted to name `base-{1-4}` as `background` and `base-{5-8}` as `foreground`, but a utility class `bg-foreground-1` looks a little contradictory, and `bg-background-3` seemed a little redundant.
 
 ## Getting Started
 
