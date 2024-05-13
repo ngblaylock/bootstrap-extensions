@@ -1,5 +1,7 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
+const mdAttrs = require("markdown-it-link-attributes");
 
 module.exports = function (eleventyConfig) {
 	// Passthrough File Copy
@@ -8,13 +10,31 @@ module.exports = function (eleventyConfig) {
 	
 	// Plugins
 	eleventyConfig.addPlugin(syntaxHighlight);
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+	eleventyConfig.addPlugin(eleventyHelmetPlugin);
+
+	// Extend Markdown
+	const mdAttrsOptions = {
+    matcher(href) {
+      return href.match(/^https?:\/\//);
+    },
+    attrs: {
+      target: "_blank",
+      rel: "noopener",
+    },
+  };
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(mdAttrs, mdAttrsOptions));
 	
 	// Filters
 	eleventyConfig.addFilter("sortByTitle", function(collection) {
 		return collection.sort((a, b) => (a.data.title > b.data.title) ? 1 : -1);
   });
 	
-	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+	// Server Options
+	eleventyConfig.setServerOptions({
+    watch: ['docs/css/site.min.css', 'dist/bootstrap-5/scss/*.scss']
+  })
+
 	return {
 		dir: {
 			pathPrefix: "/bootstrap-extensions/",

@@ -1,0 +1,81 @@
+{# Need this for Eleventy hot reloading #}
+<link
+  data-helmet
+  data-css-type
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+/> 
+
+<script data-helmet>
+  function setCssType() {
+    let existingLinks = document.head.querySelectorAll("link[data-css-type]");
+    existingLinks.forEach(function (link) {
+      link.parentNode.removeChild(link);
+    });
+    if (localStorage.getItem("cssType") === "custom") {
+      let siteLink = document.createElement("link");
+      siteLink.rel = "stylesheet";
+      siteLink.href = "/css/site.min.css?v={{pkg.version}}";
+      siteLink.setAttribute("data-css-type", "");
+
+      document.head.appendChild(siteLink);
+    } else {
+      let bootstrapLink = document.createElement("link");
+      bootstrapLink.rel = "stylesheet";
+      bootstrapLink.href =
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
+      bootstrapLink.setAttribute("data-css-type", "");
+
+      let bootstrapExtensionsLink = document.createElement("link");
+      bootstrapExtensionsLink.rel = "stylesheet";
+      bootstrapExtensionsLink.href =
+        "/css/bootstrap-extensions.min.css?v={{pkg.version}}";
+      bootstrapExtensionsLink.setAttribute("data-css-type", "");
+
+      document.head.appendChild(bootstrapLink);
+      document.head.appendChild(bootstrapExtensionsLink);
+    }
+  }
+  setCssType();
+</script>
+
+<div
+  x-data="{ 
+    cssType: 'default',
+    init() {
+      this.cssType = localStorage.getItem('cssType') || 'default'
+      $watch('cssType', value => {
+        localStorage.setItem('cssType', value);
+        setCssType();
+      })
+    }
+   }"
+>
+  <fieldset>
+    <legend class="h6">CSS Type</legend>
+    <div class="form-check">
+      <input
+        x-model="cssType"
+        class="form-check-input"
+        type="radio"
+        name="cssTypeRadio"
+        id="cssTypeRadio1"
+        value="default"
+      />
+      <label class="form-check-label" for="cssTypeRadio1">
+        Default Bootstrap
+      </label>
+    </div>
+    <div class="form-check">
+      <input
+        x-model="cssType"
+        class="form-check-input"
+        type="radio"
+        name="cssTypeRadio"
+        id="cssTypeRadio2"
+        value="custom"
+      />
+      <label class="form-check-label" for="cssTypeRadio2"> Custom Sass </label>
+    </div>
+  </fieldset>
+</div>
