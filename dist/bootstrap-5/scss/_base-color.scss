@@ -19,14 +19,14 @@ $base-5-dark: shade-color($base-6-dark, 9%) !default;
 :root,
 [data-bs-theme="light"] {
   // standard
-  --bs-base-1: #{$base-1-light};
-  --bs-base-2: #{$base-2-light};
-  --bs-base-3: #{$base-3-light};
-  --bs-base-4: #{$base-4-light};
-  --bs-base-5: #{$base-5-light};
-  --bs-base-6: #{$base-6-light};
-  --bs-base-7: #{$base-7-light};
-  --bs-base-8: #{$base-8-light};
+  --#{$prefix}base-1: #{$base-1-light};
+  --#{$prefix}base-2: #{$base-2-light};
+  --#{$prefix}base-3: #{$base-3-light};
+  --#{$prefix}base-4: #{$base-4-light};
+  --#{$prefix}base-5: #{$base-5-light};
+  --#{$prefix}base-6: #{$base-6-light};
+  --#{$prefix}base-7: #{$base-7-light};
+  --#{$prefix}base-8: #{$base-8-light};
   //hover
   $bs-base-1-hover: tint-color($base-1-light, 32%);
   $bs-base-2-hover: tint-color($base-2-light, 32%);
@@ -36,25 +36,25 @@ $base-5-dark: shade-color($base-6-dark, 9%) !default;
   $bs-base-6-hover: shade-color($base-6-light, 64%);
   $bs-base-7-hover: shade-color($base-7-light, 64%);
   $bs-base-8-hover: shade-color($base-8-light, 64%);
-  --bs-base-1-hover: #{$bs-base-1-hover};
-  --bs-base-2-hover: #{$bs-base-2-hover};
-  --bs-base-3-hover: #{$bs-base-3-hover};
-  --bs-base-4-hover: #{$bs-base-4-hover};
-  --bs-base-5-hover: #{$bs-base-5-hover};
-  --bs-base-6-hover: #{$bs-base-6-hover};
-  --bs-base-7-hover: #{$bs-base-7-hover};
-  --bs-base-8-hover: #{$bs-base-8-hover};
+  --#{$prefix}base-1-hover: #{$bs-base-1-hover};
+  --#{$prefix}base-2-hover: #{$bs-base-2-hover};
+  --#{$prefix}base-3-hover: #{$bs-base-3-hover};
+  --#{$prefix}base-4-hover: #{$bs-base-4-hover};
+  --#{$prefix}base-5-hover: #{$bs-base-5-hover};
+  --#{$prefix}base-6-hover: #{$bs-base-6-hover};
+  --#{$prefix}base-7-hover: #{$bs-base-7-hover};
+  --#{$prefix}base-8-hover: #{$bs-base-8-hover};
 }
 
 [data-bs-theme="dark"] {
-  --bs-base-1: #{$base-1-dark};
-  --bs-base-2: #{$base-2-dark};
-  --bs-base-3: #{$base-3-dark};
-  --bs-base-4: #{$base-4-dark};
-  --bs-base-5: #{$base-5-dark};
-  --bs-base-6: #{$base-6-dark};
-  --bs-base-7: #{$base-7-dark};
-  --bs-base-8: #{$base-8-dark};
+  --#{$prefix}base-1: #{$base-1-dark};
+  --#{$prefix}base-2: #{$base-2-dark};
+  --#{$prefix}base-3: #{$base-3-dark};
+  --#{$prefix}base-4: #{$base-4-dark};
+  --#{$prefix}base-5: #{$base-5-dark};
+  --#{$prefix}base-6: #{$base-6-dark};
+  --#{$prefix}base-7: #{$base-7-dark};
+  --#{$prefix}base-8: #{$base-8-dark};
   // hover
   $bs-base-1-hover: shade-color($base-1-dark, 12%);
   $bs-base-2-hover: shade-color($base-2-dark, 12%);
@@ -64,41 +64,41 @@ $base-5-dark: shade-color($base-6-dark, 9%) !default;
   $bs-base-6-hover: tint-color($base-6-dark, 24%);
   $bs-base-7-hover: tint-color($base-7-dark, 24%);
   $bs-base-8-hover: tint-color($base-8-dark, 24%);
-  --bs-base-1-hover: #{$bs-base-1-hover};
-  --bs-base-2-hover: #{$bs-base-2-hover};
-  --bs-base-3-hover: #{$bs-base-3-hover};
-  --bs-base-4-hover: #{$bs-base-4-hover};
-  --bs-base-5-hover: #{$bs-base-5-hover};
-  --bs-base-6-hover: #{$bs-base-6-hover};
-  --bs-base-7-hover: #{$bs-base-7-hover};
-  --bs-base-8-hover: #{$bs-base-8-hover};
+  --#{$prefix}base-1-hover: #{$bs-base-1-hover};
+  --#{$prefix}base-2-hover: #{$bs-base-2-hover};
+  --#{$prefix}base-3-hover: #{$bs-base-3-hover};
+  --#{$prefix}base-4-hover: #{$bs-base-4-hover};
+  --#{$prefix}base-5-hover: #{$bs-base-5-hover};
+  --#{$prefix}base-6-hover: #{$bs-base-6-hover};
+  --#{$prefix}base-7-hover: #{$bs-base-7-hover};
+  --#{$prefix}base-8-hover: #{$bs-base-8-hover};
 }
 
 @for $i from 1 through 8 {
   .bg-base-#{$i} {
-    background: var(--bs-base-#{$i}) !important;
+    background: var(--#{$prefix}base-#{$i}) !important;
   }
   .text-base-#{$i} {
-    color: var(--bs-base-#{$i}) !important;
+    color: var(--#{$prefix}base-#{$i}) !important;
   }
   .text-bg-base-#{$i} {
-    background: var(--bs-base-#{$i}) !important;
+    background: var(--#{$prefix}base-#{$i}) !important;
     @if $i <= 4 {
-      color: var(--bs-base-8) !important;
+      color: var(--#{$prefix}base-8) !important;
      } @else {
-      color: var(--bs-base-1) !important;
+      color: var(--#{$prefix}base-1) !important;
      }
   }
   .link-base-#{$i} {
-    color: var(--bs-base-#{$i}) !important;
+    color: var(--#{$prefix}base-#{$i}) !important;
     &:hover {
-      color: var(--bs-base-#{$i}-hover) !important;
+      color: var(--#{$prefix}base-#{$i}-hover) !important;
     }
   }
   .link-underline-base-#{$i} {
-    text-decoration-color: var(--bs-base-#{$i}) !important;
+    text-decoration-color: var(--#{$prefix}base-#{$i}) !important;
   }
   .border-base-#{$i} {
-    border-color: var(--bs-base-#{$i}) !important;
+    border-color: var(--#{$prefix}base-#{$i}) !important;
   }
 }
