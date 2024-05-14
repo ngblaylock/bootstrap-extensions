@@ -1,11 +1,11 @@
 {
   "name": "@ngblaylock/bootstrap-extensions",
-  "version": "0.1.0-beta.7",
+  "version": "0.1.0-beta.8",
   "description": "Commonly used code to extend or modify Bootstrap 5",
   "main": "index.js",
   "scripts": {
-    "build": "npm run sass:dist:build && npx @11ty/eleventy --pathprefix=bootstrap-extensions",
-    "dev": "npm run sass:dist:watch & npx @11ty/eleventy --serve & npm run sass:eleventy:watch",
+    "build": "npm run sass:dist:build && npm run sass:eleventy:build && npx @11ty/eleventy --pathprefix=bootstrap-extensions",
+    "dev": "rm -rf docs && npm run sass:dist:watch & npm run sass:eleventy:watch & npx @11ty/eleventy --serve & npm run sass:eleventy:watch",
     "sass:dist:build": "node ./build-sass.ts",
     "sass:dist:watch": "node ./build-sass.ts -w",
     "sass:eleventy:build": "sass 11ty-site/_scss/site.scss docs/css/site.min.css --style=compressed --no-source-map",
