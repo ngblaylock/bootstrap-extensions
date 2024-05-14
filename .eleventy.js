@@ -32,7 +32,7 @@ module.exports = function (eleventyConfig) {
 	
 	// Server Options
 	eleventyConfig.setServerOptions({
-    watch: ['docs/css/site.min.css', 'dist/bootstrap-5/scss/*.scss']
+    watch: ['docs/css/site.min.css']
   })
 
 	return {
