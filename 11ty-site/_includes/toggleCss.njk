@@ -15,7 +15,7 @@
     if (localStorage.getItem("cssType") === "custom") {
       let siteLink = document.createElement("link");
       siteLink.rel = "stylesheet";
-      siteLink.href = "/css/site.min.css?v={{pkg.version}}";
+      siteLink.href = "{{global.baseUrl}}/css/site.min.css?v={{pkg.version}}";
       siteLink.setAttribute("data-css-type", "");
 
       document.head.appendChild(siteLink);
@@ -29,7 +29,7 @@
       let bootstrapExtensionsLink = document.createElement("link");
       bootstrapExtensionsLink.rel = "stylesheet";
       bootstrapExtensionsLink.href =
-        "/css/bootstrap-extensions.min.css?v={{pkg.version}}";
+        "{{global.baseUrl}}/css/bootstrap-extensions.min.css?v={{pkg.version}}";
       bootstrapExtensionsLink.setAttribute("data-css-type", "");
 
       document.head.appendChild(bootstrapLink);
