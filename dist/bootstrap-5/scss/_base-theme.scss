@@ -2,19 +2,19 @@ $base-1-light: $body-bg !default;
 $base-2-light: shade-color($base-1-light, 3%) !default;
 $base-3-light: shade-color($base-2-light, 3%) !default;
 $base-4-light: shade-color($base-3-light, 3%) !default;
-$base-8-light: $body-color !default;
-$base-7-light: tint-color($base-8-light, 9%) !default;
-$base-6-light: tint-color($base-7-light, 9%) !default;
-$base-5-light: tint-color($base-6-light, 9%) !default;
+$base-i1-light: $body-color !default;
+$base-i2-light: tint-color($base-i1-light, 9%) !default;
+$base-i3-light: tint-color($base-i2-light, 9%) !default;
+$base-i4-light: tint-color($base-i3-light, 9%) !default;
 
 $base-1-dark: $body-bg-dark !default;
 $base-2-dark: tint-color($base-1-dark, 3%) !default;
 $base-3-dark: tint-color($base-2-dark, 3%) !default;
 $base-4-dark: tint-color($base-3-dark, 3%) !default;
-$base-8-dark: $body-color-dark !default;
-$base-7-dark: shade-color($base-8-dark, 9%) !default;
-$base-6-dark: shade-color($base-7-dark, 9%) !default;
-$base-5-dark: shade-color($base-6-dark, 9%) !default;
+$base-i1-dark: $body-color-dark !default;
+$base-i2-dark: shade-color($base-i1-dark, 9%) !default;
+$base-i3-dark: shade-color($base-i2-dark, 9%) !default;
+$base-i4-dark: shade-color($base-i3-dark, 9%) !default;
 
 :root,
 [data-bs-theme="light"] {
@@ -23,27 +23,27 @@ $base-5-dark: shade-color($base-6-dark, 9%) !default;
   --#{$prefix}base-2: #{$base-2-light};
   --#{$prefix}base-3: #{$base-3-light};
   --#{$prefix}base-4: #{$base-4-light};
-  --#{$prefix}base-5: #{$base-5-light};
-  --#{$prefix}base-6: #{$base-6-light};
-  --#{$prefix}base-7: #{$base-7-light};
-  --#{$prefix}base-8: #{$base-8-light};
+  --#{$prefix}base-i1: #{$base-i1-light};
+  --#{$prefix}base-i2: #{$base-i2-light};
+  --#{$prefix}base-i3: #{$base-i3-light};
+  --#{$prefix}base-i4: #{$base-i4-light};
   //hover
   $bs-base-1-hover: tint-color($base-1-light, 32%);
   $bs-base-2-hover: tint-color($base-2-light, 32%);
   $bs-base-3-hover: tint-color($base-3-light, 32%);
   $bs-base-4-hover: tint-color($base-4-light, 32%);
-  $bs-base-5-hover: shade-color($base-5-light, 64%);
-  $bs-base-6-hover: shade-color($base-6-light, 64%);
-  $bs-base-7-hover: shade-color($base-7-light, 64%);
-  $bs-base-8-hover: shade-color($base-8-light, 64%);
+  $bs-base-i1-hover: shade-color($base-i1-light, 64%);
+  $bs-base-i2-hover: shade-color($base-i2-light, 64%);
+  $bs-base-i3-hover: shade-color($base-i3-light, 64%);
+  $bs-base-i4-hover: shade-color($base-i4-light, 64%);
   --#{$prefix}base-1-hover: #{$bs-base-1-hover};
   --#{$prefix}base-2-hover: #{$bs-base-2-hover};
   --#{$prefix}base-3-hover: #{$bs-base-3-hover};
   --#{$prefix}base-4-hover: #{$bs-base-4-hover};
-  --#{$prefix}base-5-hover: #{$bs-base-5-hover};
-  --#{$prefix}base-6-hover: #{$bs-base-6-hover};
-  --#{$prefix}base-7-hover: #{$bs-base-7-hover};
-  --#{$prefix}base-8-hover: #{$bs-base-8-hover};
+  --#{$prefix}base-i1-hover: #{$bs-base-i1-hover};
+  --#{$prefix}base-i2-hover: #{$bs-base-i2-hover};
+  --#{$prefix}base-i3-hover: #{$bs-base-i3-hover};
+  --#{$prefix}base-i4-hover: #{$bs-base-i4-hover};
 }
 
 [data-bs-theme="dark"] {
@@ -51,30 +51,32 @@ $base-5-dark: shade-color($base-6-dark, 9%) !default;
   --#{$prefix}base-2: #{$base-2-dark};
   --#{$prefix}base-3: #{$base-3-dark};
   --#{$prefix}base-4: #{$base-4-dark};
-  --#{$prefix}base-5: #{$base-5-dark};
-  --#{$prefix}base-6: #{$base-6-dark};
-  --#{$prefix}base-7: #{$base-7-dark};
-  --#{$prefix}base-8: #{$base-8-dark};
+  --#{$prefix}base-i1: #{$base-i1-dark};
+  --#{$prefix}base-i2: #{$base-i2-dark};
+  --#{$prefix}base-i3: #{$base-i3-dark};
+  --#{$prefix}base-i4: #{$base-i4-dark};
   // hover
   $bs-base-1-hover: shade-color($base-1-dark, 12%);
   $bs-base-2-hover: shade-color($base-2-dark, 12%);
   $bs-base-3-hover: shade-color($base-3-dark, 12%);
   $bs-base-4-hover: shade-color($base-4-dark, 12%);
-  $bs-base-5-hover: tint-color($base-5-dark, 24%);
-  $bs-base-6-hover: tint-color($base-6-dark, 24%);
-  $bs-base-7-hover: tint-color($base-7-dark, 24%);
-  $bs-base-8-hover: tint-color($base-8-dark, 24%);
+  $bs-base-i1-hover: tint-color($base-i1-dark, 24%);
+  $bs-base-i2-hover: tint-color($base-i2-dark, 24%);
+  $bs-base-i3-hover: tint-color($base-i3-dark, 24%);
+  $bs-base-i4-hover: tint-color($base-i4-dark, 24%);
   --#{$prefix}base-1-hover: #{$bs-base-1-hover};
   --#{$prefix}base-2-hover: #{$bs-base-2-hover};
   --#{$prefix}base-3-hover: #{$bs-base-3-hover};
   --#{$prefix}base-4-hover: #{$bs-base-4-hover};
-  --#{$prefix}base-5-hover: #{$bs-base-5-hover};
-  --#{$prefix}base-6-hover: #{$bs-base-6-hover};
-  --#{$prefix}base-7-hover: #{$bs-base-7-hover};
-  --#{$prefix}base-8-hover: #{$bs-base-8-hover};
+  --#{$prefix}base-i1-hover: #{$bs-base-i1-hover};
+  --#{$prefix}base-i2-hover: #{$bs-base-i2-hover};
+  --#{$prefix}base-i3-hover: #{$bs-base-i3-hover};
+  --#{$prefix}base-i4-hover: #{$bs-base-i4-hover};
 }
 
-@for $i from 1 through 8 {
+$base-variants: "1", "2", "3", "4", "i1", "i2", "i3", "i4";
+
+@each $i in $base-variants {
   .bg-base-#{$i} {
     background: var(--#{$prefix}base-#{$i}) !important;
   }
@@ -83,11 +85,11 @@ $base-5-dark: shade-color($base-6-dark, 9%) !default;
   }
   .text-bg-base-#{$i} {
     background: var(--#{$prefix}base-#{$i}) !important;
-    @if $i <= 4 {
-      color: var(--#{$prefix}base-8) !important;
-     } @else {
+    @if str-index($i, "i") == null {
+      color: var(--#{$prefix}base-i1) !important;
+    } @else {
       color: var(--#{$prefix}base-1) !important;
-     }
+    }
   }
   .link-base-#{$i} {
     color: var(--#{$prefix}base-#{$i}) !important;

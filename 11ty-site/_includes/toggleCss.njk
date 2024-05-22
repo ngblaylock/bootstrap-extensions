@@ -9,9 +9,15 @@
 <script data-helmet>
   function setCssType() {
     let existingLinks = document.head.querySelectorAll("link[data-css-type]");
-    existingLinks.forEach(function (link) {
-      link.parentNode.removeChild(link);
-    });
+    
+    setTimeout(() => {
+      existingLinks.forEach((link) => {
+        if(link?.parentNode){
+          link.parentNode.removeChild(link);
+        }
+      });
+    }, 500);
+    
     if (localStorage.getItem("cssType") === "custom") {
       let siteLink = document.createElement("link");
       siteLink.rel = "stylesheet";

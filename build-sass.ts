@@ -9,8 +9,8 @@ const filesToConvert = [
     outputFilename: "bootstrap-extensions",
   },
   {
-    inputFilename: "_base-color.scss",
-    outputFilename: "base-color",
+    inputFilename: "_base-theme.scss",
+    outputFilename: "base-theme",
   },
   {
     inputFilename: "_icon-buttons.scss",
