@@ -18,7 +18,7 @@ $base-i4-dark: shade-color($base-i3-dark, 9%) !default;
 
 :root,
 [data-bs-theme="light"] {
-  // standard
+  // STANDARD
   --#{$prefix}base-1: #{$base-1-light};
   --#{$prefix}base-2: #{$base-2-light};
   --#{$prefix}base-3: #{$base-3-light};
@@ -27,26 +27,37 @@ $base-i4-dark: shade-color($base-i3-dark, 9%) !default;
   --#{$prefix}base-i2: #{$base-i2-light};
   --#{$prefix}base-i3: #{$base-i3-light};
   --#{$prefix}base-i4: #{$base-i4-light};
-  //hover
-  $bs-base-1-hover: tint-color($base-1-light, 32%);
-  $bs-base-2-hover: tint-color($base-2-light, 32%);
-  $bs-base-3-hover: tint-color($base-3-light, 32%);
-  $bs-base-4-hover: tint-color($base-4-light, 32%);
-  $bs-base-i1-hover: shade-color($base-i1-light, 64%);
-  $bs-base-i2-hover: shade-color($base-i2-light, 64%);
-  $bs-base-i3-hover: shade-color($base-i3-light, 64%);
-  $bs-base-i4-hover: shade-color($base-i4-light, 64%);
-  --#{$prefix}base-1-hover: #{$bs-base-1-hover};
-  --#{$prefix}base-2-hover: #{$bs-base-2-hover};
-  --#{$prefix}base-3-hover: #{$bs-base-3-hover};
-  --#{$prefix}base-4-hover: #{$bs-base-4-hover};
-  --#{$prefix}base-i1-hover: #{$bs-base-i1-hover};
-  --#{$prefix}base-i2-hover: #{$bs-base-i2-hover};
-  --#{$prefix}base-i3-hover: #{$bs-base-i3-hover};
-  --#{$prefix}base-i4-hover: #{$bs-base-i4-hover};
+  // RGB
+  --#{$prefix}base-1-rgb: #{to-rgb($base-1-light)};
+  --#{$prefix}base-2-rgb: #{to-rgb($base-2-light)};
+  --#{$prefix}base-3-rgb: #{to-rgb($base-3-light)};
+  --#{$prefix}base-4-rgb: #{to-rgb($base-4-light)};
+  --#{$prefix}base-i1-rgb: #{to-rgb($base-i1-light)};
+  --#{$prefix}base-i2-rgb: #{to-rgb($base-i2-light)};
+  --#{$prefix}base-i3-rgb: #{to-rgb($base-i3-light)};
+  --#{$prefix}base-i4-rgb: #{to-rgb($base-i4-light)};
+  // HOVER
+  --#{$prefix}base-1-hover: #{tint-color($base-1-light, 32%)};
+  --#{$prefix}base-2-hover: #{tint-color($base-2-light, 32%)};
+  --#{$prefix}base-3-hover: #{tint-color($base-3-light, 32%)};
+  --#{$prefix}base-4-hover: #{tint-color($base-4-light, 32%)};
+  --#{$prefix}base-i1-hover: #{shade-color($base-i1-light, 48%)};
+  --#{$prefix}base-i2-hover: #{shade-color($base-i2-light, 48%)};
+  --#{$prefix}base-i3-hover: #{shade-color($base-i3-light, 48%)};
+  --#{$prefix}base-i4-hover: #{shade-color($base-i4-light, 48%)};
+  // ACTIVE
+  --#{$prefix}base-1-active: #{tint-color($base-1-light, 60%)};
+  --#{$prefix}base-2-active: #{tint-color($base-2-light, 60%)};
+  --#{$prefix}base-3-active: #{tint-color($base-3-light, 60%)};
+  --#{$prefix}base-4-active: #{tint-color($base-4-light, 60%)};
+  --#{$prefix}base-i1-active: #{shade-color($base-i1-light, 72%)};
+  --#{$prefix}base-i2-active: #{shade-color($base-i2-light, 72%)};
+  --#{$prefix}base-i3-active: #{shade-color($base-i3-light, 72%)};
+  --#{$prefix}base-i4-active: #{shade-color($base-i4-light, 72%)};
 }
 
 [data-bs-theme="dark"] {
+  // STANDARD
   --#{$prefix}base-1: #{$base-1-dark};
   --#{$prefix}base-2: #{$base-2-dark};
   --#{$prefix}base-3: #{$base-3-dark};
@@ -55,23 +66,33 @@ $base-i4-dark: shade-color($base-i3-dark, 9%) !default;
   --#{$prefix}base-i2: #{$base-i2-dark};
   --#{$prefix}base-i3: #{$base-i3-dark};
   --#{$prefix}base-i4: #{$base-i4-dark};
-  // hover
-  $bs-base-1-hover: shade-color($base-1-dark, 12%);
-  $bs-base-2-hover: shade-color($base-2-dark, 12%);
-  $bs-base-3-hover: shade-color($base-3-dark, 12%);
-  $bs-base-4-hover: shade-color($base-4-dark, 12%);
-  $bs-base-i1-hover: tint-color($base-i1-dark, 24%);
-  $bs-base-i2-hover: tint-color($base-i2-dark, 24%);
-  $bs-base-i3-hover: tint-color($base-i3-dark, 24%);
-  $bs-base-i4-hover: tint-color($base-i4-dark, 24%);
-  --#{$prefix}base-1-hover: #{$bs-base-1-hover};
-  --#{$prefix}base-2-hover: #{$bs-base-2-hover};
-  --#{$prefix}base-3-hover: #{$bs-base-3-hover};
-  --#{$prefix}base-4-hover: #{$bs-base-4-hover};
-  --#{$prefix}base-i1-hover: #{$bs-base-i1-hover};
-  --#{$prefix}base-i2-hover: #{$bs-base-i2-hover};
-  --#{$prefix}base-i3-hover: #{$bs-base-i3-hover};
-  --#{$prefix}base-i4-hover: #{$bs-base-i4-hover};
+  // RGB
+  --#{$prefix}base-1-rgb: #{to-rgb($base-1-dark)};
+  --#{$prefix}base-2-rgb: #{to-rgb($base-2-dark)};
+  --#{$prefix}base-3-rgb: #{to-rgb($base-3-dark)};
+  --#{$prefix}base-4-rgb: #{to-rgb($base-4-dark)};
+  --#{$prefix}base-i1-rgb: #{to-rgb($base-i1-dark)};
+  --#{$prefix}base-i2-rgb: #{to-rgb($base-i2-dark)};
+  --#{$prefix}base-i3-rgb: #{to-rgb($base-i3-dark)};
+  --#{$prefix}base-i4-rgb: #{to-rgb($base-i4-dark)};
+  // HOVER
+  --#{$prefix}base-1-hover: #{shade-color($base-1-dark, 12%)};
+  --#{$prefix}base-2-hover: #{shade-color($base-2-dark, 12%)};
+  --#{$prefix}base-3-hover: #{shade-color($base-3-dark, 12%)};
+  --#{$prefix}base-4-hover: #{shade-color($base-4-dark, 12%)};
+  --#{$prefix}base-i1-hover: #{tint-color($base-i1-dark, 24%)};
+  --#{$prefix}base-i2-hover: #{tint-color($base-i2-dark, 24%)};
+  --#{$prefix}base-i3-hover: #{tint-color($base-i3-dark, 24%)};
+  --#{$prefix}base-i4-hover: #{tint-color($base-i4-dark, 24%)};
+  // ACTIVE
+  --#{$prefix}base-1-active: #{shade-color($base-1-dark, 20%)};
+  --#{$prefix}base-2-active: #{shade-color($base-2-dark, 20%)};
+  --#{$prefix}base-3-active: #{shade-color($base-3-dark, 20%)};
+  --#{$prefix}base-4-active: #{shade-color($base-4-dark, 20%)};
+  --#{$prefix}base-i1-active: #{tint-color($base-i1-dark, 36%)};
+  --#{$prefix}base-i2-active: #{tint-color($base-i2-dark, 36%)};
+  --#{$prefix}base-i3-active: #{tint-color($base-i3-dark, 36%)};
+  --#{$prefix}base-i4-active: #{tint-color($base-i4-dark, 36%)};
 }
 
 $base-variants: "1", "2", "3", "4", "i1", "i2", "i3", "i4";
@@ -102,5 +123,67 @@ $base-variants: "1", "2", "3", "4", "i1", "i2", "i3", "i4";
   }
   .border-base-#{$i} {
     border-color: var(--#{$prefix}base-#{$i}) !important;
+  }
+
+  $btn-base-color: var(--#{$prefix}base-1);
+  $btn-base-outline-rgb: var(--#{$prefix}base-#{$i}-rgb);
+  @if str-index($i, "i") == null {
+    $btn-base-color: var(--#{$prefix}base-i1);
+  }
+  @if $i == "1" {
+    $btn-base-outline-rgb: var(--#{$prefix}base-i4-rgb);
+  } @else if $i == "2" {
+    $btn-base-outline-rgb: var(--#{$prefix}base-i3-rgb);
+  } @else if $i == "3" {
+    $btn-base-outline-rgb: var(--#{$prefix}base-i2-rgb);
+  } @else if $i == "4" {
+    $btn-base-outline-rgb: var(--#{$prefix}base-i1-rgb);
+  }
+  .btn-base-#{$i} {
+    // Default Color
+    --#{$prefix}btn-color: #{$btn-base-color};
+    --#{$prefix}btn-bg: var(--#{$prefix}base-#{$i});
+    --#{$prefix}btn-border-color: var(--#{$prefix}base-#{$i});
+
+    // Hover Color
+    --#{$prefix}btn-hover-color: #{$btn-base-color};
+    --#{$prefix}btn-hover-bg: var(--#{$prefix}base-#{$i}-hover);
+    --#{$prefix}btn-hover-border-color: var(--#{$prefix}base-#{$i}-hover);
+    --#{$prefix}btn-focus-shadow-rgb: #{$btn-base-outline-rgb};
+
+    // Active Color
+    --#{$prefix}btn-active-color: #{$btn-base-color};
+    --#{$prefix}btn-active-bg: var(--#{$prefix}base-#{$i}-active);
+    --#{$prefix}btn-active-border-color: var(--#{$prefix}base-#{$i}-active);
+    --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+
+    // Disabled
+    --#{$prefix}btn-disabled-color: #{$btn-base-color};
+    --#{$prefix}btn-disabled-bg: var(--#{$prefix}base-#{$i});
+    --#{$prefix}btn-disabled-border-color: var(--#{$prefix}base-#{$i});
+  }
+
+  .btn-outline-base-#{$i} {
+    // Default Color
+    --#{$prefix}btn-color: var(--#{$prefix}base-#{$i});
+    --#{$prefix}btn-border-color: var(--#{$prefix}base-#{$i});
+
+    // Hover
+    --#{$prefix}btn-hover-color: #{$btn-base-color};
+    --#{$prefix}btn-hover-bg: var(--#{$prefix}base-#{$i});
+    --#{$prefix}btn-hover-border-color: var(--#{$prefix}base-#{$i});
+    --#{$prefix}btn-focus-shadow-rgb: #{$btn-base-outline-rgb};
+
+    // Active
+    --#{$prefix}btn-active-color: #{$btn-base-color};
+    --#{$prefix}btn-active-bg: var(--#{$prefix}base-#{$i});
+    --#{$prefix}btn-active-border-color: var(--#{$prefix}base-#{$i});
+    --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+
+    // Disabled
+    --#{$prefix}btn-disabled-color: var(--#{$prefix}base-#{$i});
+    --#{$prefix}btn-disabled-bg: transparent;
+    --#{$prefix}btn-disabled-border-color: var(--#{$prefix}base-#{$i});
+    --#{$prefix}gradient: none;
   }
 }

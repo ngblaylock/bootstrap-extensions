@@ -6,6 +6,8 @@ This is my solution for handling dark theme with Bootstrap. From what I gather o
 
 The names of these may change throughout `v0.x.x` since I'm not fully convinced my naming convention is the best it can be. I wanted to name `base-{1-4}` as `background` and `base-i{1-4}` as `foreground`, but a utility class `bg-foreground-1` looks a little contradictory, and `bg-background-3` seemed a little redundant.
 
+This heavily relies on CSS Variables. Base colors, rgb, hover, and active variables are also available for each base step.
+
 ## Getting Started
 
 ### Sass
@@ -57,6 +59,18 @@ You can either use `.bg-base-1` or `.text-bg-base-1`.
 {% include "examples/base-backgrounds.njk" %}
 ```
 
+## Buttons
+
+One issue with dark mode is using buttons. For example, in light mode you might have a `.btn-outline-dark` which looks and functions perfectly fine. If you switch to dark mode, it is invisible. That isn't what you want. You can use this base theme to handle that as well.
+
+Just use `.btn.btn-base-1` or whatever variant needed.
+
+{% include "examples/base-buttons.njk" %}
+
+```html
+{% include "examples/base-buttons.njk" %}
+```
+
 ## Using Sass
 
 - In light mode, `base-1` and `base-i1` use the `$body-bg` and `$body-color` variables respectively by default, so by changing those variables it will change `$base-{1-4}-light` and `$base-i{1-4}-light`.
@@ -70,11 +84,9 @@ These are classes where `*` can be either `base-{1-4}` or `base-i{1-4}`. More ma
 
 - `bg-*`
 - `border-*`
+- `btn-*`
+- `btn-outline-*`
 - `link-*`
 - `link-underline-*`
 - `text-*`
 - `text-bg-*`
-
-### Maybe Coming Soon?
-
-- `btn-*`
