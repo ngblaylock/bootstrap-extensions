@@ -13,6 +13,10 @@ const filesToConvert = [
     outputFilename: "base-theme",
   },
   {
+    inputFilename: "_btn-contrast.scss",
+    outputFilename: "btn-contrast",
+  },
+  {
     inputFilename: "_icon-buttons.scss",
     outputFilename: "icon-buttons",
   },
