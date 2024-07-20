@@ -16,6 +16,8 @@ $base-i2-dark: shade-color($base-i1-dark, 9%) !default;
 $base-i3-dark: shade-color($base-i2-dark, 9%) !default;
 $base-i4-dark: shade-color($base-i3-dark, 9%) !default;
 
+$enable-btn-base: true !default;
+
 :root,
 [data-bs-theme="light"] {
   // STANDARD
@@ -139,51 +141,53 @@ $base-variants: "1", "2", "3", "4", "i1", "i2", "i3", "i4";
   } @else if $i == "4" {
     $btn-base-outline-rgb: var(--#{$prefix}base-i1-rgb);
   }
-  .btn-base-#{$i} {
-    // Default Color
-    --#{$prefix}btn-color: #{$btn-base-color};
-    --#{$prefix}btn-bg: var(--#{$prefix}base-#{$i});
-    --#{$prefix}btn-border-color: var(--#{$prefix}base-#{$i});
+  @if $enable-btn-base {
+    .btn-base-#{$i} {
+      // Default Color
+      --#{$prefix}btn-color: #{$btn-base-color};
+      --#{$prefix}btn-bg: var(--#{$prefix}base-#{$i});
+      --#{$prefix}btn-border-color: var(--#{$prefix}base-#{$i});
 
-    // Hover Color
-    --#{$prefix}btn-hover-color: #{$btn-base-color};
-    --#{$prefix}btn-hover-bg: var(--#{$prefix}base-#{$i}-hover);
-    --#{$prefix}btn-hover-border-color: var(--#{$prefix}base-#{$i}-hover);
-    --#{$prefix}btn-focus-shadow-rgb: #{$btn-base-outline-rgb};
+      // Hover Color
+      --#{$prefix}btn-hover-color: #{$btn-base-color};
+      --#{$prefix}btn-hover-bg: var(--#{$prefix}base-#{$i}-hover);
+      --#{$prefix}btn-hover-border-color: var(--#{$prefix}base-#{$i}-hover);
+      --#{$prefix}btn-focus-shadow-rgb: #{$btn-base-outline-rgb};
 
-    // Active Color
-    --#{$prefix}btn-active-color: #{$btn-base-color};
-    --#{$prefix}btn-active-bg: var(--#{$prefix}base-#{$i}-active);
-    --#{$prefix}btn-active-border-color: var(--#{$prefix}base-#{$i}-active);
-    --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+      // Active Color
+      --#{$prefix}btn-active-color: #{$btn-base-color};
+      --#{$prefix}btn-active-bg: var(--#{$prefix}base-#{$i}-active);
+      --#{$prefix}btn-active-border-color: var(--#{$prefix}base-#{$i}-active);
+      --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
 
-    // Disabled
-    --#{$prefix}btn-disabled-color: #{$btn-base-color};
-    --#{$prefix}btn-disabled-bg: var(--#{$prefix}base-#{$i});
-    --#{$prefix}btn-disabled-border-color: var(--#{$prefix}base-#{$i});
-  }
+      // Disabled
+      --#{$prefix}btn-disabled-color: #{$btn-base-color};
+      --#{$prefix}btn-disabled-bg: var(--#{$prefix}base-#{$i});
+      --#{$prefix}btn-disabled-border-color: var(--#{$prefix}base-#{$i});
+    }
 
-  .btn-outline-base-#{$i} {
-    // Default Color
-    --#{$prefix}btn-color: var(--#{$prefix}base-#{$i});
-    --#{$prefix}btn-border-color: var(--#{$prefix}base-#{$i});
+    .btn-outline-base-#{$i} {
+      // Default Color
+      --#{$prefix}btn-color: var(--#{$prefix}base-#{$i});
+      --#{$prefix}btn-border-color: var(--#{$prefix}base-#{$i});
 
-    // Hover
-    --#{$prefix}btn-hover-color: #{$btn-base-color};
-    --#{$prefix}btn-hover-bg: var(--#{$prefix}base-#{$i});
-    --#{$prefix}btn-hover-border-color: var(--#{$prefix}base-#{$i});
-    --#{$prefix}btn-focus-shadow-rgb: #{$btn-base-outline-rgb};
+      // Hover
+      --#{$prefix}btn-hover-color: #{$btn-base-color};
+      --#{$prefix}btn-hover-bg: var(--#{$prefix}base-#{$i});
+      --#{$prefix}btn-hover-border-color: var(--#{$prefix}base-#{$i});
+      --#{$prefix}btn-focus-shadow-rgb: #{$btn-base-outline-rgb};
 
-    // Active
-    --#{$prefix}btn-active-color: #{$btn-base-color};
-    --#{$prefix}btn-active-bg: var(--#{$prefix}base-#{$i});
-    --#{$prefix}btn-active-border-color: var(--#{$prefix}base-#{$i});
-    --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+      // Active
+      --#{$prefix}btn-active-color: #{$btn-base-color};
+      --#{$prefix}btn-active-bg: var(--#{$prefix}base-#{$i});
+      --#{$prefix}btn-active-border-color: var(--#{$prefix}base-#{$i});
+      --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
 
-    // Disabled
-    --#{$prefix}btn-disabled-color: var(--#{$prefix}base-#{$i});
-    --#{$prefix}btn-disabled-bg: transparent;
-    --#{$prefix}btn-disabled-border-color: var(--#{$prefix}base-#{$i});
-    --#{$prefix}gradient: none;
+      // Disabled
+      --#{$prefix}btn-disabled-color: var(--#{$prefix}base-#{$i});
+      --#{$prefix}btn-disabled-bg: transparent;
+      --#{$prefix}btn-disabled-border-color: var(--#{$prefix}base-#{$i});
+      --#{$prefix}gradient: none;
+    }
   }
 }
