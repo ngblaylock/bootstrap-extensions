@@ -13,7 +13,7 @@ If you are using the Base Theme extension, you might not need this.
 ### Sass
 
 ```scss
-@import "node_modules/@ngblaylock/bootstrap-extensions/dist/bootstrap-5/scss/_btn-contrast.scss";
+@import "node_modules/@ngblaylock/bootstrap-extensions/src/bootstrap-5/scss/_btn-contrast.scss";
 ```
 
 ### CDN

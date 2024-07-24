@@ -4,14 +4,15 @@
   "description": "Commonly used code to extend or modify Bootstrap 5",
   "repository": "github:ngblaylock/bootstrap-extensions",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "clean": "rm -rf docs && rm -rf dist/bootstrap-5/css",
-    "build": "npm run clean && npm run sass:dist:build && npm run sass:eleventy:build && npx @11ty/eleventy --pathprefix=bootstrap-extensions",
-    "dev": "npm run clean && npm run sass:dist:watch & npm run sass:eleventy:watch & npx @11ty/eleventy --serve & npm run sass:eleventy:watch",
-    "sass:dist:build": "node ./build-sass.ts",
-    "sass:dist:watch": "node ./build-sass.ts -w",
-    "sass:eleventy:build": "sass 11ty-site/_scss/site.scss docs/css/site.min.css --style=compressed --no-source-map",
-    "sass:eleventy:watch": "nodemon --watch ./ -e scss --exec 'npm run sass:eleventy:build'"
+    "clean": "rm -rf docs && rm -rf dist",
+    "build": "npm run clean && npm run scss:build && npm run js:build && npx @11ty/eleventy --pathprefix=bootstrap-extensions",
+    "dev": "npm run clean && npm run scss:watch & npm run js:watch & npx @11ty/eleventy --serve",
+    "scss:build": "node ./build-sass.ts",
+    "scss:watch": "node ./build-sass.ts -w",
+    "js:build": "rollup -c",
+    "js:watch": "rollup -c -w"
   },
   "keywords": [
     "Bootstrap 5"
@@ -27,6 +28,7 @@
     "eleventy-plugin-helmet": "^0.2.2",
     "markdown-it-link-attributes": "^4.0.1",
     "nodemon": "^3.1.0",
+    "rollup": "^4.19.0",
     "sass": "^1.75.0"
   }
 }
