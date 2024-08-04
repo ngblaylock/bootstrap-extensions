@@ -9,6 +9,7 @@
    * @param {string} theme - The selected theme to set switches to
    */
   const setSwitches = (theme) => {
+    theme = !theme ? theme : theme.trim();
     const switches = document.querySelectorAll("[data-bse-theme-switch]");
     if (theme === "dark") {
       [...switches].forEach((s) => {
@@ -41,6 +42,7 @@
    * @param {light|dark|undefined} theme The desired theme to switch to
    */
   const setTheme = (theme) => {
+    theme = !theme ? theme : theme.trim();
     if (theme) {
       localStorage.setItem("bseTheme", theme);
       document.documentElement.setAttribute("data-bs-theme", theme);
@@ -56,16 +58,18 @@
   };
 
   /**
-   * Toggles a theme in order: light -> dark -> system -> light ...
+   * Toggles a theme to the next one
+   * @param {string[]} [order] - The order of the themes to toggle through. If none is provided it will go through light -> dark -> system -> (repeat)
    */
-  const toggleTheme = () => {
+  const toggleTheme = (order = ["light", "dark", null]) => {
     const storedTheme = getStoredTheme();
-    if (storedTheme === "light") {
-      setTheme("dark");
-    } else if (storedTheme === "dark") {
-      setTheme();
+    const storedThemeIndex = order.findIndex((o) => {
+      o = !o ? o : o.trim();
+      return o === storedTheme});
+    if (storedThemeIndex < 0 || storedThemeIndex === order.length - 1) {
+      setTheme(order[0]);
     } else {
-      setTheme("light");
+      setTheme(order[storedThemeIndex + 1]);
     }
   };
 
@@ -80,7 +84,17 @@
     document.addEventListener("click", (e) => {
       const themeSwitch = e.target.closest("[data-bse-theme-switch]");
       if (themeSwitch) {
-        toggleTheme();
+        const themeSwitchValue = themeSwitch.getAttribute(
+          "data-bse-theme-switch"
+        );
+        let order;
+        if (themeSwitchValue) {
+          order = themeSwitchValue
+            .toLowerCase()
+            .split(",")
+            .map((i) => !i ? i : i.trim());
+        }
+        toggleTheme(order);
       }
     });
   })();
