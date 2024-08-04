@@ -80,4 +80,10 @@ const toggleTheme = () => {
 })();
 
 // Export the functions
-export default { getStoredTheme, toggleTheme, setTheme };
+var themeSwitcher = { getStoredTheme, toggleTheme, setTheme };
+
+var bootstrapExtensions = {
+  themeSwitcher
+};
+
+export { bootstrapExtensions as default };

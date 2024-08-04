@@ -1,12 +1,18 @@
-.btn-contrast {
-  @include button-variant($body-color, $body-color)
+.btn-contrast,
+[data-bs-theme="light"] .btn-contrast {
+  @include button-variant($body-color, $body-color);
 }
-[data-bs-theme="dark"] .btn-contrast{
-  @include button-variant($body-color-dark, $body-color-dark)
+
+.btn-outline-contrast,
+[data-bs-theme="light"] .btn-outline-contrast {
+  @include button-outline-variant($body-color);
 }
-.btn-outline-contrast {
-  @include button-outline-variant($body-color)
-}
-[data-bs-theme="dark"] .btn-outline-contrast{
-  @include button-outline-variant($body-color-dark)
+
+[data-bs-theme="dark"] {
+  .btn-contrast {
+    @include button-variant($body-color-dark, $body-color-dark);
+  }
+  .btn-outline-contrast {
+    @include button-outline-variant($body-color-dark);
+  }
 }

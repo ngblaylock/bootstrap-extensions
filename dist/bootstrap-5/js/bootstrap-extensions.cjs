@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Set the UI checkbox to a specific state
  * @param {string} theme - The selected theme to set switches to
@@ -80,4 +82,10 @@ const toggleTheme = () => {
 })();
 
 // Export the functions
-export default { getStoredTheme, toggleTheme, setTheme };
+var themeSwitcher = { getStoredTheme, toggleTheme, setTheme };
+
+var bootstrapExtensions = {
+  themeSwitcher
+};
+
+module.exports = bootstrapExtensions;

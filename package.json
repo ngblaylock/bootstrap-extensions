@@ -1,16 +1,21 @@
 {
   "name": "@ngblaylock/bootstrap-extensions",
-  "version": "0.1.0-beta.14",
+  "version": "0.1.0-beta.15",
   "description": "Commonly used code to extend or modify Bootstrap 5",
   "repository": "github:ngblaylock/bootstrap-extensions",
-  "main": "index.js",
+  "main": "dist/bootstrap-5/js/theme-switcher.js",
+  "module": "dist/bootstrap-5/js/theme-switcher.mjs.js",
+  "exports": {
+    "require": "./dist/bootstrap-5/js/theme-switcher.cjs",
+    "import": "./dist/bootstrap-5/js/theme-switcher.mjs"
+  },
   "type": "commonjs",
   "scripts": {
     "clean": "rm -rf docs && rm -rf dist",
     "build": "npm run clean && npm run scss:build && npm run js:build && npx @11ty/eleventy --pathprefix=bootstrap-extensions",
     "dev": "npm run clean && npm run scss:watch & npm run js:watch & npx @11ty/eleventy --serve",
-    "scss:build": "node ./build-sass.ts",
-    "scss:watch": "node ./build-sass.ts -w",
+    "scss:build": "node ./build-sass.js",
+    "scss:watch": "node ./build-sass.js -w",
     "js:build": "rollup -c",
     "js:watch": "rollup -c -w"
   },
@@ -22,12 +27,12 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "^20.12.7",
     "bootstrap": "^5.3.3",
     "chokidar": "^3.6.0",
     "eleventy-plugin-helmet": "^0.2.2",
     "markdown-it-link-attributes": "^4.0.1",
-    "nodemon": "^3.1.0",
     "rollup": "^4.19.0",
     "sass": "^1.75.0"
   }
