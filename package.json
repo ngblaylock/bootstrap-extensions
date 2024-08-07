@@ -1,13 +1,13 @@
 {
   "name": "@ngblaylock/bootstrap-extensions",
-  "version": "0.1.0-beta.15",
+  "version": "0.1.0-beta.16",
   "description": "Commonly used code to extend or modify Bootstrap 5",
   "repository": "github:ngblaylock/bootstrap-extensions",
-  "main": "dist/bootstrap-5/js/bootstrap-extensions.js",
-  "module": "dist/bootstrap-5/js/bootstrap-extensions.mjs.js",
+  "main": "dist/js/bootstrap-extensions.js",
+  "module": "dist/js/bootstrap-extensions.mjs.js",
   "exports": {
-    "require": "./dist/bootstrap-5/js/bootstrap-extensions.cjs",
-    "import": "./dist/bootstrap-5/js/bootstrap-extensions.mjs"
+    "require": "./dist/js/bootstrap-extensions.cjs",
+    "import": "./dist/js/bootstrap-extensions.mjs"
   },
   "type": "commonjs",
   "scripts": {

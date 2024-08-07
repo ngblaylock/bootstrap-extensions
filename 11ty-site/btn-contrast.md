@@ -13,7 +13,7 @@ If you are using the Base Theme extension, you might not need this.
 ### Sass
 
 ```scss
-@import "node_modules/@ngblaylock/bootstrap-extensions/src/bootstrap-5/scss/_btn-contrast.scss";
+@import "node_modules/@ngblaylock/bootstrap-extensions/src/scss/_btn-contrast.scss";
 ```
 
 ### CDN
@@ -21,7 +21,7 @@ If you are using the Base Theme extension, you might not need this.
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/css/btn-contrast.min.css"
+  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/css/btn-contrast.min.css"
 />
 ```
 

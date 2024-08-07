@@ -5,32 +5,32 @@ const path = require("path");
 
 const filesToConvert = [
   {
-    inputFilePath: "./src/bootstrap-5/scss/bootstrap-extensions.scss",
-    outputDir: "./dist/bootstrap-5/css",
+    inputFilePath: "./src/scss/bootstrap-extensions.scss",
+    outputDir: "./dist/css",
     styles: ["expanded", "compressed"],
     includePrefix: true,
   },
   {
-    inputFilePath: "./src/bootstrap-5/scss/_base-theme.scss",
-    outputDir: "./dist/bootstrap-5/css",
+    inputFilePath: "./src/scss/_base-theme.scss",
+    outputDir: "./dist/css",
     styles: ["expanded", "compressed"],
     includePrefix: true,
   },
   {
-    inputFilePath: "./src/bootstrap-5/scss/_btn-contrast.scss",
-    outputDir: "./dist/bootstrap-5/css",
+    inputFilePath: "./src/scss/_btn-contrast.scss",
+    outputDir: "./dist/css",
     styles: ["expanded", "compressed"],
     includePrefix: true,
   },
   {
-    inputFilePath: "./src/bootstrap-5/scss/_icon-buttons.scss",
-    outputDir: "./dist/bootstrap-5/css",
+    inputFilePath: "./src/scss/_icon-buttons.scss",
+    outputDir: "./dist/css",
     styles: ["expanded", "compressed"],
     includePrefix: true,
   },
   {
-    inputFilePath: "./src/bootstrap-5/scss/_theme-switch.scss",
-    outputDir: "./dist/bootstrap-5/css",
+    inputFilePath: "./src/scss/_theme-switch.scss",
+    outputDir: "./dist/css",
     styles: ["expanded", "compressed"],
     includePrefix: true,
   },
@@ -87,7 +87,7 @@ const buildSass = () => {
 };
 
 const watchSass = () => {
-  const watcher = chokidar.watch(["./src/bootstrap-5/scss", "./11ty-site/_scss"]);
+  const watcher = chokidar.watch(["./src/scss", "./11ty-site/_scss"]);
   watcher.on("change", () => {
     console.log("Change detected in SCSS files. Rebuilding...");
     buildSass();

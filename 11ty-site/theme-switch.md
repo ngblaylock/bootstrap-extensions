@@ -9,13 +9,13 @@ This is a handy switch for changing themes from light mode to dark mode. It come
 ### Sass
 
 ```scss
-@import "node_modules/@ngblaylock/bootstrap-extensions/src/bootstrap-5/scss/_theme-switch.scss";
+@import "node_modules/@ngblaylock/bootstrap-extensions/src/scss/_theme-switch.scss";
 ```
 
 ### JS
 
 ```html
-<script src="dist/bootstrap-5/js/bootstrap-extensions.min.js" />
+<script src="dist/js/bootstrap-extensions.min.js" />
 ```
 
 ### CDN
@@ -23,10 +23,10 @@ This is a handy switch for changing themes from light mode to dark mode. It come
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/css/theme-switch.min.css"
+  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/css/theme-switch.min.css"
 />
 <script
-  src="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/js/theme-switcher/theme-switcher.min.js"
+  src="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/js/theme-switcher/theme-switcher.min.js"
 />
 ```
 

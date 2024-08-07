@@ -13,7 +13,7 @@ This heavily relies on CSS Variables. Base colors, rgb, hover, and active variab
 ### Sass
 
 ```scss
-@import "node_modules/@ngblaylock/bootstrap-extensions/src/bootstrap-5/scss/_base-theme.scss";
+@import "node_modules/@ngblaylock/bootstrap-extensions/src/scss/_base-theme.scss";
 ```
 
 ### CDN
@@ -21,7 +21,7 @@ This heavily relies on CSS Variables. Base colors, rgb, hover, and active variab
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/css/base-theme.min.css"
+  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/css/base-theme.min.css"
 />
 ```
 
