@@ -12,6 +12,7 @@
     <meta name="theme-color" content="#ffffff" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="/js/bootstrap-extensions.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Freeman&family=Patrick+Hand+SC&family=Teko:wght@300..700&display=swap"
       rel="stylesheet"
@@ -42,7 +43,7 @@
       }
     </style>
   </head>
-  <body data-bs-theme="dark">
+  <body>
     <div style="min-height: 100vh" class="d-flex flex-column">
       <div class="container flex-fill d-flex flex-column">
         <div class="row flex-fill">
@@ -126,8 +127,17 @@
               {%- endfor -%}
             </div>
             <div class="position-sticky" style="top: 1em">
-              <div class="vstack gap-3 mt-4">
-                {% include "toggleTheme.njk" %} {% include "toggleCss.njk" %}
+              <div class="vstack">
+                {% include "toggleCss.njk" %}
+                <div class="hstack border-top p-3">
+                  <input
+                    type="checkbox"
+                    class="theme-switch"
+                    data-bse-theme-switch="dark,light"
+                    id="main-theme-switch"
+                  />
+                  <label for="main-theme-switch" class="ps-3">Switch Theme</label>
+                </div>
               </div>
             </div>
           </div>

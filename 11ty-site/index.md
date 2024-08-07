@@ -19,6 +19,9 @@ This project supports [Bootstrap 5](https://getbootstrap.com/).
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/css/bootstrap-extensions.min.css"
 />
+<script
+  src="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/js/bootstrap-extensions.min.js"
+/>
 ```
 
 ### NPM

@@ -1,0 +1,38 @@
+<div class="hstack gap-2 flex-wrap">
+  <button
+    class="btn btn-info"
+    onclick="alert(bse.themeSwitcher.getStoredTheme())"
+  >
+    Get Stored Theme
+  </button>
+  <button
+    class="btn btn-primary"
+    onclick="bse.themeSwitcher.toggleTheme()"
+  >
+    Toggle Theme
+  </button>
+  <button
+    class="btn btn-primary"
+    onclick="bse.themeSwitcher.toggleTheme([' light ', 'dark'])"
+  >
+    Toggle Just Light and Dark
+  </button>
+  <button
+    class="btn btn-warning"
+    onclick="bse.themeSwitcher.setTheme('dark')"
+  >
+    Set Theme to Dark
+  </button>
+  <button
+    class="btn btn-warning"
+    onclick="bse.themeSwitcher.setTheme('light')"
+  >
+    Set Theme to Light
+  </button>
+  <button
+    class="btn btn-warning"
+    onclick="bse.themeSwitcher.setTheme()"
+  >
+    Set Theme to System
+  </button>
+</div>

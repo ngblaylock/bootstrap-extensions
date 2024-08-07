@@ -13,6 +13,7 @@ This project uses 11ty for the documentation is handled in the `pages` directory
 ## Deploy Steps
 
 1. Update package.json version
-2. Merge into `main` branch (do a PR if necessary). This will create the documentation and deploy it using GitHub Actions.
-3. Run `npm publish`
-4. Create a release in GitHub
+2. Merge into `main` branch (do a PR if necessary). 
+  - This will run an action to build the site and host it on GitHub Pages.
+3. Create a release in GitHub.
+  - This will run an action to publish it to NPM.
