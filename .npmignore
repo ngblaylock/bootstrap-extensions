@@ -2,5 +2,7 @@
 .vscode
 .github
 .eleventy.js
-build-sass.ts
+build-sass.js
 docs
+rollup.config.mjs
+package.json

@@ -17,17 +17,17 @@ This project supports [Bootstrap 5](https://getbootstrap.com/).
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/css/bootstrap-extensions.min.css"
+  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/css/bootstrap-extensions.min.css"
 />
 <script
-  src="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/js/bootstrap-extensions.min.js"
+  src="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/js/bootstrap-extensions.min.js"
 />
 ```
 
 ### NPM
 
 ```bash
-npm install -D @ngblaylock/bootstrap-extensions@{{pkg.version}}
+npm install @ngblaylock/bootstrap-extensions@{{pkg.version}} --save-dev --save-exact
 ```
 
 You can also pick and choose which extension you want to include, so you don't have to include everything. See the extension pages for details.

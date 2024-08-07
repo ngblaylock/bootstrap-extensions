@@ -6,33 +6,33 @@ const outputMap = filenames.map((filename) => {
   const fileSubPath =
     filename === "bootstrap-extensions" ? filename : `${filename}/${filename}`;
   const config = {
-    input: `src/bootstrap-5/js/${filename}.js`,
+    input: `src/js/${filename}.js`,
     output: [
       {
-        file: `dist/bootstrap-5/js/${fileSubPath}.cjs`,
+        file: `dist/js/${fileSubPath}.cjs`,
         format: "cjs",
       },
       {
-        file: `dist/bootstrap-5/js/${fileSubPath}.min.cjs`,
+        file: `dist/js/${fileSubPath}.min.cjs`,
         format: "cjs",
         plugins: [terser()],
       },
       {
-        file: `dist/bootstrap-5/js/${fileSubPath}.mjs`,
+        file: `dist/js/${fileSubPath}.mjs`,
         format: "es",
       },
       {
-        file: `dist/bootstrap-5/js/${fileSubPath}.min.mjs`,
+        file: `dist/js/${fileSubPath}.min.mjs`,
         format: "es",
         plugins: [terser()],
       },
       {
-        file: `dist/bootstrap-5/js/${fileSubPath}.js`,
+        file: `dist/js/${fileSubPath}.js`,
         name: "bse",
         format: "umd",
       },
       {
-        file: `dist/bootstrap-5/js/${fileSubPath}.min.js`,
+        file: `dist/js/${fileSubPath}.min.js`,
         name: "bse",
         format: "umd",
         plugins: [terser()],
