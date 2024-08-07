@@ -25,9 +25,8 @@ This is a handy switch for changing themes from light mode to dark mode. It come
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/css/theme-switch.min.css"
 />
-<!-- Make sure to include the script -->
 <script
-  src="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/js/bootstrap-extensions.min.js"
+  src="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/bootstrap-5/js/theme-switcher/theme-switcher.min.js"
 />
 ```
 
