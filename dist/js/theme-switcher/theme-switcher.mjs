@@ -59,7 +59,8 @@ const toggleTheme = (order = ["light", "dark", null]) => {
   const storedTheme = getStoredTheme();
   const storedThemeIndex = order.findIndex((o) => {
     o = !o ? o : o.trim();
-    return o === storedTheme});
+    return o === storedTheme;
+  });
   if (storedThemeIndex < 0 || storedThemeIndex === order.length - 1) {
     setTheme(order[0]);
   } else {
@@ -67,8 +68,7 @@ const toggleTheme = (order = ["light", "dark", null]) => {
   }
 };
 
-// IIFE to apply the stored theme immediately
-(() => {
+const initTheme = () => {
   const storedTheme = getStoredTheme();
   setTheme(storedTheme);
   window.onload = () => {
@@ -86,14 +86,21 @@ const toggleTheme = (order = ["light", "dark", null]) => {
         order = themeSwitchValue
           .toLowerCase()
           .split(",")
-          .map((i) => !i ? i : i.trim());
+          .map((i) => (!i ? i : i.trim()));
       }
       toggleTheme(order);
     }
   });
-})();
+};
+
+// IIFE to apply the stored theme immediately
+if (typeof window !== "undefined" && typeof module === "undefined") {
+  (() => {
+    initTheme();
+  })();
+}
 
 // Export the functions
-var themeSwitcher = { getStoredTheme, toggleTheme, setTheme };
+var themeSwitcher = {initTheme, getStoredTheme, toggleTheme, setTheme };
 
 export { themeSwitcher as default };
