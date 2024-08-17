@@ -1,6 +1,6 @@
 {
   "name": "@ngblaylock/bootstrap-extensions",
-  "version": "0.1.0-beta.16",
+  "version": "0.1.0-beta.17",
   "description": "Commonly used code to extend or modify Bootstrap 5",
   "repository": "github:ngblaylock/bootstrap-extensions",
   "main": "dist/js/bootstrap-extensions.js",
