@@ -6,3 +6,4 @@ build-sass.js
 docs
 rollup.config.mjs
 package.json
+README_DEV.md

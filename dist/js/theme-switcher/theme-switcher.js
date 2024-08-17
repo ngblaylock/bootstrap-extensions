@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.bse = factory());
-})(this, (function () { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.themeSwitcher = {}));
+})(this, (function (exports) { 'use strict';
 
   /**
    * Set the UI checkbox to a specific state
@@ -65,7 +65,8 @@
     const storedTheme = getStoredTheme();
     const storedThemeIndex = order.findIndex((o) => {
       o = !o ? o : o.trim();
-      return o === storedTheme});
+      return o === storedTheme;
+    });
     if (storedThemeIndex < 0 || storedThemeIndex === order.length - 1) {
       setTheme(order[0]);
     } else {
@@ -73,8 +74,7 @@
     }
   };
 
-  // IIFE to apply the stored theme immediately
-  (() => {
+  const initTheme = () => {
     const storedTheme = getStoredTheme();
     setTheme(storedTheme);
     window.onload = () => {
@@ -92,16 +92,23 @@
           order = themeSwitchValue
             .toLowerCase()
             .split(",")
-            .map((i) => !i ? i : i.trim());
+            .map((i) => (!i ? i : i.trim()));
         }
         toggleTheme(order);
       }
     });
-  })();
+  };
 
-  // Export the functions
-  var themeSwitcher = { getStoredTheme, toggleTheme, setTheme };
+  // IIFE to apply the stored theme immediately
+  if (typeof window !== "undefined" && typeof module === "undefined") {
+    (() => {
+      initTheme();
+    })();
+  }
 
-  return themeSwitcher;
+  exports.getStoredTheme = getStoredTheme;
+  exports.initTheme = initTheme;
+  exports.setTheme = setTheme;
+  exports.toggleTheme = toggleTheme;
 
 }));

@@ -1,5 +1,11 @@
 <div class="hstack gap-2 flex-wrap">
   <button
+    class="btn btn-light"
+    onclick="bse.themeSwitcher.initTheme()"
+  >
+    Initialize theme (no visible change)
+  </button>
+  <button
     class="btn btn-info"
     onclick="alert(bse.themeSwitcher.getStoredTheme())"
   >

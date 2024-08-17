@@ -1,54 +1,60 @@
 import terser from "@rollup/plugin-terser";
 
-const filenames = ["bootstrap-extensions", "theme-switcher"];
-
-const outputMap = filenames.map((filename) => {
-  const fileSubPath =
-    filename === "bootstrap-extensions" ? filename : `${filename}/${filename}`;
-  const config = {
-    input: `src/js/${filename}.js`,
+export default [
+  {
+    input: `src/js/bootstrap-extensions.js`,
     output: [
       {
-        file: `dist/js/${fileSubPath}.cjs`,
+        file: `dist/js/bootstrap-extensions.cjs`,
         format: "cjs",
       },
       {
-        file: `dist/js/${fileSubPath}.min.cjs`,
+        file: `dist/js/bootstrap-extensions.min.cjs`,
         format: "cjs",
         plugins: [terser()],
       },
       {
-        file: `dist/js/${fileSubPath}.mjs`,
+        file: `dist/js/bootstrap-extensions.mjs`,
         format: "es",
       },
       {
-        file: `dist/js/${fileSubPath}.min.mjs`,
+        file: `dist/js/bootstrap-extensions.min.mjs`,
         format: "es",
         plugins: [terser()],
       },
       {
-        file: `dist/js/${fileSubPath}.js`,
+        file: `dist/js/bootstrap-extensions.js`,
         name: "bse",
         format: "umd",
       },
       {
-        file: `dist/js/${fileSubPath}.min.js`,
+        file: `dist/js/bootstrap-extensions.min.js`,
+        name: "bse",
+        format: "umd",
+        plugins: [terser()],
+      },
+      {
+        file: `docs/js/bootstrap-extensions.min.js`,
         name: "bse",
         format: "umd",
         plugins: [terser()],
       },
     ],
-  };
-  if (filename === fileSubPath) {
-    config.output.push({
-      file: `docs/js/${fileSubPath}.min.js`,
-      name: "bse",
-      format: "umd",
-      plugins: [terser()],
-    });
-  }
-
-  return config;
-});
-
-export default outputMap;
+  },
+  {
+    input: `src/js/theme-switcher.js`,
+    output: [
+      {
+        file: `dist/js/theme-switcher/theme-switcher.js`,
+        name: "themeSwitcher",
+        format: "umd",
+      },
+      {
+        file: `dist/js/theme-switcher/theme-switcher.min.js`,
+        name: "themeSwitcher",
+        format: "umd",
+        plugins: [terser()],
+      },
+    ],
+  },
+];

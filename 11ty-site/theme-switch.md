@@ -14,8 +14,16 @@ This is a handy switch for changing themes from light mode to dark mode. It come
 
 ### JS
 
+#### Browser
+
 ```html
 <script src="dist/js/bootstrap-extensions.min.js" />
+```
+
+#### ESM
+
+```js
+import { themeSwitcher } from "@ngblaylock/bootstrap-extensions";
 ```
 
 ### CDN
@@ -25,14 +33,12 @@ This is a handy switch for changing themes from light mode to dark mode. It come
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/css/theme-switch.min.css"
 />
-<script
-  src="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/js/theme-switcher/theme-switcher.min.js"
-/>
+<script src="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/js/theme-switcher/theme-switcher.min.js" />
 ```
 
 ## Usage
 
-The basic usage for this toggles the theme in order from: 
+The basic usage for this toggles the theme in order from:
 
 `light -> dark -> system -> (repeat)`
 
@@ -44,7 +50,7 @@ The basic usage for this toggles the theme in order from:
 
 ### Switch Order and Value
 
-You can also give `data-bse-theme-switch` a value to change the order, and/or only show dark and light modes. 
+You can also give `data-bse-theme-switch` a value to change the order, and/or only show dark and light modes.
 
 {% include "examples/theme-switch-advanced.njk" %}
 
@@ -57,6 +63,15 @@ Although this doesn't work for this site, you can theoretically do `data-bse-the
 ## JavaScript
 
 You can also use JavaScript if you want to handle changing themes your own way.
+
+### API
+
+| Method                             | Description                                                                                                   |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `initTheme()`                      | Initializes the theme. This is done once loaded in the browser, but can be called on command, like during HMR |
+| `getTheme()`                       | Gets the currently stored theme (if any)                                                                      |
+| `toggleTheme(undefined\|string[])` | Toggles the theme. Pass in an array of themes to toggle in specific orders.                                   |
+| `setTheme(string)`                 | Sets the theme to the theme passed in                                                                         |
 
 <div class="alert alert-info">Note that the "System" theme is treated as a falsy value. If no theme is set it defaults to the system theme.</div>
 
