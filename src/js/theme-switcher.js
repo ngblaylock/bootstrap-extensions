@@ -101,4 +101,4 @@ if (typeof window !== "undefined" && typeof module === "undefined") {
 }
 
 // Export the functions
-export default {initTheme, getStoredTheme, toggleTheme, setTheme };
+export {initTheme, getStoredTheme, toggleTheme, setTheme };

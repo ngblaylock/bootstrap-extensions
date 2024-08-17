@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.bse = factory());
-})(this, (function () { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.themeSwitcher = {}));
+})(this, (function (exports) { 'use strict';
 
   /**
    * Set the UI checkbox to a specific state
@@ -106,9 +106,9 @@
     })();
   }
 
-  // Export the functions
-  var themeSwitcher = {initTheme, getStoredTheme, toggleTheme, setTheme };
-
-  return themeSwitcher;
+  exports.getStoredTheme = getStoredTheme;
+  exports.initTheme = initTheme;
+  exports.setTheme = setTheme;
+  exports.toggleTheme = toggleTheme;
 
 }));

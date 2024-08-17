@@ -100,7 +100,12 @@ if (typeof window !== "undefined" && typeof module === "undefined") {
   })();
 }
 
-// Export the functions
-var themeSwitcher = {initTheme, getStoredTheme, toggleTheme, setTheme };
+var themeSwitcher = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  getStoredTheme: getStoredTheme,
+  initTheme: initTheme,
+  setTheme: setTheme,
+  toggleTheme: toggleTheme
+});
 
 export { themeSwitcher };
