@@ -58,6 +58,16 @@ You can also give `data-bse-theme-switch` a value to change the order, and/or on
 {% include "examples/theme-switch-advanced.njk" %}
 ```
 
+### Variants
+
+If you need to place your button on a fixed light or dark color regardless of the set theme, you can use the `.theme-switch-light` or `.theme-switch-dark` variant to preserve the color on the switch.
+
+{% include "examples/theme-switch-variants.njk" %}
+
+```html
+{% include "examples/theme-switch-variants.njk" %}
+```
+
 Although this doesn't work for this site, you can theoretically do `data-bse-theme-switch="red, green, blue"` to change between custom themes.
 
 ## JavaScript
