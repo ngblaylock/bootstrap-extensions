@@ -23,3 +23,52 @@
   margin-bottom: 1rem;
   border-bottom: 1px dashed #dc3545;
 }
+
+.dev-mq-helper::before {
+  content: "xs";
+  text-transform: uppercase;
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dc3545;
+  color: #fff;
+  border-radius: 50rem;
+  opacity: 0.8;
+  z-index: 1090;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  pointer-events: none;
+}
+
+.dev-mq-helper::before {
+  content: "xs";
+}
+
+@media (min-width: 576px) {
+  .dev-mq-helper::before {
+    content: "sm";
+  }
+}
+@media (min-width: 768px) {
+  .dev-mq-helper::before {
+    content: "md";
+  }
+}
+@media (min-width: 992px) {
+  .dev-mq-helper::before {
+    content: "lg";
+  }
+}
+@media (min-width: 1200px) {
+  .dev-mq-helper::before {
+    content: "xl";
+  }
+}
+@media (min-width: 1400px) {
+  .dev-mq-helper::before {
+    content: "xxl";
+  }
+}

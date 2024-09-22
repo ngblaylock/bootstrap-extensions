@@ -39,6 +39,16 @@ Bootstrap Extensions only provides styling for these elements! It does not autom
 
 ### Media Query Helper
 
+A media query helper is a small indicator located in the bottom-right corner of the webpage, showing the current screen size breakpoint. This is especially useful when working with responsive classes, such as columns, as it helps you quickly determine which breakpoint you're at. Depending on your project, you can either set it up to toggle on and off or keep it visible at all times while in development mode.
+
+Try resizing the screen to see the media query helper update with the current breakpoint size in the bottom-right corner.
+
+{% include "examples/dev-media-query-helper.njk" %}
+
+```html
+{% include "examples/dev-media-query-helper.njk" %}
+```
+
 ### Development Favicon
 
 Dev favicons are a practical concept, not a feature directly offered by Bootstrap Extensions. They serve as a visual cue in your browser tab, helping you quickly identify whether you're on your development or production site. This is especially useful if you have both the development and production versions open.

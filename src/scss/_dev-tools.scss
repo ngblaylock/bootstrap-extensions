@@ -1,4 +1,4 @@
-$bse-prefix: 'bse-' !default;
+$bse-prefix: "bse-" !default;
 
 $dev: $red !default;
 $dev-secondary: shade-color($red, 50%);
@@ -12,7 +12,7 @@ $dev-secondary: shade-color($red, 50%);
   border: 1px solid $dev;
   margin-bottom: $spacer;
   &::before {
-    content: var(--#{$bse-prefix}dev-note-title, 'Dev Note');
+    content: var(--#{$bse-prefix}dev-note-title, "Dev Note");
     display: block;
     background: $dev-secondary;
     color: color-contrast($dev-secondary);
@@ -27,4 +27,33 @@ $dev-secondary: shade-color($red, 50%);
     margin-bottom: $card-spacer-y;
     border-bottom: 1px dashed $dev;
   }
+}
+
+.dev-mq-helper {
+  &::before {
+    content: "xs";
+    text-transform: uppercase;
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $dev;
+    color: color-contrast($dev);
+    border-radius: $border-radius-pill;
+    opacity: .8;
+    z-index: $zindex-toast;
+    position: fixed;
+    bottom: $spacer;
+    right: $spacer;
+    pointer-events: none;
+  }
+}
+@each $key, $value in $grid-breakpoints{
+  @include media-breakpoint-up($key) {
+    .dev-mq-helper::before{
+      content: '#{$key}';
+    }
+   }
+
 }
