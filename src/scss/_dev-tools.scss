@@ -1,0 +1,30 @@
+$bse-prefix: 'bse-' !default;
+
+$dev: $red !default;
+$dev-secondary: shade-color($red, 50%);
+
+.dev-note {
+  padding: $card-spacer-y $card-spacer-x;
+  border-radius: $border-radius;
+  background: $dev;
+  color: color-contrast($dev);
+  position: relative;
+  border: 1px solid $dev;
+  margin-bottom: $spacer;
+  &::before {
+    content: var(--#{$bse-prefix}dev-note-title, 'Dev Note');
+    display: block;
+    background: $dev-secondary;
+    color: color-contrast($dev-secondary);
+    font-weight: bolder;
+    padding: ($card-spacer-x * 0.5) $card-spacer-y;
+    top: 0;
+    border-top-right-radius: calc($border-radius - 1px);
+    border-top-left-radius: calc($border-radius - 1px);
+    margin-right: -$card-spacer-x;
+    margin-left: -$card-spacer-x;
+    margin-top: -$card-spacer-y;
+    margin-bottom: $card-spacer-y;
+    border-bottom: 1px dashed $dev;
+  }
+}

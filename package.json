@@ -1,6 +1,6 @@
 {
   "name": "@ngblaylock/bootstrap-extensions",
-  "version": "0.1.0-beta.18",
+  "version": "0.1.0-beta.19",
   "description": "Commonly used code to extend or modify Bootstrap 5",
   "repository": "github:ngblaylock/bootstrap-extensions",
   "main": "dist/js/bootstrap-extensions.js",
@@ -35,5 +35,8 @@
     "markdown-it-link-attributes": "^4.0.1",
     "rollup": "^4.19.0",
     "sass": "^1.75.0"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
   }
 }

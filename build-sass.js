@@ -35,6 +35,12 @@ const filesToConvert = [
     includePrefix: true,
   },
   {
+    inputFilePath: "./src/scss/_dev-tools.scss",
+    outputDir: "./dist/css",
+    styles: ["expanded", "compressed"],
+    includePrefix: true,
+  },
+  {
     inputFilePath: "./11ty-site/_scss/site.scss",
     outputDir: "./docs/css",
     styles: ["compressed"],
