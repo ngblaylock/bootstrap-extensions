@@ -72,3 +72,41 @@
     content: "xxl";
   }
 }
+.dev-toolbar {
+  background: #dc3545;
+  color: #fff;
+}
+.dev-toolbar .dev-toolbar-body {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.dev-toolbar-collapse-container {
+  position: relative;
+  height: 1rem;
+}
+.dev-toolbar-collapse-container .dev-toolbar-collapse {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.dev-toolbar-collapse-container .dev-toolbar-collapse .dev-toolbar {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  pointer-events: auto;
+  transform: translateY(calc(-100% + 1rem));
+}
+.dev-toolbar-collapse-container .dev-toolbar-collapse .dev-toolbar:hover, .dev-toolbar-collapse-container .dev-toolbar-collapse .dev-toolbar:focus-within {
+  transform: translateY(0);
+}
+.dev-toolbar-collapse-container .dev-toolbar-collapse .dev-toolbar:hover .dev-toolbar-body, .dev-toolbar-collapse-container .dev-toolbar-collapse .dev-toolbar:focus-within .dev-toolbar-body {
+  opacity: 1;
+}
+.dev-toolbar-collapse-container .dev-toolbar-collapse .dev-toolbar .dev-toolbar-body {
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+}

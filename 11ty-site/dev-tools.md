@@ -14,6 +14,17 @@ Bootstrap Extensions only provides styling for these elements! It does not autom
 
 ```scss
 @import "node_modules/@ngblaylock/bootstrap-extensions/src/scss/_dev-tools.scss";
+
+/*
+
+// Default Sass Variables:
+
+$bse-prefix: "bse-" !default;
+$dev: $red !default;
+$dev-secondary: shade-color($dev, 50%) !default;
+$dev-toolbar-height: $spacer !default;
+
+*/
 ```
 
 ### CDN
@@ -36,6 +47,16 @@ Bootstrap Extensions only provides styling for these elements! It does not autom
 ```
 
 ### Dev Toolbar
+
+The development toolbar serves two purposes. The first as a quick indicator that the site you are on is a development site, and not production. The second is a way to house links to other development processes. 
+
+Bootstrap Extensions ships with basic development toolbar as well as a collapse wrapper. When you hover over the collapse wrapper, or if an element is in focus it will expand to show the links. You can modify this to fit the needs of your dev site. Using utility classes can help with placement, such as keeping it sticky to the top of your window.
+
+{% include "examples/dev-toolbar.njk" %}
+
+```html
+{% include "examples/dev-toolbar.njk" %}
+```
 
 ### Media Query Helper
 

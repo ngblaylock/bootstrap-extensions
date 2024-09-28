@@ -1,7 +1,7 @@
 $bse-prefix: "bse-" !default;
-
 $dev: $red !default;
-$dev-secondary: shade-color($red, 50%);
+$dev-secondary: shade-color($dev, 50%) !default;
+$dev-toolbar-height: $spacer !default;
 
 .dev-note {
   padding: $card-spacer-y $card-spacer-x;
@@ -41,7 +41,7 @@ $dev-secondary: shade-color($red, 50%);
     background: $dev;
     color: color-contrast($dev);
     border-radius: $border-radius-pill;
-    opacity: .8;
+    opacity: 0.8;
     z-index: $zindex-toast;
     position: fixed;
     bottom: $spacer;
@@ -49,11 +49,50 @@ $dev-secondary: shade-color($red, 50%);
     pointer-events: none;
   }
 }
-@each $key, $value in $grid-breakpoints{
+@each $key, $value in $grid-breakpoints {
   @include media-breakpoint-up($key) {
-    .dev-mq-helper::before{
-      content: '#{$key}';
+    .dev-mq-helper::before {
+      content: "#{$key}";
     }
-   }
+  }
+}
 
+.dev-toolbar {
+  background: $dev;
+  color: color-contrast($dev);
+  .dev-toolbar-body {
+    padding: $spacer * 0.5;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.dev-toolbar-collapse-container {
+  position: relative;
+  height: $dev-toolbar-height;
+  .dev-toolbar-collapse {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    pointer-events: none;
+    .dev-toolbar {
+      position: relative;
+      transition: $transition-base;
+      pointer-events: auto;
+      transform: translateY(calc(-100% + #{$dev-toolbar-height}));
+      &:hover,
+      &:focus-within {
+        transform: translateY(0);
+        .dev-toolbar-body {
+          opacity: 1;
+        }
+      }
+      .dev-toolbar-body {
+        transition: $transition-base;
+        opacity: 0;
+      }
+    }
+  }
 }
