@@ -17,9 +17,9 @@ Bootstrap Extensions only provides styling for these elements! It does not autom
 
 /*
 
-// Default Sass Variables:
+Default Sass Variables:
 
-$bse-prefix: "bse-" !default;
+$bse-prefix: "--bse" !default;
 $dev: $red !default;
 $dev-secondary: shade-color($dev, 50%) !default;
 $dev-toolbar-height: $spacer !default;
@@ -34,6 +34,24 @@ $dev-toolbar-height: $spacer !default;
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/css/dev-tools.min.css"
 />
+
+<!--
+
+CSS Variables available:
+
+--bse-dev 
+  Hex value of the dev color. The default is the Bootstrap red color
+
+--bse-dev-rgb
+  RGB values of the dev color
+
+--bse-dev-secondary
+  Hex value of the secondary dev color. The default is a darker variant of the Bootstrap red color
+
+--bse-dev-secondary-rgb
+  RGB values of the dev-secondary color.
+
+-->
 ```
 
 ## Usage

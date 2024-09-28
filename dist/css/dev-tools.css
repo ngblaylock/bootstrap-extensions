@@ -1,3 +1,10 @@
+:root {
+  --bse-dev: #dc3545;
+  --bse-dev-rgb: 220, 53, 69;
+  --bse-dev-secondary: #6e1b23;
+  --bse-dev-secondary-rgb: 110, 27, 35;
+}
+
 .dev-note {
   padding: 1rem 1rem;
   border-radius: 0.375rem;

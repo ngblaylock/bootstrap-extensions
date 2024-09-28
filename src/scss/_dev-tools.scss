@@ -1,7 +1,14 @@
-$bse-prefix: "bse-" !default;
+$bse-prefix: "--bse" !default;
 $dev: $red !default;
 $dev-secondary: shade-color($dev, 50%) !default;
 $dev-toolbar-height: $spacer !default;
+
+:root{
+  #{$bse-prefix}-dev: $dev;
+  #{$bse-prefix}-dev-rgb: to-rgb($dev);
+  #{$bse-prefix}-dev-secondary: $dev-secondary;
+  #{$bse-prefix}-dev-secondary-rgb: to-rgb($dev-secondary);
+}
 
 .dev-note {
   padding: $card-spacer-y $card-spacer-x;
@@ -12,7 +19,7 @@ $dev-toolbar-height: $spacer !default;
   border: 1px solid $dev;
   margin-bottom: $spacer;
   &::before {
-    content: var(--#{$bse-prefix}dev-note-title, "Dev Note");
+    content: var(#{$bse-prefix}-dev-note-title, "Dev Note");
     display: block;
     background: $dev-secondary;
     color: color-contrast($dev-secondary);
