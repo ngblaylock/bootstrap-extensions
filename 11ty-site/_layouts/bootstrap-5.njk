@@ -10,6 +10,7 @@
     <link
       rel="icon"
       type="image/svg"
+      id="dev-favicon"
       href="/favicon-dev.svg"
     />
     {% else %}
@@ -88,6 +89,15 @@
       }
       .preload * {
         transition: none !important;
+      }
+      .bse-use-custom .hide-on-custom{
+        display: none;
+      }
+      .show-on-custom{
+        display: none;
+      }
+      .bse-use-custom .show-on-custom{
+        display: initial;
       }
     </style>
     <script>

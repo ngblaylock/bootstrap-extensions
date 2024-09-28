@@ -2,7 +2,7 @@
 title: Development Tools
 ---
 
-These items are not intended to be viewed by users and should only show up in development mode. Adding this should have a wrapper that checks an environment variable. Depending on what technology you are using will determine how you incorporate this. 
+These items are not intended to be viewed by users and should only show up in development mode. Adding this should have a wrapper that checks an environment variable. Depending on what technology you are using will determine how you incorporate this.
 
 <div class="alert alert-warning">
 Bootstrap Extensions only provides styling for these elements! It does not automatically determine if you are in development or production mode.
@@ -22,6 +22,7 @@ Default Sass Variables:
 $bse-prefix: "--bse" !default;
 $dev: $red !default;
 $dev-secondary: shade-color($dev, 50%) !default;
+$dev-note-text: "Dev Note" !default;
 $dev-toolbar-height: $spacer !default;
 
 */
@@ -58,6 +59,8 @@ CSS Variables available:
 
 ### Development Note
 
+Development notes are intended to only show up in development mode and it should be hidden in production. These are great for reminders, to-dos and anything else you don't want the end user to see but might be helpful to see while developing.
+
 {% include "examples/dev-note.njk" %}
 
 ```html
@@ -66,7 +69,7 @@ CSS Variables available:
 
 ### Dev Toolbar
 
-The development toolbar serves two purposes. The first as a quick indicator that the site you are on is a development site, and not production. The second is a way to house links to other development processes. 
+The development toolbar serves two purposes. The first as a quick indicator that the site you are on is a development site, and not production. The second is a way to house links to other development processes.
 
 Bootstrap Extensions ships with basic development toolbar as well as a collapse wrapper. When you hover over the collapse wrapper, or if an element is in focus it will expand to show the links. You can modify this to fit the needs of your dev site. Using utility classes can help with placement, such as keeping it sticky to the top of your window.
 
@@ -102,9 +105,16 @@ To implement this, you'll need to set up conditional logic to load different fav
     </div>
   </div>
   
-  <div class="col-sm-6">
+  <div class="col-sm-6 hide-on-custom">
     <div class="card card-body align-items-center">
       <img src="/favicon-dev.svg" style="max-width: 100px;" />
+      Development Favicon
+    </div>
+  </div>
+  
+  <div class="col-sm-6 show-on-custom">
+    <div class="card card-body align-items-center">
+      <img src="/favicon-dev-alt.svg" style="max-width: 100px;" />
       Development Favicon
     </div>
   </div>
