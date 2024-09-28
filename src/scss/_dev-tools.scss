@@ -1,0 +1,106 @@
+$bse-prefix: "--bse" !default;
+$dev: $red !default;
+$dev-secondary: shade-color($dev, 50%) !default;
+$dev-note-text: "Dev Note" !default;
+$dev-toolbar-height: $spacer !default;
+
+:root {
+  #{$bse-prefix}-dev: $dev;
+  #{$bse-prefix}-dev-rgb: to-rgb($dev);
+  #{$bse-prefix}-dev-secondary: $dev-secondary;
+  #{$bse-prefix}-dev-secondary-rgb: to-rgb($dev-secondary);
+}
+
+.dev-note {
+  padding: $card-spacer-y $card-spacer-x;
+  border-radius: $border-radius;
+  background: $dev;
+  color: color-contrast($dev);
+  position: relative;
+  border: 1px solid $dev;
+  margin-bottom: $spacer;
+  &::before {
+    content: var(#{$bse-prefix}-dev-note-title, $dev-note-text);
+    display: block;
+    background: $dev-secondary;
+    color: color-contrast($dev-secondary);
+    font-weight: bolder;
+    padding: ($card-spacer-x * 0.5) $card-spacer-y;
+    top: 0;
+    border-top-right-radius: calc($border-radius - 1px);
+    border-top-left-radius: calc($border-radius - 1px);
+    margin-right: -$card-spacer-x;
+    margin-left: -$card-spacer-x;
+    margin-top: -$card-spacer-y;
+    margin-bottom: $card-spacer-y;
+    border-bottom: 1px dashed $dev;
+  }
+}
+
+.dev-mq-helper {
+  &::before {
+    content: "xs";
+    text-transform: uppercase;
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $dev;
+    color: color-contrast($dev);
+    border-radius: $border-radius-pill;
+    opacity: 0.8;
+    z-index: $zindex-toast;
+    position: fixed;
+    bottom: $spacer;
+    right: $spacer;
+    pointer-events: none;
+  }
+}
+@each $key, $value in $grid-breakpoints {
+  @include media-breakpoint-up($key) {
+    .dev-mq-helper::before {
+      content: "#{$key}";
+    }
+  }
+}
+
+.dev-toolbar {
+  background: $dev;
+  color: color-contrast($dev);
+  .dev-toolbar-body {
+    padding: $spacer * 0.5;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.dev-toolbar-collapse-container {
+  position: relative;
+  height: $dev-toolbar-height;
+  .dev-toolbar-collapse {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    pointer-events: none;
+    .dev-toolbar {
+      position: relative;
+      transition: $transition-base;
+      pointer-events: auto;
+      transform: translateY(calc(-100% + #{$dev-toolbar-height}));
+      &:hover,
+      &:focus-within {
+        transform: translateY(0);
+        .dev-toolbar-body {
+          opacity: 1;
+        }
+      }
+      .dev-toolbar-body {
+        transition: $transition-base;
+        opacity: 0;
+      }
+    }
+  }
+}

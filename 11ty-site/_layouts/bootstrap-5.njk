@@ -2,16 +2,62 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#ffc40d" />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    {% if global.env === 'dev' %}
+    <link
+      rel="icon"
+      type="image/svg"
+      id="dev-favicon"
+      href="/favicon-dev.svg"
+    />
+    {% else %}
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="/site.webmanifest"
+    />
+    <link
+      rel="mask-icon"
+      href="/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta
+      name="msapplication-TileColor"
+      content="#ffc40d"
+    />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+    />
+    {% endif %}
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
     <script src="/js/bootstrap-extensions.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Freeman&family=Patrick+Hand+SC&family=Teko:wght@300..700&display=swap"
@@ -41,10 +87,58 @@
       [data-bs-theme="dark"] footer svg path {
         fill: var(--bs-base-i4);
       }
+      .preload * {
+        transition: none !important;
+      }
+      .bse-use-custom .hide-on-custom{
+        display: none;
+      }
+      .show-on-custom{
+        display: none;
+      }
+      .bse-use-custom .show-on-custom{
+        display: initial;
+      }
     </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(() => {
+          console.log("preloaded");
+          const preload = document.querySelectorAll(".preload");
+          [...preload].forEach((e) => e.classList.remove("preload"));
+        }, 500);
+      });
+    </script>
   </head>
   <body>
-    <div style="min-height: 100vh" class="d-flex flex-column">
+    <div
+      style="min-height: 100vh"
+      class="d-flex flex-column"
+    >
+      {% if global.env === 'dev' %}
+      <div class="dev-toolbar-collapse-container position-sticky top-0 z-3 preload">
+        <div class="dev-toolbar-collapse">
+          <div class="dev-toolbar">
+            <div class="dev-toolbar-body">
+              Development
+              <span class="flex-fill"></span>
+              <div class="hstack gap-2">
+                <a
+                  href="https://github.com/ngblaylock/bootstrap-extensions"
+                  class="link-light"
+                  >GitHub</a
+                >
+                <a
+                  href="https://ngblaylock.github.io/bootstrap-extensions/"
+                  class="link-light"
+                  >Prod</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
       <div class="container flex-fill d-flex flex-column">
         <div class="row flex-fill">
           <div class="col-sm-4 col-md-3 border-end border-base-4 pb-4">
@@ -52,63 +146,7 @@
               href="/"
               class="hstack gap-3 my-4 link-base-i1 text-decoration-none"
             >
-              <svg
-                width="410"
-                height="410"
-                viewBox="0 0 410 410"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style="max-width: 48px; height: auto"
-              >
-                <rect
-                  width="410"
-                  height="410"
-                  rx="36"
-                  fill="url(#paint0_linear_1449_91)"
-                />
-                <mask id="path-2-inside-1_1449_91" fill="white">
-                  <rect x="66" y="79" width="224" height="195" rx="6" />
-                </mask>
-                <rect
-                  x="66"
-                  y="79"
-                  width="224"
-                  height="195"
-                  rx="6"
-                  stroke="white"
-                  stroke-width="44"
-                  mask="url(#path-2-inside-1_1449_91)"
-                />
-                <mask id="path-3-inside-2_1449_91" fill="white">
-                  <rect x="120" y="136" width="224" height="195" rx="6" />
-                </mask>
-                <rect
-                  x="120"
-                  y="136"
-                  width="224"
-                  height="195"
-                  rx="6"
-                  fill="white"
-                  fill-opacity="0.35"
-                  stroke="white"
-                  stroke-width="44"
-                  mask="url(#path-3-inside-2_1449_91)"
-                />
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_1449_91"
-                    x1="60.9226"
-                    y1="10.8509"
-                    x2="478.043"
-                    y2="274.704"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#9013FE" />
-                    <stop offset="1" stop-color="#6610F2" />
-                  </linearGradient>
-                </defs>
-              </svg>
-
+              <img src="/favicon.svg" alt="Bootstrap Extensions Logo" style="max-width: 40px;">
               <div class="h5 m-0">Bootstrap Extensions</div>
             </a>
             <div class="list-group list-group-flush border-top">
@@ -126,7 +164,10 @@
               >
               {%- endfor -%}
             </div>
-            <div class="position-sticky" style="top: 1em">
+            <div
+              class="position-sticky"
+              style="top: 1em"
+            >
               <div class="vstack">
                 {% include "toggleCss.njk" %}
                 <div class="hstack border-top p-3">
@@ -136,7 +177,11 @@
                     data-bse-theme-switch="dark,light"
                     id="main-theme-switch"
                   />
-                  <label for="main-theme-switch" class="ps-3">Switch Theme</label>
+                  <label
+                    for="main-theme-switch"
+                    class="ps-3"
+                    >Switch Theme</label
+                  >
                 </div>
               </div>
             </div>
