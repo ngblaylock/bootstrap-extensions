@@ -18,6 +18,8 @@
       });
     }, 500);
 
+
+    const devFavicon = document.getElementById("dev-favicon")
     if (localStorage.getItem("cssType") === "custom") {
       let siteLink = document.createElement("link");
       siteLink.rel = "stylesheet";
@@ -25,9 +27,8 @@
       siteLink.setAttribute("data-css-type", "");
 
       document.head.appendChild(siteLink);
-      document.getElementById("dev-favicon").href = "/favicon-dev-alt.svg";
+      if(devFavicon) devFavicon.href = "/favicon-dev-alt.svg";
       document.documentElement.classList.add("bse-use-custom");
-      console.log("does this happen?");
     } else {
       let bootstrapLink = document.createElement("link");
       bootstrapLink.rel = "stylesheet";
@@ -43,7 +44,7 @@
 
       document.head.appendChild(bootstrapLink);
       document.head.appendChild(bootstrapExtensionsLink);
-      document.getElementById("dev-favicon").href = "/favicon-dev.svg";
+      if(devFavicon) devFavicon.href = "/favicon-dev.svg";
       document.documentElement.classList.remove("bse-use-custom");
     }
   }
