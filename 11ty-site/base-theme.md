@@ -2,11 +2,7 @@
 title: Base Theme
 ---
 
-This is my solution for handling dark theme with Bootstrap. From what I gather on the Bootstrap 5 documentation, there aren't many options for dynamic color shifting. There are some CSS variables that you can use, but I wanted to use things like `.bg-base-1` or `.border-base-1` that will gracefully swap to the negative instance when switching themes.
-
-The names of these may change throughout `v0.x.x` since I'm not fully convinced my naming convention is the best it can be. I wanted to name `base-{1-4}` as `background` and `base-i{1-4}` as `foreground`, but a utility class `bg-foreground-1` looks a little contradictory, and `bg-background-3` seemed a little redundant.
-
-This heavily relies on CSS Variables. Base colors, rgb, hover, and active variables are also available for each base step.
+This is a solution for handling dark theme with Bootstrap. There are not many options for dynamic color shifting. There are some CSS variables that you can use, but Bootstrap Extensions advanced usage creates options like `.bg-base-1` or `.border-base-1` that will gracefully swap to the negative instance when switching themes.
 
 ## Getting Started
 
@@ -14,6 +10,31 @@ This heavily relies on CSS Variables. Base colors, rgb, hover, and active variab
 
 ```scss
 @import "node_modules/@ngblaylock/bootstrap-extensions/src/scss/_base-theme.scss";
+
+/*
+
+Default Sass Variables:
+
+$bse-prefix: "bse-" !default;
+$base-1-light: $body-bg !default;
+$base-2-light: shade-color($base-1-light, 3%) !default;
+$base-3-light: shade-color($base-2-light, 3%) !default;
+$base-4-light: shade-color($base-3-light, 3%) !default;
+$base-i1-light: $body-color !default;
+$base-i2-light: tint-color($base-i1-light, 9%) !default;
+$base-i3-light: tint-color($base-i2-light, 9%) !default;
+$base-i4-light: tint-color($base-i3-light, 9%) !default;
+$base-1-dark: $body-bg-dark !default;
+$base-2-dark: tint-color($base-1-dark, 3%) !default;
+$base-3-dark: tint-color($base-2-dark, 3%) !default;
+$base-4-dark: tint-color($base-3-dark, 3%) !default;
+$base-i1-dark: $body-color-dark !default;
+$base-i2-dark: shade-color($base-i1-dark, 9%) !default;
+$base-i3-dark: shade-color($base-i2-dark, 9%) !default;
+$base-i4-dark: shade-color($base-i3-dark, 9%) !default;
+$enable-btn-base: true !default;
+
+*/
 ```
 
 ### CDN
@@ -61,23 +82,15 @@ You can either use `.bg-base-1` or `.text-bg-base-1`.
 
 ## Buttons
 
-One issue with dark mode is using buttons. For example, in light mode you might have a `.btn-outline-dark` which looks and functions perfectly fine. If you switch to dark mode, it is invisible. That isn't what you want. You can use this base theme to handle that as well.
+One issue in general with Bootstrap is using buttons with themes. For example, in light mode you might have a `.btn-outline-dark` which looks and functions perfectly fine. If you switch to dark mode, it is invisible. Bootstrap Extensions provides additional buttons to respond to theme changes.
 
-Just use `.btn.btn-base-1` or whatever variant needed.
+Toggle the theme to see how these buttons respond.
 
 {% include "examples/base-buttons.njk" %}
 
 ```html
 {% include "examples/base-buttons.njk" %}
 ```
-
-## Using Sass
-
-- In light mode, `base-1` and `base-i1` use the `$body-bg` and `$body-color` variables respectively by default, so by changing those variables it will change `$base-{1-4}-light` and `$base-i{1-4}-light`.
-- In dark mode, just set `$body-bg-dark` and `$body-color-dark` to achieve a similar affect explained above.
-- When changing `$base-1-{light|dark}` and `$base-i1-{light|dark}`, `$base-{2-4}-{light|dark}` and `$base-i{2-4}-{light|dark}` will automatically add a tint or shade depending on what was set.
-- You can also just declare `$base-{1-4}-{light|dark}` and `$base-i{1-4}-{light|dark}` for full customization.
-- Using the buttons adds in about an extra 10kb to the CSS. If you don't plan on using them, you can set `$enable-btn-base: false;` which will omit the buttons from your Sass build.
 
 ## Available Classes
 
@@ -91,3 +104,38 @@ These are classes where `*` can be either `base-{1-4}` or `base-i{1-4}`. More ma
 - `link-underline-*`
 - `text-*`
 - `text-bg-*`
+
+## CSS Variables
+
+- `--bse-base-1`
+- `--bse-base-2`
+- `--bse-base-3`
+- `--bse-base-4`
+- `--bse-base-i1`
+- `--bse-base-i2`
+- `--bse-base-i3`
+- `--bse-base-i4`
+- `--bse-base-1-rgb`
+- `--bse-base-2-rgb`
+- `--bse-base-3-rgb`
+- `--bse-base-4-rgb`
+- `--bse-base-i1-rgb`
+- `--bse-base-i2-rgb`
+- `--bse-base-i3-rgb`
+- `--bse-base-i4-rgb`
+- `--bse-base-1-hover`
+- `--bse-base-2-hover`
+- `--bse-base-3-hover`
+- `--bse-base-4-hover`
+- `--bse-base-i1-hover`
+- `--bse-base-i2-hover`
+- `--bse-base-i3-hover`
+- `--bse-base-i4-hover`
+- `--bse-base-1-active`
+- `--bse-base-2-active`
+- `--bse-base-3-active`
+- `--bse-base-4-active`
+- `--bse-base-i1-active`
+- `--bse-base-i2-active`
+- `--bse-base-i3-active`
+- `--bse-base-i4-active`

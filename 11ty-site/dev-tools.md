@@ -19,7 +19,7 @@ Bootstrap Extensions only provides styling for these elements! It does not autom
 
 Default Sass Variables:
 
-$bse-prefix: "--bse" !default;
+$bse-prefix: "bse-" !default;
 $dev: $red !default;
 $dev-secondary: shade-color($dev, 50%) !default;
 $dev-note-text: "Dev Note" !default;
@@ -35,24 +35,6 @@ $dev-toolbar-height: $spacer !default;
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/css/dev-tools.min.css"
 />
-
-<!--
-
-CSS Variables available:
-
---bse-dev 
-  Hex value of the dev color. The default is the Bootstrap red color
-
---bse-dev-rgb
-  RGB values of the dev color
-
---bse-dev-secondary
-  Hex value of the secondary dev color. The default is a darker variant of the Bootstrap red color
-
---bse-dev-secondary-rgb
-  RGB values of the dev-secondary color.
-
--->
 ```
 
 ## Usage
@@ -95,7 +77,10 @@ Try resizing the screen to see the media query helper update with the current br
 
 Dev favicons are a practical concept, not a feature directly offered by Bootstrap Extensions. They serve as a visual cue in your browser tab, helping you quickly identify whether you're on your development or production site. This is especially useful if you have both the development and production versions open.
 
-To implement this, you'll need to set up conditional logic to load different favicons. For example, you might use a red favicon for your dev site and the standard favicon for production.
+To implement this, you'll need to set up conditional logic to load different favicons. For example, you might use a
+<span class="hide-on-custom">red</span>
+<span class="show-on-custom">green</span>
+favicon for your dev site and the standard favicon for production.
 
 <div class="row">
   <div class="col-sm-6">
@@ -119,3 +104,11 @@ To implement this, you'll need to set up conditional logic to load different fav
     </div>
   </div>
 </div>
+<br />
+
+## CSS Variables
+
+- `--bse-dev`
+- `--bse-dev-rgb`
+- `--bse-dev-secondary`
+- `--bse-dev-secondary-rgb`
