@@ -150,9 +150,7 @@ $base-variants: "1", "2", "3", "4", "i1", "i2", "i3", "i4";
       // Hover Color
       --#{$prefix}btn-hover-color: #{$btn-base-color};
       --#{$prefix}btn-hover-bg: var(--#{$bse-prefix}base-#{$i}-hover);
-      --#{$prefix}btn-hover-border-color: var(
-        --#{$bse-prefix}base-#{$i}-hover
-      );
+      --#{$prefix}btn-hover-border-color: var(--#{$bse-prefix}base-#{$i}-hover);
       --#{$prefix}btn-focus-shadow-rgb: #{$btn-base-outline-rgb};
 
       // Active Color
@@ -166,9 +164,7 @@ $base-variants: "1", "2", "3", "4", "i1", "i2", "i3", "i4";
       // Disabled
       --#{$prefix}btn-disabled-color: #{$btn-base-color};
       --#{$prefix}btn-disabled-bg: var(--#{$bse-prefix}base-#{$i});
-      --#{$prefix}btn-disabled-border-color: var(
-        --#{$bse-prefix}base-#{$i}
-      );
+      --#{$prefix}btn-disabled-border-color: var(--#{$bse-prefix}base-#{$i});
     }
 
     .btn-outline-base-#{$i} {
@@ -191,9 +187,7 @@ $base-variants: "1", "2", "3", "4", "i1", "i2", "i3", "i4";
       // Disabled
       --#{$prefix}btn-disabled-color: var(--#{$bse-prefix}base-#{$i});
       --#{$prefix}btn-disabled-bg: transparent;
-      --#{$prefix}btn-disabled-border-color: var(
-        --#{$bse-prefix}base-#{$i}
-      );
+      --#{$prefix}btn-disabled-border-color: var(--#{$bse-prefix}base-#{$i});
       --#{$prefix}gradient: none;
     }
   }

@@ -5,10 +5,10 @@ $dev-note-text: "Dev Note" !default;
 $dev-toolbar-height: $spacer !default;
 
 :root {
-  --#{$bse-prefix}-dev: $dev;
-  --#{$bse-prefix}-dev-rgb: to-rgb($dev);
-  --#{$bse-prefix}-dev-secondary: $dev-secondary;
-  --#{$bse-prefix}-dev-secondary-rgb: to-rgb($dev-secondary);
+  --#{$bse-prefix}dev: $dev;
+  --#{$bse-prefix}dev-rgb: to-rgb($dev);
+  --#{$bse-prefix}dev-secondary: $dev-secondary;
+  --#{$bse-prefix}dev-secondary-rgb: to-rgb($dev-secondary);
 }
 
 .dev-note {
