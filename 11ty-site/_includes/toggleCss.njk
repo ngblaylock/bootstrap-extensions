@@ -27,7 +27,7 @@
       siteLink.setAttribute("data-css-type", "");
 
       document.head.appendChild(siteLink);
-      if(devFavicon) devFavicon.href = "/favicon-dev-alt.svg";
+      if(devFavicon) devFavicon.href = "{{global.baseUrl}}/favicon-dev-alt.svg";
       document.documentElement.classList.add("bse-use-custom");
     } else {
       let bootstrapLink = document.createElement("link");
@@ -44,7 +44,7 @@
 
       document.head.appendChild(bootstrapLink);
       document.head.appendChild(bootstrapExtensionsLink);
-      if(devFavicon) devFavicon.href = "/favicon-dev.svg";
+      if(devFavicon) devFavicon.href = "{{global.baseUrl}}/favicon-dev.svg";
       document.documentElement.classList.remove("bse-use-custom");
     }
   }
