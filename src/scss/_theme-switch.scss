@@ -16,23 +16,25 @@
     )};
 }
 
-$bse-prefix: "bse" !default;
+$bse-prefix: "bse-" !default;
 $theme-switch-size: $spacer * 2 !default;
 $theme-switch-bg-opacity: 0.06 !default;
 $theme-switch-bg-hover-opacity: 0.09 !default;
 $theme-switch-bg-focus-opacity: 0.12 !default;
+$icon-color-light: $body-bg !default;
+$icon-color-dark: $body-color !default;
 
-$theme-switch-sun-icon-light: sun-icon($body-bg) !default;
-$theme-switch-sun-icon-dark: sun-icon($body-color) !default;
-$theme-switch-moon-icon-light: moon-icon($body-bg) !default;
-$theme-switch-moon-icon-dark: moon-icon($body-color) !default;
-$theme-switch-system-icon-light: system-icon($body-bg) !default;
-$theme-switch-system-icon-dark: system-icon($body-color) !default;
+$theme-switch-sun-icon-light: sun-icon($icon-color-light);
+$theme-switch-sun-icon-dark: sun-icon($icon-color-dark);
+$theme-switch-moon-icon-light: moon-icon($icon-color-light);
+$theme-switch-moon-icon-dark: moon-icon($icon-color-dark);
+$theme-switch-system-icon-light: system-icon($icon-color-light);
+$theme-switch-system-icon-dark: system-icon($icon-color-dark);
 
 :root,
 [data-bs-theme="light"] {
   --#{$bse-prefix}theme-switch-size: #{$theme-switch-size};
-  --#{$bse-prefix}theme-switch-bg-rgb: var(--#{$bse-prefix}body-color-rgb);
+  --#{$bse-prefix}theme-switch-bg-rgb: var(--#{$prefix}body-color-rgb);
   --#{$bse-prefix}light-theme-icon: #{$theme-switch-sun-icon-dark};
   --#{$bse-prefix}dark-theme-icon: #{$theme-switch-moon-icon-light};
   --#{$bse-prefix}system-theme-icon: #{$theme-switch-system-icon-dark};

@@ -136,7 +136,7 @@
   --bs-btn-disabled-border-color: var(
     --bse-base-1
   );
-  --bse-gradient: none;
+  --bs-gradient: none;
 }
 
 .bg-base-2 {
@@ -206,7 +206,7 @@
   --bs-btn-disabled-border-color: var(
     --bse-base-2
   );
-  --bse-gradient: none;
+  --bs-gradient: none;
 }
 
 .bg-base-3 {
@@ -276,7 +276,7 @@
   --bs-btn-disabled-border-color: var(
     --bse-base-3
   );
-  --bse-gradient: none;
+  --bs-gradient: none;
 }
 
 .bg-base-4 {
@@ -346,7 +346,7 @@
   --bs-btn-disabled-border-color: var(
     --bse-base-4
   );
-  --bse-gradient: none;
+  --bs-gradient: none;
 }
 
 .bg-base-i1 {
@@ -416,7 +416,7 @@
   --bs-btn-disabled-border-color: var(
     --bse-base-i1
   );
-  --bse-gradient: none;
+  --bs-gradient: none;
 }
 
 .bg-base-i2 {
@@ -486,7 +486,7 @@
   --bs-btn-disabled-border-color: var(
     --bse-base-i2
   );
-  --bse-gradient: none;
+  --bs-gradient: none;
 }
 
 .bg-base-i3 {
@@ -556,7 +556,7 @@
   --bs-btn-disabled-border-color: var(
     --bse-base-i3
   );
-  --bse-gradient: none;
+  --bs-gradient: none;
 }
 
 .bg-base-i4 {
@@ -626,5 +626,5 @@
   --bs-btn-disabled-border-color: var(
     --bse-base-i4
   );
-  --bse-gradient: none;
+  --bs-gradient: none;
 }

@@ -194,7 +194,7 @@ $base-variants: "1", "2", "3", "4", "i1", "i2", "i3", "i4";
       --#{$prefix}btn-disabled-border-color: var(
         --#{$bse-prefix}base-#{$i}
       );
-      --#{$bse-prefix}gradient: none;
+      --#{$prefix}gradient: none;
     }
   }
 }

@@ -10,6 +10,20 @@ This is a handy switch for changing themes from light mode to dark mode. It come
 
 ```scss
 @import "node_modules/@ngblaylock/bootstrap-extensions/src/scss/_theme-switch.scss";
+
+/*
+
+Default Sass Variables:
+
+$bse-prefix: "bse-" !default;
+$theme-switch-size: $spacer * 2 !default;
+$theme-switch-bg-opacity: 0.06 !default;
+$theme-switch-bg-hover-opacity: 0.09 !default;
+$theme-switch-bg-focus-opacity: 0.12 !default;
+$icon-color-light: $body-bg !default;
+$icon-color-dark: $body-color !default;
+
+*/
 ```
 
 ### JS
@@ -90,3 +104,10 @@ You can also use JavaScript if you want to handle changing themes your own way.
 ```html
 {% include "examples/theme-switch-js.njk" %}
 ```
+## CSS Variables
+
+- `--bse-theme-switch-size`
+- `--bse-theme-switch-bg-rgb`
+- `--bse-light-theme-icon`
+- `--bse-dark-theme-icon`
+- `--bse-system-theme-icon`

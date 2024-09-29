@@ -108,7 +108,7 @@ favicon for your dev site and the standard favicon for production.
 
 ## CSS Variables
 
-- `--bse-dev` - Hex value of the dev color. The default is the Bootstrap red color
-- `--bse-dev-rgb` - RGB values of the dev color
-- `--bse-dev-secondary` - Hex value of the secondary dev color. The default is a darker variant of the Bootstrap red color
-- `--bse-dev-secondary-rgb` - RGB values of the dev-secondary color.
+- `--bse-dev`
+- `--bse-dev-rgb`
+- `--bse-dev-secondary`
+- `--bse-dev-secondary-rgb`
