@@ -1,8 +1,8 @@
 :root {
-  --bse-dev: #dc3545;
-  --bse-dev-rgb: 220, 53, 69;
-  --bse-dev-secondary: #6e1b23;
-  --bse-dev-secondary-rgb: 110, 27, 35;
+  --bse-dev: $dev;
+  --bse-dev-rgb: to-rgb($dev);
+  --bse-dev-secondary: $dev-secondary;
+  --bse-dev-secondary-rgb: to-rgb($dev-secondary);
 }
 
 .dev-note {
@@ -15,7 +15,7 @@
   margin-bottom: 1rem;
 }
 .dev-note::before {
-  content: var(--bse-dev-note-title, "Dev Note");
+  content: var(bse-dev-note-title, "Dev Note");
   display: block;
   background: #6e1b23;
   color: #fff;

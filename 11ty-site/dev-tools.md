@@ -19,7 +19,7 @@ Bootstrap Extensions only provides styling for these elements! It does not autom
 
 Default Sass Variables:
 
-$bse-prefix: "--bse" !default;
+$bse-prefix: "bse" !default;
 $dev: $red !default;
 $dev-secondary: shade-color($dev, 50%) !default;
 $dev-note-text: "Dev Note" !default;

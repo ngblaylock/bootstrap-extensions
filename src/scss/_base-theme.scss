@@ -1,3 +1,4 @@
+$bse-prefix: "bse" !important;
 $base-1-light: $body-bg !default;
 $base-2-light: shade-color($base-1-light, 3%) !default;
 $base-3-light: shade-color($base-2-light, 3%) !default;
@@ -6,7 +7,6 @@ $base-i1-light: $body-color !default;
 $base-i2-light: tint-color($base-i1-light, 9%) !default;
 $base-i3-light: tint-color($base-i2-light, 9%) !default;
 $base-i4-light: tint-color($base-i3-light, 9%) !default;
-
 $base-1-dark: $body-bg-dark !default;
 $base-2-dark: tint-color($base-1-dark, 3%) !default;
 $base-3-dark: tint-color($base-2-dark, 3%) !default;
@@ -15,179 +15,186 @@ $base-i1-dark: $body-color-dark !default;
 $base-i2-dark: shade-color($base-i1-dark, 9%) !default;
 $base-i3-dark: shade-color($base-i2-dark, 9%) !default;
 $base-i4-dark: shade-color($base-i3-dark, 9%) !default;
-
 $enable-btn-base: true !default;
 
 :root,
 [data-bs-theme="light"] {
   // STANDARD
-  --#{$prefix}base-1: #{$base-1-light};
-  --#{$prefix}base-2: #{$base-2-light};
-  --#{$prefix}base-3: #{$base-3-light};
-  --#{$prefix}base-4: #{$base-4-light};
-  --#{$prefix}base-i1: #{$base-i1-light};
-  --#{$prefix}base-i2: #{$base-i2-light};
-  --#{$prefix}base-i3: #{$base-i3-light};
-  --#{$prefix}base-i4: #{$base-i4-light};
+  --#{$bse-prefix}base-1: #{$base-1-light};
+  --#{$bse-prefix}base-2: #{$base-2-light};
+  --#{$bse-prefix}base-3: #{$base-3-light};
+  --#{$bse-prefix}base-4: #{$base-4-light};
+  --#{$bse-prefix}base-i1: #{$base-i1-light};
+  --#{$bse-prefix}base-i2: #{$base-i2-light};
+  --#{$bse-prefix}base-i3: #{$base-i3-light};
+  --#{$bse-prefix}base-i4: #{$base-i4-light};
   // RGB
-  --#{$prefix}base-1-rgb: #{to-rgb($base-1-light)};
-  --#{$prefix}base-2-rgb: #{to-rgb($base-2-light)};
-  --#{$prefix}base-3-rgb: #{to-rgb($base-3-light)};
-  --#{$prefix}base-4-rgb: #{to-rgb($base-4-light)};
-  --#{$prefix}base-i1-rgb: #{to-rgb($base-i1-light)};
-  --#{$prefix}base-i2-rgb: #{to-rgb($base-i2-light)};
-  --#{$prefix}base-i3-rgb: #{to-rgb($base-i3-light)};
-  --#{$prefix}base-i4-rgb: #{to-rgb($base-i4-light)};
+  --#{$bse-prefix}base-1-rgb: #{to-rgb($base-1-light)};
+  --#{$bse-prefix}base-2-rgb: #{to-rgb($base-2-light)};
+  --#{$bse-prefix}base-3-rgb: #{to-rgb($base-3-light)};
+  --#{$bse-prefix}base-4-rgb: #{to-rgb($base-4-light)};
+  --#{$bse-prefix}base-i1-rgb: #{to-rgb($base-i1-light)};
+  --#{$bse-prefix}base-i2-rgb: #{to-rgb($base-i2-light)};
+  --#{$bse-prefix}base-i3-rgb: #{to-rgb($base-i3-light)};
+  --#{$bse-prefix}base-i4-rgb: #{to-rgb($base-i4-light)};
   // HOVER
-  --#{$prefix}base-1-hover: #{tint-color($base-1-light, 32%)};
-  --#{$prefix}base-2-hover: #{tint-color($base-2-light, 32%)};
-  --#{$prefix}base-3-hover: #{tint-color($base-3-light, 32%)};
-  --#{$prefix}base-4-hover: #{tint-color($base-4-light, 32%)};
-  --#{$prefix}base-i1-hover: #{shade-color($base-i1-light, 48%)};
-  --#{$prefix}base-i2-hover: #{shade-color($base-i2-light, 48%)};
-  --#{$prefix}base-i3-hover: #{shade-color($base-i3-light, 48%)};
-  --#{$prefix}base-i4-hover: #{shade-color($base-i4-light, 48%)};
+  --#{$bse-prefix}base-1-hover: #{tint-color($base-1-light, 32%)};
+  --#{$bse-prefix}base-2-hover: #{tint-color($base-2-light, 32%)};
+  --#{$bse-prefix}base-3-hover: #{tint-color($base-3-light, 32%)};
+  --#{$bse-prefix}base-4-hover: #{tint-color($base-4-light, 32%)};
+  --#{$bse-prefix}base-i1-hover: #{shade-color($base-i1-light, 48%)};
+  --#{$bse-prefix}base-i2-hover: #{shade-color($base-i2-light, 48%)};
+  --#{$bse-prefix}base-i3-hover: #{shade-color($base-i3-light, 48%)};
+  --#{$bse-prefix}base-i4-hover: #{shade-color($base-i4-light, 48%)};
   // ACTIVE
-  --#{$prefix}base-1-active: #{tint-color($base-1-light, 60%)};
-  --#{$prefix}base-2-active: #{tint-color($base-2-light, 60%)};
-  --#{$prefix}base-3-active: #{tint-color($base-3-light, 60%)};
-  --#{$prefix}base-4-active: #{tint-color($base-4-light, 60%)};
-  --#{$prefix}base-i1-active: #{shade-color($base-i1-light, 72%)};
-  --#{$prefix}base-i2-active: #{shade-color($base-i2-light, 72%)};
-  --#{$prefix}base-i3-active: #{shade-color($base-i3-light, 72%)};
-  --#{$prefix}base-i4-active: #{shade-color($base-i4-light, 72%)};
+  --#{$bse-prefix}base-1-active: #{tint-color($base-1-light, 60%)};
+  --#{$bse-prefix}base-2-active: #{tint-color($base-2-light, 60%)};
+  --#{$bse-prefix}base-3-active: #{tint-color($base-3-light, 60%)};
+  --#{$bse-prefix}base-4-active: #{tint-color($base-4-light, 60%)};
+  --#{$bse-prefix}base-i1-active: #{shade-color($base-i1-light, 72%)};
+  --#{$bse-prefix}base-i2-active: #{shade-color($base-i2-light, 72%)};
+  --#{$bse-prefix}base-i3-active: #{shade-color($base-i3-light, 72%)};
+  --#{$bse-prefix}base-i4-active: #{shade-color($base-i4-light, 72%)};
 }
 
 [data-bs-theme="dark"] {
   // STANDARD
-  --#{$prefix}base-1: #{$base-1-dark};
-  --#{$prefix}base-2: #{$base-2-dark};
-  --#{$prefix}base-3: #{$base-3-dark};
-  --#{$prefix}base-4: #{$base-4-dark};
-  --#{$prefix}base-i1: #{$base-i1-dark};
-  --#{$prefix}base-i2: #{$base-i2-dark};
-  --#{$prefix}base-i3: #{$base-i3-dark};
-  --#{$prefix}base-i4: #{$base-i4-dark};
+  --#{$bse-prefix}base-1: #{$base-1-dark};
+  --#{$bse-prefix}base-2: #{$base-2-dark};
+  --#{$bse-prefix}base-3: #{$base-3-dark};
+  --#{$bse-prefix}base-4: #{$base-4-dark};
+  --#{$bse-prefix}base-i1: #{$base-i1-dark};
+  --#{$bse-prefix}base-i2: #{$base-i2-dark};
+  --#{$bse-prefix}base-i3: #{$base-i3-dark};
+  --#{$bse-prefix}base-i4: #{$base-i4-dark};
   // RGB
-  --#{$prefix}base-1-rgb: #{to-rgb($base-1-dark)};
-  --#{$prefix}base-2-rgb: #{to-rgb($base-2-dark)};
-  --#{$prefix}base-3-rgb: #{to-rgb($base-3-dark)};
-  --#{$prefix}base-4-rgb: #{to-rgb($base-4-dark)};
-  --#{$prefix}base-i1-rgb: #{to-rgb($base-i1-dark)};
-  --#{$prefix}base-i2-rgb: #{to-rgb($base-i2-dark)};
-  --#{$prefix}base-i3-rgb: #{to-rgb($base-i3-dark)};
-  --#{$prefix}base-i4-rgb: #{to-rgb($base-i4-dark)};
+  --#{$bse-prefix}base-1-rgb: #{to-rgb($base-1-dark)};
+  --#{$bse-prefix}base-2-rgb: #{to-rgb($base-2-dark)};
+  --#{$bse-prefix}base-3-rgb: #{to-rgb($base-3-dark)};
+  --#{$bse-prefix}base-4-rgb: #{to-rgb($base-4-dark)};
+  --#{$bse-prefix}base-i1-rgb: #{to-rgb($base-i1-dark)};
+  --#{$bse-prefix}base-i2-rgb: #{to-rgb($base-i2-dark)};
+  --#{$bse-prefix}base-i3-rgb: #{to-rgb($base-i3-dark)};
+  --#{$bse-prefix}base-i4-rgb: #{to-rgb($base-i4-dark)};
   // HOVER
-  --#{$prefix}base-1-hover: #{shade-color($base-1-dark, 12%)};
-  --#{$prefix}base-2-hover: #{shade-color($base-2-dark, 12%)};
-  --#{$prefix}base-3-hover: #{shade-color($base-3-dark, 12%)};
-  --#{$prefix}base-4-hover: #{shade-color($base-4-dark, 12%)};
-  --#{$prefix}base-i1-hover: #{tint-color($base-i1-dark, 24%)};
-  --#{$prefix}base-i2-hover: #{tint-color($base-i2-dark, 24%)};
-  --#{$prefix}base-i3-hover: #{tint-color($base-i3-dark, 24%)};
-  --#{$prefix}base-i4-hover: #{tint-color($base-i4-dark, 24%)};
+  --#{$bse-prefix}base-1-hover: #{shade-color($base-1-dark, 12%)};
+  --#{$bse-prefix}base-2-hover: #{shade-color($base-2-dark, 12%)};
+  --#{$bse-prefix}base-3-hover: #{shade-color($base-3-dark, 12%)};
+  --#{$bse-prefix}base-4-hover: #{shade-color($base-4-dark, 12%)};
+  --#{$bse-prefix}base-i1-hover: #{tint-color($base-i1-dark, 24%)};
+  --#{$bse-prefix}base-i2-hover: #{tint-color($base-i2-dark, 24%)};
+  --#{$bse-prefix}base-i3-hover: #{tint-color($base-i3-dark, 24%)};
+  --#{$bse-prefix}base-i4-hover: #{tint-color($base-i4-dark, 24%)};
   // ACTIVE
-  --#{$prefix}base-1-active: #{shade-color($base-1-dark, 20%)};
-  --#{$prefix}base-2-active: #{shade-color($base-2-dark, 20%)};
-  --#{$prefix}base-3-active: #{shade-color($base-3-dark, 20%)};
-  --#{$prefix}base-4-active: #{shade-color($base-4-dark, 20%)};
-  --#{$prefix}base-i1-active: #{tint-color($base-i1-dark, 36%)};
-  --#{$prefix}base-i2-active: #{tint-color($base-i2-dark, 36%)};
-  --#{$prefix}base-i3-active: #{tint-color($base-i3-dark, 36%)};
-  --#{$prefix}base-i4-active: #{tint-color($base-i4-dark, 36%)};
+  --#{$bse-prefix}base-1-active: #{shade-color($base-1-dark, 20%)};
+  --#{$bse-prefix}base-2-active: #{shade-color($base-2-dark, 20%)};
+  --#{$bse-prefix}base-3-active: #{shade-color($base-3-dark, 20%)};
+  --#{$bse-prefix}base-4-active: #{shade-color($base-4-dark, 20%)};
+  --#{$bse-prefix}base-i1-active: #{tint-color($base-i1-dark, 36%)};
+  --#{$bse-prefix}base-i2-active: #{tint-color($base-i2-dark, 36%)};
+  --#{$bse-prefix}base-i3-active: #{tint-color($base-i3-dark, 36%)};
+  --#{$bse-prefix}base-i4-active: #{tint-color($base-i4-dark, 36%)};
 }
 
 $base-variants: "1", "2", "3", "4", "i1", "i2", "i3", "i4";
 
 @each $i in $base-variants {
   .bg-base-#{$i} {
-    background: var(--#{$prefix}base-#{$i}) !important;
+    background: var(--#{$bse-prefix}base-#{$i}) !important;
   }
   .text-base-#{$i} {
-    color: var(--#{$prefix}base-#{$i}) !important;
+    color: var(--#{$bse-prefix}base-#{$i}) !important;
   }
   .text-bg-base-#{$i} {
-    background: var(--#{$prefix}base-#{$i}) !important;
+    background: var(--#{$bse-prefix}base-#{$i}) !important;
     @if str-index($i, "i") == null {
-      color: var(--#{$prefix}base-i1) !important;
+      color: var(--#{$bse-prefix}base-i1) !important;
     } @else {
-      color: var(--#{$prefix}base-1) !important;
+      color: var(--#{$bse-prefix}base-1) !important;
     }
   }
   .link-base-#{$i} {
-    color: var(--#{$prefix}base-#{$i}) !important;
+    color: var(--#{$bse-prefix}base-#{$i}) !important;
     &:hover {
-      color: var(--#{$prefix}base-#{$i}-hover) !important;
+      color: var(--#{$bse-prefix}base-#{$i}-hover) !important;
     }
   }
   .link-underline-base-#{$i} {
-    text-decoration-color: var(--#{$prefix}base-#{$i}) !important;
+    text-decoration-color: var(--#{$bse-prefix}base-#{$i}) !important;
   }
   .border-base-#{$i} {
-    border-color: var(--#{$prefix}base-#{$i}) !important;
+    border-color: var(--#{$bse-prefix}base-#{$i}) !important;
   }
 
-  $btn-base-color: var(--#{$prefix}base-1);
-  $btn-base-outline-rgb: var(--#{$prefix}base-#{$i}-rgb);
+  $btn-base-color: var(--#{$bse-prefix}base-1);
+  $btn-base-outline-rgb: var(--#{$bse-prefix}base-#{$i}-rgb);
   @if str-index($i, "i") == null {
-    $btn-base-color: var(--#{$prefix}base-i1);
+    $btn-base-color: var(--#{$bse-prefix}base-i1);
   }
   @if $i == "1" {
-    $btn-base-outline-rgb: var(--#{$prefix}base-i4-rgb);
+    $btn-base-outline-rgb: var(--#{$bse-prefix}base-i4-rgb);
   } @else if $i == "2" {
-    $btn-base-outline-rgb: var(--#{$prefix}base-i3-rgb);
+    $btn-base-outline-rgb: var(--#{$bse-prefix}base-i3-rgb);
   } @else if $i == "3" {
-    $btn-base-outline-rgb: var(--#{$prefix}base-i2-rgb);
+    $btn-base-outline-rgb: var(--#{$bse-prefix}base-i2-rgb);
   } @else if $i == "4" {
-    $btn-base-outline-rgb: var(--#{$prefix}base-i1-rgb);
+    $btn-base-outline-rgb: var(--#{$bse-prefix}base-i1-rgb);
   }
   @if $enable-btn-base {
     .btn-base-#{$i} {
       // Default Color
-      --#{$prefix}btn-color: #{$btn-base-color};
-      --#{$prefix}btn-bg: var(--#{$prefix}base-#{$i});
-      --#{$prefix}btn-border-color: var(--#{$prefix}base-#{$i});
+      --#{$bse-prefix}btn-color: #{$btn-base-color};
+      --#{$bse-prefix}btn-bg: var(--#{$bse-prefix}base-#{$i});
+      --#{$bse-prefix}btn-border-color: var(--#{$bse-prefix}base-#{$i});
 
       // Hover Color
-      --#{$prefix}btn-hover-color: #{$btn-base-color};
-      --#{$prefix}btn-hover-bg: var(--#{$prefix}base-#{$i}-hover);
-      --#{$prefix}btn-hover-border-color: var(--#{$prefix}base-#{$i}-hover);
-      --#{$prefix}btn-focus-shadow-rgb: #{$btn-base-outline-rgb};
+      --#{$bse-prefix}btn-hover-color: #{$btn-base-color};
+      --#{$bse-prefix}btn-hover-bg: var(--#{$bse-prefix}base-#{$i}-hover);
+      --#{$bse-prefix}btn-hover-border-color: var(
+        --#{$bse-prefix}base-#{$i}-hover
+      );
+      --#{$bse-prefix}btn-focus-shadow-rgb: #{$btn-base-outline-rgb};
 
       // Active Color
-      --#{$prefix}btn-active-color: #{$btn-base-color};
-      --#{$prefix}btn-active-bg: var(--#{$prefix}base-#{$i}-active);
-      --#{$prefix}btn-active-border-color: var(--#{$prefix}base-#{$i}-active);
-      --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+      --#{$bse-prefix}btn-active-color: #{$btn-base-color};
+      --#{$bse-prefix}btn-active-bg: var(--#{$bse-prefix}base-#{$i}-active);
+      --#{$bse-prefix}btn-active-border-color: var(
+        --#{$bse-prefix}base-#{$i}-active
+      );
+      --#{$bse-prefix}btn-active-shadow: #{$btn-active-box-shadow};
 
       // Disabled
-      --#{$prefix}btn-disabled-color: #{$btn-base-color};
-      --#{$prefix}btn-disabled-bg: var(--#{$prefix}base-#{$i});
-      --#{$prefix}btn-disabled-border-color: var(--#{$prefix}base-#{$i});
+      --#{$bse-prefix}btn-disabled-color: #{$btn-base-color};
+      --#{$bse-prefix}btn-disabled-bg: var(--#{$bse-prefix}base-#{$i});
+      --#{$bse-prefix}btn-disabled-border-color: var(
+        --#{$bse-prefix}base-#{$i}
+      );
     }
 
     .btn-outline-base-#{$i} {
       // Default Color
-      --#{$prefix}btn-color: var(--#{$prefix}base-#{$i});
-      --#{$prefix}btn-border-color: var(--#{$prefix}base-#{$i});
+      --#{$bse-prefix}btn-color: var(--#{$bse-prefix}base-#{$i});
+      --#{$bse-prefix}btn-border-color: var(--#{$bse-prefix}base-#{$i});
 
       // Hover
-      --#{$prefix}btn-hover-color: #{$btn-base-color};
-      --#{$prefix}btn-hover-bg: var(--#{$prefix}base-#{$i});
-      --#{$prefix}btn-hover-border-color: var(--#{$prefix}base-#{$i});
-      --#{$prefix}btn-focus-shadow-rgb: #{$btn-base-outline-rgb};
+      --#{$bse-prefix}btn-hover-color: #{$btn-base-color};
+      --#{$bse-prefix}btn-hover-bg: var(--#{$bse-prefix}base-#{$i});
+      --#{$bse-prefix}btn-hover-border-color: var(--#{$bse-prefix}base-#{$i});
+      --#{$bse-prefix}btn-focus-shadow-rgb: #{$btn-base-outline-rgb};
 
       // Active
-      --#{$prefix}btn-active-color: #{$btn-base-color};
-      --#{$prefix}btn-active-bg: var(--#{$prefix}base-#{$i});
-      --#{$prefix}btn-active-border-color: var(--#{$prefix}base-#{$i});
-      --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+      --#{$bse-prefix}btn-active-color: #{$btn-base-color};
+      --#{$bse-prefix}btn-active-bg: var(--#{$bse-prefix}base-#{$i});
+      --#{$bse-prefix}btn-active-border-color: var(--#{$bse-prefix}base-#{$i});
+      --#{$bse-prefix}btn-active-shadow: #{$btn-active-box-shadow};
 
       // Disabled
-      --#{$prefix}btn-disabled-color: var(--#{$prefix}base-#{$i});
-      --#{$prefix}btn-disabled-bg: transparent;
-      --#{$prefix}btn-disabled-border-color: var(--#{$prefix}base-#{$i});
-      --#{$prefix}gradient: none;
+      --#{$bse-prefix}btn-disabled-color: var(--#{$bse-prefix}base-#{$i});
+      --#{$bse-prefix}btn-disabled-bg: transparent;
+      --#{$bse-prefix}btn-disabled-border-color: var(
+        --#{$bse-prefix}base-#{$i}
+      );
+      --#{$bse-prefix}gradient: none;
     }
   }
 }
