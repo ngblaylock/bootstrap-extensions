@@ -1,6 +1,6 @@
 {
   "name": "@ngblaylock/bootstrap-extensions",
-  "version": "0.1.0-beta.18",
+  "version": "0.1.0-beta.19",
   "description": "Commonly used code to extend or modify Bootstrap 5",
   "repository": "github:ngblaylock/bootstrap-extensions",
   "main": "dist/js/bootstrap-extensions.js",
@@ -11,9 +11,10 @@
   },
   "type": "commonjs",
   "scripts": {
-    "clean": "rm -rf docs && rm -rf dist",
-    "build": "npm run clean && npm run scss:build && npm run js:build && npx @11ty/eleventy --pathprefix=bootstrap-extensions",
+    "clean": "rm -rf docs && rm -rf dist && rm -rf bootstrap-extensions",
+    "build": "npm run clean && npm run scss:build && npm run js:build && npx @11ty/eleventy",
     "dev": "npm run clean && npm run scss:watch & npm run js:watch & npx @11ty/eleventy --serve",
+    "stage": "npm run build && mv docs bootstrap-extensions",
     "scss:build": "node ./build-sass.js",
     "scss:watch": "node ./build-sass.js -w",
     "js:build": "rollup -c",

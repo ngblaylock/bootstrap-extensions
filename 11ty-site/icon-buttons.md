@@ -2,7 +2,7 @@
 title: Icon Buttons
 ---
 
-Icon Buttons must all be the same height of other buttons without an icon. Icon only buttons should be a 1:1 ratio, and the icon inside should be designed at a 1:1 ratio just like Material Design Icons. They should look uniform whether the base font size is `48px` or if the font is a crummy cursive variant.
+Icon Buttons must all be the same height of other buttons without an icon. Icon only buttons should be a 1:1 ratio, and the icon inside should be designed at a 1:1 ratio just like <a href="https://pictogrammers.com/library/mdi/" target="_blank">Material Design Icons</a>.
 
 ## Getting Started
 
@@ -30,7 +30,3 @@ This uses Material Design Icons, which work great for most projects. Notice how 
 ```html
 {% include "examples/icon-buttons.njk" %}
 ```
-
-## Visual Testing Examples
-
-{% include "examples/icon-buttons-tests.njk" %}

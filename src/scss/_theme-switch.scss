@@ -16,73 +16,85 @@
     )};
 }
 
+$bse-prefix: "bse-" !default;
 $theme-switch-size: $spacer * 2 !default;
 $theme-switch-bg-opacity: 0.06 !default;
 $theme-switch-bg-hover-opacity: 0.09 !default;
 $theme-switch-bg-focus-opacity: 0.12 !default;
+$icon-color-light: $body-bg !default;
+$icon-color-dark: $body-color !default;
 
-$theme-switch-sun-icon-light: sun-icon($body-bg) !default;
-$theme-switch-sun-icon-dark: sun-icon($body-color) !default;
-$theme-switch-moon-icon-light: moon-icon($body-bg) !default;
-$theme-switch-moon-icon-dark: moon-icon($body-color) !default;
-$theme-switch-system-icon-light: system-icon($body-bg) !default;
-$theme-switch-system-icon-dark: system-icon($body-color) !default;
+$theme-switch-sun-icon-light: sun-icon($icon-color-light);
+$theme-switch-sun-icon-dark: sun-icon($icon-color-dark);
+$theme-switch-moon-icon-light: moon-icon($icon-color-light);
+$theme-switch-moon-icon-dark: moon-icon($icon-color-dark);
+$theme-switch-system-icon-light: system-icon($icon-color-light);
+$theme-switch-system-icon-dark: system-icon($icon-color-dark);
 
 :root,
 [data-bs-theme="light"] {
-  --#{$prefix}theme-switch-size: #{$theme-switch-size};
-  --#{$prefix}theme-switch-bg-rgb: var(--#{$prefix}body-color-rgb);
-  --#{$prefix}light-theme-icon: #{$theme-switch-sun-icon-dark};
-  --#{$prefix}dark-theme-icon: #{$theme-switch-moon-icon-light};
-  --#{$prefix}system-theme-icon: #{$theme-switch-system-icon-dark};
+  --#{$bse-prefix}theme-switch-size: #{$theme-switch-size};
+  --#{$bse-prefix}theme-switch-bg-rgb: var(--#{$prefix}body-color-rgb);
+  --#{$bse-prefix}light-theme-icon: #{$theme-switch-sun-icon-dark};
+  --#{$bse-prefix}dark-theme-icon: #{$theme-switch-moon-icon-light};
+  --#{$bse-prefix}system-theme-icon: #{$theme-switch-system-icon-dark};
 }
 
 [data-bs-theme="dark"] {
-  --#{$prefix}system-theme-icon: #{$theme-switch-system-icon-light};
+  --#{$bse-prefix}system-theme-icon: #{$theme-switch-system-icon-light};
 }
 
 .theme-switch {
   &.theme-switch-dark {
-    --#{$prefix}theme-switch-bg-rgb: #{to-rgb($body-color)};
-    --#{$prefix}light-theme-icon: #{$theme-switch-sun-icon-dark};
-    --#{$prefix}dark-theme-icon: #{$theme-switch-moon-icon-dark};
-    --#{$prefix}system-theme-icon: #{$theme-switch-system-icon-dark};
+    --#{$bse-prefix}theme-switch-bg-rgb: #{to-rgb($body-color)};
+    --#{$bse-prefix}light-theme-icon: #{$theme-switch-sun-icon-dark};
+    --#{$bse-prefix}dark-theme-icon: #{$theme-switch-moon-icon-dark};
+    --#{$bse-prefix}system-theme-icon: #{$theme-switch-system-icon-dark};
   }
   &.theme-switch-light {
-    --#{$prefix}theme-switch-bg-rgb: #{to-rgb($body-bg)};
-    --#{$prefix}light-theme-icon: #{$theme-switch-sun-icon-light};
-    --#{$prefix}dark-theme-icon: #{$theme-switch-moon-icon-light};
-    --#{$prefix}system-theme-icon: #{$theme-switch-system-icon-light};
+    --#{$bse-prefix}theme-switch-bg-rgb: #{to-rgb($body-bg)};
+    --#{$bse-prefix}light-theme-icon: #{$theme-switch-sun-icon-light};
+    --#{$bse-prefix}dark-theme-icon: #{$theme-switch-moon-icon-light};
+    --#{$bse-prefix}system-theme-icon: #{$theme-switch-system-icon-light};
   }
 }
 
 input.theme-switch[type="checkbox"] {
   appearance: none;
-  width: var(--#{$prefix}theme-switch-size);
-  height: var(--#{$prefix}theme-switch-size);
-  background-image: var(--#{$prefix}light-theme-icon);
+  width: var(--#{$bse-prefix}theme-switch-size);
+  height: var(--#{$bse-prefix}theme-switch-size);
+  background-image: var(--#{$bse-prefix}light-theme-icon);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 75%;
   border-radius: $border-radius-pill;
   cursor: pointer;
-  background-color: rgba(var(--#{$prefix}theme-switch-bg-rgb), $theme-switch-bg-opacity);
+  background-color: rgba(
+    var(--#{$bse-prefix}theme-switch-bg-rgb),
+    $theme-switch-bg-opacity
+  );
   transition: background 0.2s;
   &:hover {
-    background-color: rgba(var(--#{$prefix}theme-switch-bg-rgb), $theme-switch-bg-hover-opacity);
+    background-color: rgba(
+      var(--#{$bse-prefix}theme-switch-bg-rgb),
+      $theme-switch-bg-hover-opacity
+    );
   }
   &:focus {
-    background-color: rgba(var(--#{$prefix}theme-switch-bg-rgb), $theme-switch-bg-focus-opacity);
+    background-color: rgba(
+      var(--#{$bse-prefix}theme-switch-bg-rgb),
+      $theme-switch-bg-focus-opacity
+    );
   }
   &:checked {
-    background-image: var(--#{$prefix}dark-theme-icon);
+    background-image: var(--#{$bse-prefix}dark-theme-icon);
   }
   &:indeterminate {
-    background-image: var(--#{$prefix}system-theme-icon);
+    background-image: var(--#{$bse-prefix}system-theme-icon);
   }
   [data-bs-theme="dark"] & {
     &:indeterminate {
-      background-image: var(--#{$prefix}system-theme-icon);
+      background-image: var(--#{$bse-prefix}system-theme-icon);
     }
   }
 }

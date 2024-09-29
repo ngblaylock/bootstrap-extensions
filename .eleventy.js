@@ -31,8 +31,8 @@ module.exports = function (eleventyConfig) {
   });
 
 	return {
+		pathPrefix: "/bootstrap-extensions/",
 		dir: {
-			pathPrefix: "/bootstrap-extensions/",
       input: "11ty-site",
 			includes: "_includes",
       layouts: "_layouts",
