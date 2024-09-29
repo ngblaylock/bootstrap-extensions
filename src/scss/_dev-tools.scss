@@ -1,4 +1,4 @@
-$bse-prefix: "bse" !default;
+$bse-prefix: "bse-" !default;
 $dev: $red !default;
 $dev-secondary: shade-color($dev, 50%) !default;
 $dev-note-text: "Dev Note" !default;
@@ -20,7 +20,7 @@ $dev-toolbar-height: $spacer !default;
   border: 1px solid $dev;
   margin-bottom: $spacer;
   &::before {
-    content: var(#{$bse-prefix}-dev-note-title, $dev-note-text);
+    content: var(--#{$bse-prefix}dev-note-title, $dev-note-text);
     display: block;
     background: $dev-secondary;
     color: color-contrast($dev-secondary);

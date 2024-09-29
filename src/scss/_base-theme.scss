@@ -1,4 +1,4 @@
-$bse-prefix: "bse" !important;
+$bse-prefix: "bse-" !default;
 $base-1-light: $body-bg !default;
 $base-2-light: shade-color($base-1-light, 3%) !default;
 $base-3-light: shade-color($base-2-light, 3%) !default;

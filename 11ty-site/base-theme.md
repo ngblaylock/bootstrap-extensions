@@ -14,6 +14,31 @@ This heavily relies on CSS Variables. Base colors, rgb, hover, and active variab
 
 ```scss
 @import "node_modules/@ngblaylock/bootstrap-extensions/src/scss/_base-theme.scss";
+
+/*
+
+Default Sass Variables
+
+$bse-prefix: "bse-" !default;
+$base-1-light: $body-bg !default;
+$base-2-light: shade-color($base-1-light, 3%) !default;
+$base-3-light: shade-color($base-2-light, 3%) !default;
+$base-4-light: shade-color($base-3-light, 3%) !default;
+$base-i1-light: $body-color !default;
+$base-i2-light: tint-color($base-i1-light, 9%) !default;
+$base-i3-light: tint-color($base-i2-light, 9%) !default;
+$base-i4-light: tint-color($base-i3-light, 9%) !default;
+$base-1-dark: $body-bg-dark !default;
+$base-2-dark: tint-color($base-1-dark, 3%) !default;
+$base-3-dark: tint-color($base-2-dark, 3%) !default;
+$base-4-dark: tint-color($base-3-dark, 3%) !default;
+$base-i1-dark: $body-color-dark !default;
+$base-i2-dark: shade-color($base-i1-dark, 9%) !default;
+$base-i3-dark: shade-color($base-i2-dark, 9%) !default;
+$base-i4-dark: shade-color($base-i3-dark, 9%) !default;
+$enable-btn-base: true !default;
+
+*/
 ```
 
 ### CDN
