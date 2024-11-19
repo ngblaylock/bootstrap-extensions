@@ -25,7 +25,7 @@ const setSwitches = (theme) => {
 
 /**
  * Get's the current theme stored in localStorage
- * @returns {light|dark|null}
+ * @returns {'light'|'dark'|null}
  */
 const getStoredTheme = () => {
   return localStorage.getItem("bseTheme");
@@ -33,7 +33,7 @@ const getStoredTheme = () => {
 
 /**
  * Set the page to a specific theme
- * @param {light|dark|undefined} theme The desired theme to switch to
+ * @param {'light'|'dark'} [theme] The desired theme to switch to
  */
 const setTheme = (theme) => {
   theme = !theme ? theme : theme.trim();
@@ -54,6 +54,9 @@ const setTheme = (theme) => {
 /**
  * Toggles a theme to the next one
  * @param {string[]} [order] - The order of the themes to toggle through. If none is provided it will go through light -> dark -> system -> (repeat)
+ * @example 
+ * toggleTheme(['light', 'dark', 'system']); // Default behavior
+ * toggleTheme(['light', 'dark']); // Doesn't include 'system'
  */
 const toggleTheme = (order = ["light", "dark", null]) => {
   const storedTheme = getStoredTheme();
@@ -68,6 +71,9 @@ const toggleTheme = (order = ["light", "dark", null]) => {
   }
 };
 
+/**
+ * Initializes the theme Switcher at the time it is called.
+ */
 const initTheme = () => {
   const storedTheme = getStoredTheme();
   setTheme(storedTheme);
