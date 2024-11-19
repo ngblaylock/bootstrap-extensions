@@ -1,18 +1,22 @@
 {
   "name": "@ngblaylock/bootstrap-extensions",
-  "version": "0.1.0-beta.19",
+  "version": "0.1.0-beta.20",
   "description": "Commonly used code to extend or modify Bootstrap 5",
   "repository": "github:ngblaylock/bootstrap-extensions",
+  "sass": "src/scss/bootstrap-extensions.scss",
+  "style": "dist/css/bootstrap-extensions.min.css",
   "main": "dist/js/bootstrap-extensions.js",
   "module": "dist/js/bootstrap-extensions.mjs.js",
+  "types": "types/bootstrap-extensions.d.ts",
   "exports": {
     "require": "./dist/js/bootstrap-extensions.cjs",
-    "import": "./dist/js/bootstrap-extensions.mjs"
+    "import": "./dist/js/bootstrap-extensions.mjs",
+    "types": "./types/bootstrap-extensions.d.ts"
   },
   "type": "commonjs",
   "scripts": {
     "clean": "rm -rf docs && rm -rf dist && rm -rf bootstrap-extensions",
-    "build": "npm run clean && npm run scss:build && npm run js:build && npx @11ty/eleventy",
+    "build": "npm run clean && npm run scss:build && npm run js:build && tsc && npx @11ty/eleventy",
     "dev": "npm run clean && npm run scss:watch & npm run js:watch & npx @11ty/eleventy --serve",
     "stage": "npm run build && mv docs bootstrap-extensions",
     "scss:build": "node ./build-sass.js",
@@ -35,6 +39,7 @@
     "eleventy-plugin-helmet": "^0.2.2",
     "markdown-it-link-attributes": "^4.0.1",
     "rollup": "^4.19.0",
-    "sass": "^1.75.0"
+    "sass": "^1.75.0",
+    "typescript": "^5.6.3"
   }
 }

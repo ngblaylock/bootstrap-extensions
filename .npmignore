@@ -4,6 +4,7 @@
 .eleventy.js
 build-sass.js
 docs
+bootstrap-extensions
 rollup.config.mjs
 package.json
 README_DEV.md
