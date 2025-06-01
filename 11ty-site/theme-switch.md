@@ -93,7 +93,7 @@ You can also use JavaScript if you want to handle changing themes your own way.
 | Method                             | Description                                                                                                   |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `initTheme()`                      | Initializes the theme. This is done once loaded in the browser, but can be called on command, like during HMR |
-| `getTheme()`                       | Gets the currently stored theme (if any)                                                                      |
+| `getStoredTheme()`                 | Gets the currently stored theme (if any)                                                                      |
 | `toggleTheme(undefined\|string[])` | Toggles the theme. Pass in an array of themes to toggle in specific orders.                                   |
 | `setTheme(string)`                 | Sets the theme to the theme passed in                                                                         |
 
@@ -104,6 +104,7 @@ You can also use JavaScript if you want to handle changing themes your own way.
 ```html
 {% include "examples/theme-switch-js.njk" %}
 ```
+
 ## CSS Variables
 
 - `--bse-theme-switch-size`
