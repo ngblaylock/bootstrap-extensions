@@ -8,7 +8,7 @@ This repository was created to implement modifications that apply to most, if no
 
 This project supports [Bootstrap 5](https://getbootstrap.com/).
 
-<div class="alert alert-warning">This is a work in progress. You might find breaking changes during version <code>v0.x.x</code>.</div>
+<div class="alert alert-warning">Although no breaking changes are expected in <code>v0.x.x</code>, there is no guarantee. Make sure to install only specific versions to avoid breaking changes to your websites.</div>
 
 ## Getting Started
 

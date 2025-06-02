@@ -23,7 +23,7 @@ Icon Buttons must all be the same height of other buttons without an icon. Icon 
 
 ## Usage
 
-This uses Material Design Icons, which work great for most projects. Notice how the buttons are all the same size, and the icons don't change the height. For the icon only button, just use the class `.btn-icon` and the icon within the regular button it will be `.btn-inner-icon`. This makes it so it doesn't matter if you have the icon before or after the text.
+This uses [Material Design Icons](https://pictogrammers.com/library/mdi/), which work great for most projects. Notice how the buttons are all the same size, and the icons don't change the height. For the icon only button, just use the class `.btn-icon` and the icon within the regular button it will be `.btn-inner-icon`. This makes it so it doesn't matter if you have the icon before or after the text.
 
 {% include "examples/icon-buttons.njk" %}
 

@@ -5,6 +5,6 @@ This repo contains commonly used code to extend or modify **Bootstrap 5**. Anybo
 
 Visit https://ngblaylock.github.io/bootstrap-extensions/ for documentation.
 
-While this is in beta release expect breaking changes. If you npm install make sure to lock it to a specific version. 
+While Bootstrap Extensions is in v0.x.x, I will do my best to not make breaking changes, but there is no grantee. Make sure to install only specific versions to avoid breaking changes to your websites. 
 
 I will not be making extensions for Bootstrap 4 or earlier since I no longer use those versions. When Bootstrap 6 comes out and I feel like making extensions for it I will create a major release (v2.0.0) to handle that. 
