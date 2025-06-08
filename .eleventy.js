@@ -1,20 +1,20 @@
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-const eleventyHelmetPlugin = require('eleventy-plugin-helmet');
-const mdAttrs = require("markdown-it-link-attributes");
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import eleventyHelmetPlugin from "eleventy-plugin-helmet";
+import mdAttrs from "markdown-it-link-attributes";
 
-module.exports = function (eleventyConfig) {
-	// Passthrough File Copy
-	eleventyConfig.addPassthroughCopy({"dist/**/*.min.css": '/css'});
-	eleventyConfig.addPassthroughCopy({"11ty-site/_assets": '/'});
-	
-	// Plugins
-	eleventyConfig.addPlugin(syntaxHighlight);
-	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-	eleventyConfig.addPlugin(eleventyHelmetPlugin);
+export default function (eleventyConfig) {
+  // Passthrough File Copy
+  eleventyConfig.addPassthroughCopy({ "dist/**/*.min.css": "/css" });
+  eleventyConfig.addPassthroughCopy({ "11ty-site/_assets": "/" });
 
-	// Extend Markdown
-	const mdAttrsOptions = {
+  // Plugins
+  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  eleventyConfig.addPlugin(eleventyHelmetPlugin);
+
+  // Extend Markdown
+  const mdAttrsOptions = {
     matcher(href) {
       return href.match(/^https?:\/\//);
     },
@@ -23,20 +23,23 @@ module.exports = function (eleventyConfig) {
       rel: "noopener",
     },
   };
-  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(mdAttrs, mdAttrsOptions));
-	
-	// Filters
-	eleventyConfig.addFilter("sortByTitle", function(collection) {
-		return collection.sort((a, b) => (a.data.title > b.data.title) ? 1 : -1);
+
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib.use(mdAttrs, mdAttrsOptions)
+  );
+
+  // Filters
+  eleventyConfig.addFilter("sortByTitle", function (collection) {
+    return collection.sort((a, b) => (a.data.title > b.data.title ? 1 : -1));
   });
 
-	return {
-		pathPrefix: "/bootstrap-extensions/",
-		dir: {
+  return {
+    pathPrefix: "/bootstrap-extensions/",
+    dir: {
       input: "11ty-site",
-			includes: "_includes",
+      includes: "_includes",
       layouts: "_layouts",
       output: "docs",
-		},
-	};
-};
+    },
+  };
+}

@@ -1,19 +1,19 @@
 {
   "name": "@ngblaylock/bootstrap-extensions",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Commonly used code to extend or modify Bootstrap 5",
   "repository": "github:ngblaylock/bootstrap-extensions",
   "sass": "src/scss/bootstrap-extensions.scss",
   "style": "dist/css/bootstrap-extensions.min.css",
-  "main": "dist/js/bootstrap-extensions.js",
-  "module": "dist/js/bootstrap-extensions.mjs.js",
+  "main": "dist/js/bootstrap-extensions.min.js",
+  "module": "dist/js/bootstrap-extensions.min.mjs",
   "types": "types/bootstrap-extensions.d.ts",
   "exports": {
-    "require": "./dist/js/bootstrap-extensions.cjs",
-    "import": "./dist/js/bootstrap-extensions.mjs",
+    "require": "./dist/js/bootstrap-extensions.min.cjs",
+    "import": "./dist/js/bootstrap-extensions.min.mjs",
     "types": "./types/bootstrap-extensions.d.ts"
   },
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "clean": "rm -rf docs && rm -rf dist && rm -rf bootstrap-extensions",
     "build": "npm run clean && npm run scss:build && npm run js:build && tsc && npx @11ty/eleventy",
@@ -30,7 +30,7 @@
   "author": "ngblaylock",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.1.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "^20.12.7",

@@ -1,7 +1,12 @@
-const sass = require("sass");
-const fs = require("fs");
-const chokidar = require("chokidar");
-const path = require("path");
+import * as sass from "sass";
+import fs from "fs";
+import chokidar from "chokidar";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Resolve __dirname in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const filesToConvert = [
   {
@@ -50,19 +55,20 @@ const filesToConvert = [
 
 const convertFile = ({ inputFilePath, outputDir, styles, includePrefix }) => {
   styles.forEach((style) => {
-    // Prefix content with required imports
-    const prefixContent = includePrefix ? `
+    const prefixContent = includePrefix
+      ? `
 @import "./node_modules/bootstrap/scss/functions";
 @import "./node_modules/bootstrap/scss/variables";
 @import "./node_modules/bootstrap/scss/variables-dark";
 @import "./node_modules/bootstrap/scss/maps";
 @import "./node_modules/bootstrap/scss/mixins";
 @import "./node_modules/bootstrap/scss/utilities";
-`: '';
+`
+      : "";
 
     sass.render(
       {
-        data: `${prefixContent}\n@import '${inputFilePath}';`, // Prefix with content and import main file
+        data: `${prefixContent}\n@import '${inputFilePath}';`,
         outputStyle: style,
       },
       (err, result) => {
@@ -70,15 +76,18 @@ const convertFile = ({ inputFilePath, outputDir, styles, includePrefix }) => {
           console.error(err);
         } else {
           let outputFileName = path.basename(inputFilePath);
-          outputFileName = outputFileName.startsWith('_') ? outputFileName.slice(1) : outputFileName;
-          outputFileName = style === 'compressed' ? outputFileName.replace('.scss', '.min.css') : outputFileName.replace('.scss', '.css');
+          outputFileName = outputFileName.startsWith("_")
+            ? outputFileName.slice(1)
+            : outputFileName;
+          outputFileName =
+            style === "compressed"
+              ? outputFileName.replace(".scss", ".min.css")
+              : outputFileName.replace(".scss", ".css");
 
-          // Ensure the directory exists
           if (!fs.existsSync(outputDir)) {
             fs.mkdirSync(outputDir, { recursive: true });
           }
-          
-          // Write the CSS file
+
           const outputPath = path.join(outputDir, outputFileName);
           fs.writeFileSync(outputPath, result.css.toString());
           console.log(`Converted ${inputFilePath} to ${outputPath}`);
@@ -100,7 +109,7 @@ const watchSass = () => {
   });
 };
 
-// Check if the watch flag is provided
+// Main
 if (process.argv.includes("-w") || process.argv.includes("--watch")) {
   console.log("Watching Sass Changes...");
   buildSass();
