@@ -73,7 +73,7 @@ Using max widths requires either a `.container`, `.container-fluid`, or `.contai
 
 ## Existing Workarounds
 
-One common workaround is to use rows and columns to simulate a narrower layout:
+One common workaround is to use rows and columns to simulate a narrow layout:
 
 <!-- prettier-ignore-->
 ```html
@@ -86,6 +86,6 @@ One common workaround is to use rows and columns to simulate a narrower layout:
 </div>
 ```
 
-The issue with this method is that the layout shifts significantly across the `md`, `lg`, `xl`, and `xxl` breakpoints, potentially disrupting the user experience.
+The issue with this method is that the layout shifts significantly across the `md`, `lg`, `xl`, and `xxl` breakpoints, potentially disrupting the user experience. It is also painful to write and maintain.
 
 Another workaround is to apply an inline style to force a specific max-width. However, this requires hardcoding values and managing breakpoints manually, which can be difficult to maintain.
