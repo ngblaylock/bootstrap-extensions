@@ -1,7 +1,18 @@
 @each $breakpoint, $size in $container-max-widths {
   @include media-breakpoint-up(#{$breakpoint}) {
-    .container-max-#{$breakpoint} {
-      max-width: $size;
+    // Build selector list
+    $selectors: (".container", ".container-fluid");
+
+    // Add all .container-<bp> to the list
+    @each $bp, $val in $container-max-widths {
+      $selectors: append($selectors, ".container-#{$bp}", comma);
+    }
+
+    // Output selector group
+    #{join($selectors, ', ')} {
+      &.container-max-#{$breakpoint} {
+        max-width: $size;
+      }
     }
   }
 }

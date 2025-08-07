@@ -45,7 +45,7 @@ Using max widths requires either a `.container`, `.container-fluid`, or `.contai
       <div class="modal-body p-0 text-bg-secondary">
       <div class="vstack gap-3 text-center">
         <div>
-          <p class="p-3 mb-0">Resize the window to see the container size change.</p>
+          <p class="p-3 mb-0">Resize the window to see the container sizes change.</p>
           <div class="p-3"><strong>Current Breakpoint:</strong>
             <div class="lead">
               <mark class="d-sm-none">XS</mark>
