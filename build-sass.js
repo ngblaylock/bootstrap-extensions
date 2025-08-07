@@ -22,6 +22,12 @@ const filesToConvert = [
     includePrefix: true,
   },
   {
+    inputFilePath: "./src/scss/_container-max-widths.scss",
+    outputDir: "./dist/css",
+    styles: ["expanded", "compressed"],
+    includePrefix: true,
+  },
+  {
     inputFilePath: "./src/scss/_btn-contrast.scss",
     outputDir: "./dist/css",
     styles: ["expanded", "compressed"],
