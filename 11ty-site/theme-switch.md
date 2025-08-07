@@ -40,6 +40,12 @@ $icon-color-dark: $body-color !default;
 import { themeSwitcher } from "@ngblaylock/bootstrap-extensions";
 ```
 
+#### CJS
+
+```js
+const { themeSwitcher } = require('@ngblaylock/bootstrap-extensions');
+```
+
 ### CDN
 
 ```html
