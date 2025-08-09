@@ -29,6 +29,14 @@ This approach can be especially helpful on text-heavy pages, where overly wide c
 
 Using max widths requires either a `.container`, `.container-fluid`, or `.container-<breakpoint>` class.
 
+| Class                | Max Container Width |
+| -------------------- | ------------------- |
+| `.container-max-sm`  | 540px               |
+| `.container-max-md`  | 720px               |
+| `.container-max-lg`  | 960px               |
+| `.container-max-xs`  | 1140px              |
+| `.container-max-xxl` | 1320px              |
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Preview Max Widths in Full Screen
