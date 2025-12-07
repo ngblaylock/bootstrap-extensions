@@ -278,7 +278,7 @@
     flex: 0 1 auto;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid var(--ss-border-color);
+    border-bottom: 1px solid $dropdown-divider-bg;
     padding: $dropdown-padding-y $dropdown-padding-x;
     
     input {
@@ -293,6 +293,7 @@
       border: none;
       outline: 0;
       text-align: left;
+      background: transparent;
 
       &::placeholder {
         color: $input-placeholder-color;
@@ -545,6 +546,11 @@
     .ss-main {
       --#{$prefix}form-select-bg-img: #{escape-svg($form-select-indicator-dark)};
       .ss-deselect {
+        filter: $btn-close-white-filter;
+      }
+    }
+    .ss-search{
+      .ss-addable {
         filter: $btn-close-white-filter;
       }
     }
