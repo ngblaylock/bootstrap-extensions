@@ -1,0 +1,64 @@
+<div class="vstack gap-3 mb-5">
+  <div>
+    <label for="regular-input" class="form-label">Regular Input</label>
+    <input id="regular-input" class="form-control" value="Value 1" />
+  </div>
+
+  <div>
+    <label for="regular-select" class="form-label">Regular Select</label>
+    <select id="regular-select" class="form-select">
+      <option value="value1">Value 1</option>
+      <option value="value2">Value 2</option>
+      <option value="value3">Value 3</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="selectElement" class="form-label"
+      >Slim Select Single Example</label
+    >
+    <select id="selectElement">
+      <option value="value1">Value 1</option>
+      <option value="value2">Value 2</option>
+      <option value="value3">Value 3</option>
+      <option value="value4" disabled>Value 4</option>
+      <option value="value5">Value 5</option>
+      <option value="value6">Value 6</option>
+    </select>
+  </div>
+
+  <div>
+    <button
+      type="button"
+      class="btn btn-primary dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Danger
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item active" href="#">Something else here</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><h6 class="dropdown-header">Dropdown header</h6></li>
+      <li><a class="dropdown-item" href="#">Separated link</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  new SlimSelect({
+    select: "#selectElement",
+    settings: {
+      // disabled: true,
+      allowDeselect: true,
+    },
+    events: {
+      // Allow anything
+      addable: function (value) {
+        return value;
+      },
+    },
+  });
+</script>
