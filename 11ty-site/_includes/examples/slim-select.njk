@@ -14,10 +14,10 @@
   </div>
 
   <div>
-    <label for="selectElement" class="form-label"
+    <label for="single-example" class="form-label"
       >Slim Select Single Example</label
     >
-    <select id="selectElement">
+    <select id="single-example">
       <option value="value1">Value 1</option>
       <option value="value2">Value 2</option>
       <option value="value3">Value 3</option>
@@ -25,6 +25,13 @@
       <option value="value5">Value 5</option>
       <option value="value6">Value 6</option>
     </select>
+  </div>
+
+  <div>
+    <label for="multiple-example" class="form-label"
+      >Slim Select Multiple Example</label
+    >
+    <select id="multiple-example" multiple></select>
   </div>
 
   <div>
@@ -37,11 +44,12 @@
       Danger
     </button>
     <ul class="dropdown-menu">
+      <li><div class="dropdown-header">Dropdown header</div></li>
       <li><a class="dropdown-item" href="#">Action</a></li>
       <li><a class="dropdown-item" href="#">Another action</a></li>
       <li><a class="dropdown-item active" href="#">Something else here</a></li>
       <li><hr class="dropdown-divider" /></li>
-      <li><h6 class="dropdown-header">Dropdown header</h6></li>
+      <li><div class="dropdown-header">Dropdown header</div></li>
       <li><a class="dropdown-item" href="#">Separated link</a></li>
     </ul>
   </div>
@@ -49,9 +57,10 @@
 
 <script>
   new SlimSelect({
-    select: "#selectElement",
+    select: "#single-example",
     settings: {
       // disabled: true,
+      showSearch: false,
       allowDeselect: true,
     },
     events: {
@@ -60,5 +69,40 @@
         return value;
       },
     },
+  });
+  new SlimSelect({
+    select: "#multiple-example",
+    settings: {
+      // disabled: true,
+      allowDeselect: true,
+      maxValuesShown: 3,
+      searchHighlight: true
+    },
+    data: [
+    {
+      label: 'Label 1',
+      options: [
+        { text: 'Option 1', value: '1' },
+        { text: 'Option 2', value: '2' },
+        { text: 'Option 3', value: '3' },
+      ],
+    },
+    {
+      label: 'Label 2',
+      options: [
+        { text: 'Option 4', value: '4' },
+        { text: 'Option 5', value: '5' },
+        { text: 'Option 6', value: '6' },
+      ],
+    },
+    {
+      label: 'Label 3',
+      options: [
+        { text: 'Option 7', value: '7' },
+        { text: 'Option 8', value: '8' },
+        { text: 'Option 9', value: '9' },
+      ],
+    },
+  ],
   });
 </script>

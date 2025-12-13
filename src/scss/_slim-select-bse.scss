@@ -31,26 +31,26 @@
 }
 
 // Animation keyframes
-// @keyframes ss-valueIn {
-//   0% {
-//     transform: scale(0);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: scale(1);
-//     opacity: 1;
-//   }
-// }
-// @keyframes ss-valueOut {
-//   0% {
-//     transform: scale(1);
-//     opacity: 1;
-//   }
-//   100% {
-//     transform: scale(0);
-//     opacity: 0;
-//   }
-// }
+@keyframes ss-valueIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes ss-valueOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
 
 // Misc classes
 .ss-hide {
@@ -133,11 +133,11 @@
       align-items: center;
       width: fit-content;
       font-size: 12px;
-      color: var(--ss-bg-color);
+      color: color-contrast($primary);
       line-height: 1;
-      padding: var(--ss-spacing-s) var(--ss-spacing-m);
-      background-color: var(--ss-primary-color);
-      border-radius: var(--ss-border-radius);
+      padding: $badge-padding-y $badge-padding-x;
+      background-color: $primary;
+      border-radius: $badge-border-radius;
     }
 
     // Used for single select selected value
@@ -157,16 +157,16 @@
       align-items: center;
       width: fit-content;
       max-width: 100%; // Ensure value doesn't exceed container width
-      background-color: var(--ss-primary-color);
-      border-radius: var(--ss-border-radius);
+      background-color: $primary;
+      border-radius: $badge-border-radius;
       animation-name: ss-valueIn;
-      animation-duration: var(--ss-animation-timing);
+      animation-duration: $transition-fade;
       animation-timing-function: ease-out;
       animation-fill-mode: both;
 
       &.ss-value-out {
         animation-name: ss-valueOut;
-        animation-duration: var(--ss-animation-timing);
+        animation-duration: $transition-fade;
         animation-timing-function: ease-out;
       }
 
@@ -175,8 +175,8 @@
         min-width: 0; // Allow text to shrink
         font-size: 12px;
         line-height: 1;
-        color: var(--ss-bg-color);
-        padding: var(--ss-spacing-s) var(--ss-spacing-m);
+        color: color-contrast($primary);
+        padding: $badge-padding-y $badge-padding-x;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -187,18 +187,18 @@
         align-items: center;
         height: var(--ss-spacing-l);
         width: var(--ss-spacing-l);
-        padding: var(--ss-spacing-s) var(--ss-spacing-m);
+        padding: $badge-padding-y $badge-padding-x;
         cursor: pointer;
-        border-left: solid 1px var(--ss-bg-color);
+        border-left: solid 1px rgba(color-contrast($primary), 0.18);
         box-sizing: content-box;
 
         svg {
-          height: var(--ss-spacing-l);
-          width: var(--ss-spacing-l);
+          height: 1em;
+          width: 1em;
 
           path {
             fill: none;
-            stroke: var(--ss-bg-color);
+            stroke: color-contrast($primary);
             stroke-width: 18;
             stroke-linecap: round;
             stroke-linejoin: round;
@@ -263,10 +263,16 @@
   &.ss-dir-above {
     transform-origin: center bottom;
     flex-direction: column-reverse;
+    .ss-search {
+      border-top: 1px solid $dropdown-divider-bg;
+    }
   }
-
+  
   &.ss-dir-below {
     transform-origin: center top;
+    .ss-search {
+      border-bottom: 1px solid $dropdown-divider-bg;
+    }
   }
 
   &.ss-open {
@@ -274,13 +280,13 @@
     transform: scaleY(1);
   }
 
+
   .ss-search {
     flex: 0 1 auto;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid $dropdown-divider-bg;
     padding: $dropdown-padding-y $dropdown-padding-x;
-    
+
     input {
       display: inline-flex;
       font-size: inherit;
@@ -393,13 +399,12 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: var(--ss-spacing-m) var(--ss-spacing-l) var(--ss-spacing-m)
-          var(--ss-spacing-l);
+        padding: $dropdown-header-padding-y $dropdown-header-padding-x;
 
         .ss-optgroup-label-text {
           flex: 1 1 auto;
-          font-weight: bold;
-          color: var(--ss-font-color);
+          color: $dropdown-header-color;
+          @include font-size($font-size-sm);
         }
 
         // If optgroup has arrow, make label clickable
@@ -490,8 +495,7 @@
       }
 
       .ss-option {
-        padding: var(--ss-spacing-s) var(--ss-spacing-s) var(--ss-spacing-s)
-          calc(var(--ss-spacing-l) * 3);
+        padding: $dropdown-item-padding-y $dropdown-item-padding-x;
       }
     }
 
@@ -527,7 +531,9 @@
       // Sub div wrapper for highlighting text
       .ss-search-highlight {
         display: inline-block;
-        background-color: $mark-bg;
+        background-color: var(--bs-highlight-bg);
+        color: var(--bs-highlight-color);
+        padding: 0;
       }
     }
 
@@ -549,7 +555,7 @@
         filter: $btn-close-white-filter;
       }
     }
-    .ss-search{
+    .ss-search {
       .ss-addable {
         filter: $btn-close-white-filter;
       }
