@@ -5,19 +5,11 @@
   --ss-content-height: 300px;
 
   // Colors
-  --ss-primary-color: #{$primary};
-  --ss-bg-color: #{$input-bg};
   --ss-font-color: var(--bs-body-color);
-  --ss-disabled-color: #dcdee2;
-  --ss-border-color: #{$input-border-color};
-  --ss-highlight-color: #{$mark-bg};
-  --ss-focus-color: var(--ss-primary-color);
   --ss-success-color: var(--bs-form-valid-border-color);
   --ss-error-color: var(--bs-form-invalid-border-color);
 
   // Heights
-  --ss-main-height: 0px;
-  --ss-search-height: 0px;
   --ss-option-height: auto;
 
   // Spacing
@@ -27,7 +19,6 @@
 
   // Misc
   --ss-animation-timing: 0.2s;
-  --ss-border-radius: #{$border-radius};
 }
 
 // Animation keyframes
@@ -103,6 +94,9 @@
     color: $form-select-disabled-color;
     background-color: $form-select-disabled-bg;
     border-color: $form-select-disabled-border-color;
+    .ss-deselect {
+      display: none;
+    }
   }
 
   .ss-values {
