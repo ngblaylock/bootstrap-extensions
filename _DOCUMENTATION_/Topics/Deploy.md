@@ -10,5 +10,5 @@
    5. Build the 11ty site in production mode into the `docs` directory. This is probably unnecessary since the hosted site is built using GitHub Actions.
 4. Merge into `main` branch (do a PR if necessary). This will:
    1. Build the site and host on GitHub Pages using a GitHub workflow
-5. Create a release in GitHub. This will:
-   1. Publish the new release to NPM via a GitHub Action.
+5. Create a release in GitHub
+6. Run `npm publish`. You may need to `npm login` before doing so.
