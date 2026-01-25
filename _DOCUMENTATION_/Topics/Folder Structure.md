@@ -7,4 +7,4 @@
 - docs: Built 11ty files, it is in .gitignore because the GitHub workflow manages the build for production
 - node_modules: for node packages
 - src: Development files for NPM
-- types: Type definitions for NPM
+- types: Type definitions for NPM (auto created)

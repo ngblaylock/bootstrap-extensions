@@ -1,0 +1,542 @@
+// Modified for Bootstrap 5.3 from slim-select v3.2.0
+
+:root {
+  --ss-content-height: 300px;
+  --ss-animation-timing: 0.2s;
+}
+
+// Animation keyframes
+@keyframes ss-valueIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes ss-valueOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+// Misc classes
+.ss-hide {
+  display: none !important;
+}
+
+// Main container
+.ss-main {
+  --#{$prefix}form-select-bg-img: #{escape-svg($form-select-indicator)};
+  --#{$prefix}form-select-deselect-img: #{escape-svg($btn-close-bg)};
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  user-select: none;
+  font-family: $form-select-font-family;
+  @include font-size($form-select-font-size);
+  font-weight: $form-select-font-weight;
+  line-height: $form-select-line-height;
+  color: $form-select-color;
+  width: 100%;
+  padding: $form-select-padding-y $form-select-indicator-padding
+    $form-select-padding-y $form-select-padding-x;
+  border: $form-select-border-width solid $input-border-color;
+  background-color: $form-select-bg;
+  background-image:
+    var(--#{$prefix}form-select-bg-img),
+    var(--#{$prefix}form-select-bg-icon, none);
+  background-repeat: no-repeat;
+  background-position: $form-select-bg-position;
+  background-size: $form-select-bg-size;
+  overflow: hidden;
+  @include border-radius($form-select-border-radius, 0);
+  @include box-shadow($form-select-box-shadow);
+  @include transition($form-select-transition);
+
+  &:focus {
+    border-color: $form-select-focus-border-color;
+    outline: 0;
+    @if $enable-shadows {
+      @include box-shadow(
+        $form-select-box-shadow,
+        $form-select-focus-box-shadow
+      );
+    } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      box-shadow: $form-select-focus-box-shadow;
+    }
+  }
+
+  &.ss-disabled {
+    color: $form-select-disabled-color;
+    background-color: $form-select-disabled-bg;
+    border-color: $form-select-disabled-border-color;
+    .ss-deselect {
+      display: none;
+    }
+  }
+
+  .ss-values {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    flex: 1 1 100%;
+    min-width: 0; // Allow container to shrink
+    max-width: 100%; // Ensure container doesn't exceed parent
+    overflow: hidden; // Prevent overflow
+
+    .ss-placeholder {
+      display: block; // Use block for proper ellipsis
+      width: 100%;
+      min-width: 0; // Allow placeholder to shrink
+      padding: 0;
+      margin: auto 0px auto 0px;
+      color: $input-placeholder-color;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    // Max is used to display max number of values
+    .ss-max {
+      display: flex;
+      user-select: none;
+      align-items: center;
+      width: fit-content;
+      font-size: 12px;
+      color: color-contrast($primary);
+      line-height: 1;
+      padding: $badge-padding-y $badge-padding-x;
+      background-color: $primary;
+      border-radius: $badge-border-radius;
+    }
+
+    // Used for single select selected value
+    .ss-single {
+      display: block; // Use block for proper ellipsis
+      min-width: 0; // Allow flex item to shrink below content size
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; // Prevent text wrapping
+      flex: 1 1 auto; // Allow it to grow but also shrink
+    }
+
+    // Used for the selected values
+    .ss-value {
+      display: flex;
+      user-select: none;
+      align-items: center;
+      width: fit-content;
+      max-width: 100%; // Ensure value doesn't exceed container width
+      background-color: $primary;
+      border-radius: $badge-border-radius;
+      animation-name: ss-valueIn;
+      animation-duration: $transition-fade;
+      animation-timing-function: ease-out;
+      animation-fill-mode: both;
+
+      &.ss-value-out {
+        animation-name: ss-valueOut;
+        animation-duration: $transition-fade;
+        animation-timing-function: ease-out;
+      }
+
+      .ss-value-text {
+        flex: 1; // Take up available space in flex container
+        min-width: 0; // Allow text to shrink
+        font-size: 12px;
+        line-height: 1;
+        color: color-contrast($primary);
+        padding: $badge-padding-y $badge-padding-x;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .ss-value-delete {
+        display: flex;
+        align-items: center;
+        height: 9px;
+        width: 9px;
+        padding: $badge-padding-y $badge-padding-x;
+        cursor: pointer;
+        border-left: solid 1px rgba(color-contrast($primary), 0.18);
+        box-sizing: content-box;
+
+        svg {
+          height: 1em;
+          width: 1em;
+
+          path {
+            fill: none;
+            stroke: color-contrast($primary);
+            stroke-width: 18;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+        }
+      }
+    }
+  }
+
+  .ss-deselect {
+    --#{$prefix}deselect-size: 1.5rem;
+    min-width: var(--#{$prefix}deselect-size);
+    min-height: var(--#{$prefix}deselect-size);
+    cursor: pointer;
+    align-self: center;
+    background-image: var(--#{$prefix}form-select-deselect-img);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    margin-left: var(--#{$prefix}deselect-size);
+    opacity: 0.625;
+    transition: $transition-fade;
+    &:hover {
+      opacity: 1;
+    }
+    // margin-right: $form-select-padding-x;
+    svg {
+      display: none;
+    }
+  }
+
+  .ss-arrow {
+    display: none;
+  }
+}
+
+// Content container
+.ss-content {
+  position: absolute; // default position
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  width: auto;
+  max-height: var(--ss-content-height);
+  border: $dropdown-border-width solid $dropdown-border-color;
+  background-color: $dropdown-bg;
+  opacity: 0;
+  transform: scaleY(0);
+  overflow: hidden;
+  z-index: 10000;
+  border-radius: $dropdown-border-radius;
+
+  &.ss-relative {
+    position: relative;
+    height: 100%;
+  }
+
+  &.ss-fixed {
+    position: fixed;
+  }
+
+  &.ss-dir-above {
+    transform-origin: center bottom;
+    flex-direction: column-reverse;
+    .ss-search {
+      border-top: 1px solid $dropdown-divider-bg;
+    }
+  }
+
+  &.ss-dir-below {
+    transform-origin: center top;
+    .ss-search {
+      border-bottom: 1px solid $dropdown-divider-bg;
+    }
+  }
+
+  &.ss-open {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  .ss-search {
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: row;
+    padding: $dropdown-padding-y $dropdown-padding-x;
+
+    input {
+      display: inline-flex;
+      font-size: inherit;
+      line-height: inherit;
+      flex: 1 1 auto;
+      width: 100%;
+      min-width: 0px;
+      margin: 0;
+      padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+      border: none;
+      outline: 0;
+      text-align: left;
+      background: transparent;
+
+      &::placeholder {
+        color: $input-placeholder-color;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .ss-addable {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      flex: 0 0 auto;
+      height: auto;
+      opacity: 0.625;
+      transition: $transition-fade;
+      padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+
+      svg {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 0 1 auto;
+        width: 1rem;
+        height: 1rem;
+
+        path {
+          fill: none;
+          stroke: black;
+          stroke-width: 10;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .ss-list {
+    flex: 1 1 auto;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: $dropdown-padding-y $dropdown-padding-x;
+
+    .ss-error {
+      color: $form-feedback-invalid-color;
+      padding: 0 $dropdown-item-padding-x;
+    }
+
+    .ss-searching {
+      color: $body-color;
+      padding: 0 $dropdown-item-padding-x;
+    }
+
+    // TODO:::
+    .ss-optgroup {
+      .ss-option {
+        transition:
+          max-height var(--ss-animation-timing) ease,
+          opacity var(--ss-animation-timing) ease,
+          padding-top var(--ss-animation-timing) ease,
+          padding-bottom var(--ss-animation-timing) ease,
+          margin-top var(--ss-animation-timing) ease,
+          margin-bottom var(--ss-animation-timing) ease;
+      }
+
+      &.ss-open {
+        .ss-option {
+          max-height: 100px;
+          opacity: 1;
+          overflow: visible;
+        }
+      }
+
+      // If optgroup has close, hide all options
+      &.ss-close {
+        .ss-option {
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+        }
+      }
+
+      .ss-optgroup-label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: $dropdown-header-padding-y $dropdown-header-padding-x;
+
+        .ss-optgroup-label-text {
+          flex: 1 1 auto;
+          color: $dropdown-header-color;
+          @include font-size($font-size-sm);
+        }
+
+        // If optgroup has arrow, make label clickable
+        &:has(.ss-arrow) {
+          cursor: pointer;
+        }
+
+        .ss-optgroup-actions {
+          flex: 0 1 auto;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+
+          .ss-selectall {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+
+            &:hover {
+              opacity: 0.5;
+            }
+
+            &.ss-selected {
+              svg {
+                path {
+                  stroke: $form-feedback-invalid-color;
+                }
+              }
+            }
+
+            span {
+              flex: 0 1 auto;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: calc(100% * 0.6);
+              text-align: center;
+              padding: 0 6px 0 0;
+            }
+
+            svg {
+              flex: 0 1 auto;
+              width: 13px;
+              height: 13px;
+
+              path {
+                fill: none;
+                stroke: $form-feedback-valid-color;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+              }
+
+              &:first-child {
+                stroke-width: 5;
+              }
+              &:last-child {
+                stroke-width: 11;
+              }
+            }
+          }
+
+          .ss-closable {
+            flex: 0 1 auto;
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+
+            .ss-arrow {
+              flex: 1 1 auto;
+              width: 10px;
+              height: 10px;
+
+              path {
+                fill: none;
+                stroke: $body-color;
+                stroke-width: 18;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                transition-timing-function: ease-out;
+                transition: var(--ss-animation-timing);
+              }
+            }
+          }
+        }
+      }
+
+      .ss-option {
+        padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+      }
+    }
+
+    .ss-option {
+      display: flex;
+      align-items: center;
+      min-height: auto;
+      padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+      white-space: normal;
+      color: $dropdown-color;
+      user-select: none;
+
+      &:hover:not(.ss-disabled) {
+        cursor: pointer;
+        color: $dropdown-link-hover-color;
+        background-color: $dropdown-link-hover-bg;
+      }
+
+      &.ss-highlighted {
+        color: $dropdown-link-hover-color;
+        background-color: $dropdown-link-hover-bg;
+      }
+
+      &:not(.ss-disabled).ss-selected {
+        color: $dropdown-link-active-color;
+        background-color: $dropdown-link-active-bg;
+      }
+
+      &.ss-disabled {
+        color: $dropdown-dark-link-disabled-color;
+      }
+
+      // Sub div wrapper for highlighting text
+      .ss-search-highlight {
+        display: inline-block;
+        background-color: var(--bs-highlight-bg);
+        color: var(--bs-highlight-color);
+        padding: 0;
+      }
+    }
+
+    .ss-search {
+      color: $secondary;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 $dropdown-item-padding-x;
+      border: none;
+    }
+  }
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark) {
+    .ss-main {
+      --#{$prefix}form-select-bg-img: #{escape-svg($form-select-indicator-dark)};
+      .ss-deselect {
+        filter: $btn-close-white-filter;
+      }
+    }
+    .ss-search {
+      .ss-addable {
+        filter: $btn-close-white-filter;
+      }
+    }
+  }
+}

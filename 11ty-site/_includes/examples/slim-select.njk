@@ -1,0 +1,80 @@
+<div class="vstack gap-3">
+
+  <!-- Regular Bootstrap Select -->
+  <div>
+    <label for="regular-select" class="form-label">Regular Select</label>
+    <select id="regular-select" class="form-select">
+      <option value="value1">Value 1</option>
+      <option value="value2">Value 2</option>
+      <option value="value3">Value 3</option>
+    </select>
+  </div>
+
+  <!-- Single Select Example -->
+  <div>
+    <label for="single-example" class="form-label"
+      >Slim Select Single Example</label
+    >
+    <select id="single-example">
+      <option value="value1">Value 1</option>
+      <option value="value2">Value 2</option>
+      <option value="value3">Value 3</option>
+      <option value="value4" disabled>Value 4</option>
+      <option value="value5">Value 5</option>
+      <option value="value6">Value 6</option>
+    </select>
+  </div>
+
+  <!-- Multiple Select Example -->
+  <div>
+    <label for="multiple-example" class="form-label"
+      >Slim Select Multiple Example</label
+    >
+    <select id="multiple-example" multiple></select>
+  </div>
+</div>
+
+<script>
+  new SlimSelect({
+    select: "#single-example",
+    settings: {
+      showSearch: false,
+      allowDeselect: true,
+    },
+  });
+  new SlimSelect({
+    select: "#multiple-example",
+    settings: {
+      allowDeselect: true,
+      maxValuesShown: 3,
+      searchHighlight: true,
+    },
+    data: [
+      {
+        label: "Label 1",
+        options: [
+          { text: "Option 1", value: "1" },
+          { text: "Option 2", value: "2", disabled: true },
+          { text: "Option 3", value: "3" },
+        ],
+      },
+      {
+        label: "Label 2",
+        options: [
+          { text: "Option 4", value: "4" },
+          { text: "Option 5", value: "5" },
+          { text: "Option 6", value: "6" },
+        ],
+      },
+      {
+        label: "Label 3",
+        options: [
+          { text: "Option 7", value: "7" },
+          { text: "Option 8", value: "8" },
+          { text: "Option 9", value: "9" },
+        ],
+      },
+    ],
+  });
+
+</script>
