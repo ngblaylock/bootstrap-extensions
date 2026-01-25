@@ -1,23 +1,7 @@
-// Copied from slim-select v3.2.0
+// Modified for Bootstrap 5.3 from slim-select v3.2.0
 
 :root {
-  // KEEP!!!
   --ss-content-height: 300px;
-
-  // Colors
-  --ss-font-color: var(--bs-body-color);
-  --ss-success-color: var(--bs-form-valid-border-color);
-  --ss-error-color: var(--bs-form-invalid-border-color);
-
-  // Heights
-  --ss-option-height: auto;
-
-  // Spacing
-  --ss-spacing-l: 9px;
-  --ss-spacing-m: 7px;
-  --ss-spacing-s: 5px;
-
-  // Misc
   --ss-animation-timing: 0.2s;
 }
 
@@ -66,7 +50,8 @@
     $form-select-padding-y $form-select-padding-x;
   border: $form-select-border-width solid $input-border-color;
   background-color: $form-select-bg;
-  background-image: var(--#{$prefix}form-select-bg-img),
+  background-image:
+    var(--#{$prefix}form-select-bg-img),
     var(--#{$prefix}form-select-bg-icon, none);
   background-repeat: no-repeat;
   background-position: $form-select-bg-position;
@@ -102,7 +87,7 @@
   .ss-values {
     display: inline-flex;
     flex-wrap: wrap;
-    gap: var(--ss-spacing-m);
+    gap: 6px;
     flex: 1 1 100%;
     min-width: 0; // Allow container to shrink
     max-width: 100%; // Ensure container doesn't exceed parent
@@ -179,8 +164,8 @@
       .ss-value-delete {
         display: flex;
         align-items: center;
-        height: var(--ss-spacing-l);
-        width: var(--ss-spacing-l);
+        height: 9px;
+        width: 9px;
         padding: $badge-padding-y $badge-padding-x;
         cursor: pointer;
         border-left: solid 1px rgba(color-contrast($primary), 0.18);
@@ -261,7 +246,7 @@
       border-top: 1px solid $dropdown-divider-bg;
     }
   }
-  
+
   &.ss-dir-below {
     transform-origin: center top;
     .ss-search {
@@ -273,7 +258,6 @@
     opacity: 1;
     transform: scaleY(1);
   }
-
 
   .ss-search {
     flex: 0 1 auto;
@@ -344,22 +328,21 @@
     overflow-y: auto;
     padding: $dropdown-padding-y $dropdown-padding-x;
 
-    // TODO:::
     .ss-error {
-      color: var(--ss-error-color);
-      padding: var(--ss-spacing-l);
+      color: $form-feedback-invalid-color;
+      padding: 0 $dropdown-item-padding-x;
     }
 
-    // TODO:::
     .ss-searching {
-      color: var(--ss-font-color);
-      padding: var(--ss-spacing-l);
+      color: $body-color;
+      padding: 0 $dropdown-item-padding-x;
     }
 
     // TODO:::
     .ss-optgroup {
       .ss-option {
-        transition: max-height var(--ss-animation-timing) ease,
+        transition:
+          max-height var(--ss-animation-timing) ease,
           opacity var(--ss-animation-timing) ease,
           padding-top var(--ss-animation-timing) ease,
           padding-bottom var(--ss-animation-timing) ease,
@@ -412,7 +395,7 @@
           flex-direction: row;
           align-items: center;
           justify-content: center;
-          gap: var(--ss-spacing-m);
+          gap: 6px;
 
           .ss-selectall {
             flex: 0 0 auto;
@@ -427,7 +410,7 @@
             &.ss-selected {
               svg {
                 path {
-                  stroke: var(--ss-error-color);
+                  stroke: $form-feedback-invalid-color;
                 }
               }
             }
@@ -439,7 +422,7 @@
               justify-content: center;
               font-size: calc(100% * 0.6);
               text-align: center;
-              padding: 0 var(--ss-spacing-s) 0 0;
+              padding: 0 6px 0 0;
             }
 
             svg {
@@ -449,7 +432,7 @@
 
               path {
                 fill: none;
-                stroke: var(--ss-success-color);
+                stroke: $form-feedback-valid-color;
                 stroke-linecap: round;
                 stroke-linejoin: round;
               }
@@ -476,7 +459,7 @@
 
               path {
                 fill: none;
-                stroke: var(--ss-font-color);
+                stroke: $body-color;
                 stroke-width: 18;
                 stroke-linecap: round;
                 stroke-linejoin: round;
@@ -496,7 +479,7 @@
     .ss-option {
       display: flex;
       align-items: center;
-      min-height: var(--ss-option-height);
+      min-height: auto;
       padding: $dropdown-item-padding-y $dropdown-item-padding-x;
       white-space: normal;
       color: $dropdown-color;
@@ -532,10 +515,11 @@
     }
 
     .ss-search {
+      color: $secondary;
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+      padding: 0 $dropdown-item-padding-x;
       border: none;
     }
   }

@@ -6,12 +6,30 @@ title: Slim Select Styles
 
 This CSS is specifically based off of Slim Select v3.2.0. If something doesn't quite look right at first, double check that you are using the same version. If there is a newer version causing a break, submit a PR.
 
+## Getting Started
+
+### Sass
+
+```scss
+@import "node_modules/@ngblaylock/bootstrap-extensions/src/scss/_slim-select-bse.scss";
+```
+
+### CDN
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@ngblaylock/bootstrap-extensions@{{pkg.version}}/dist/css/slim-select-bse.min.css"
+/>
+```
+
+## Examples
+
 {% include "examples/slim-select.njk" %}
 
-## TODO:::
-
-- Validation
-- Finish removing SS CSS variables
+```html
+{% include "examples/slim-select.njk" %}
+```
 
 ## Important Notes:
 
