@@ -23,6 +23,14 @@ This CSS is specifically based off of Slim Select v3.2.0. If something doesn't q
 />
 ```
 
+### JS
+
+You will also need to use the Slim Select JS file in some form, but use Bootstrap Extension styles instead of Slim Select's styles. The easiest way is to use the slim select CDN link.
+
+```html
+<script src="https://unpkg.com/slim-select@3.2.0/dist/slimselect.js"></script>
+```
+
 ## Examples
 
 {% include "examples/slim-select.njk" %}
